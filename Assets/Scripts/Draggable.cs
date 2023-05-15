@@ -8,7 +8,7 @@ public class Draggable : MonoBehaviour {
     }
 
     private void OnMouseDown() {
-        _mousePosition = Input.mousePosition + GetMousePos();
+        _mousePosition = Input.mousePosition - GetMousePos();
     }
 
     private void OnMouseDrag() {

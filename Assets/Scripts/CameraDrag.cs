@@ -1,20 +1,26 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CameraDrag : MonoBehaviour {
   [SerializeField] private float sensitivity = 2f;
 
-  private float sensitivityConstant = 1f;
+  private Vector2 _delta;
+  private bool _isMoving;
 
-  private Vector3 dragOrigin;
-
-  private void OnMouseDown() {
-    dragOrigin = Input.mousePosition;
+  public void onLook(InputAction.CallbackContext ctx) {
+    _delta = ctx.ReadValue<Vector2>();
   }
 
-  private void OnMouseDrag() {
-    Vector3 mouseDelta = Camera.main.ScreenToViewportPoint(Input.mousePosition - dragOrigin);
-    Vector3 movement = new Vector3(mouseDelta.x * sensitivity, 0, mouseDelta.y * sensitivity);
-
-    transform.Translate(movement, Space.World);
+  public void onMove(InputAction.CallbackContext ctx) {
+    _isMoving = ctx.started || ctx.performed;
+  }
+  
+  private void LateUpdate() {
+    if (!_isMoving) return;
+    
+    var position = transform.right * (_delta.x * -sensitivity);
+    position += transform.forward * (_delta.y * -sensitivity);
+    transform.position += position * Time.deltaTime;
   }
 }
