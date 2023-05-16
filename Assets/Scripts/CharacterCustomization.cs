@@ -3,24 +3,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterCustomization : MonoBehaviour {
-  [SerializeField] private GameObject[][] modelGroup;
-  [SerializeField] private int[] activeIndexes = {0};
-  
-  // Start is called before the first frame update
-  void Start() {
-    // Toggle all models off but set the initial indexes to be on
-    foreach (GameObject[] group in modelGroup) {
-      foreach (GameObject model in group) {
-        model.SetActive(false);
+public class CharacterCustomization : MonoBehaviour
+{
+  public GameObject[] eyes;
+  private int currentEyes;
+
+  private void Update()
+  {
+    for (int i = 0; i < eyes.Length; i++)
+    {
+      if (i == currentEyes)
+      {
+        eyes[i].SetActive(true);
       }
-      
-      group[0].SetActive(true);
+      else
+      {
+        eyes[i].SetActive(false);
+      }
     }
   }
 
-  // Update is called once per frame
-  void Update() {
+  public void SwitchEyes()
+  {
+    if (currentEyes == eyes.Length - 1)
+    {
+      currentEyes = 0;
+    }
+    else
+    {
+      currentEyes++;
+    }
   }
-
 }
