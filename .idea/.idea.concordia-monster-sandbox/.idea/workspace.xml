@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5ad8d95-c8ac-4a6f-a312-4c8b6e990182" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.concordia-monster-sandbox/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.concordia-monster-sandbox/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Character/Character.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/CharacterCustomization.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CharacterCustomization.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterCustomization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CharacterCustomization.cs" afterDir="false" />
     </list>
@@ -89,6 +91,9 @@
       <workItem from="1683746502456" duration="3309000" />
       <workItem from="1683887408587" duration="1592000" />
       <workItem from="1684142715729" duration="3579000" />
+      <workItem from="1684231909743" duration="4679000" />
+      <workItem from="1684247247631" duration="1784000" />
+      <workItem from="1684275785079" duration="2899000" />
     </task>
     <servers />
   </component>
