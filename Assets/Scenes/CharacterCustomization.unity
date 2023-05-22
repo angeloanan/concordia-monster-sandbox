@@ -4957,7 +4957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce76ea871890d744d9a0e6a352df3d93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 2
+  sensitivity: 1.5
 --- !u!114 &2041771909
 MonoBehaviour:
   m_ObjectHideFlags: 0
