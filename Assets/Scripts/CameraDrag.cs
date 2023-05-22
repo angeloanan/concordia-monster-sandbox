@@ -2,6 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+// DEPRECATED - Use CursorDragSystem instead
 public class CameraDrag : MonoBehaviour {
   [SerializeField] private float sensitivity = 2f;
 
@@ -13,7 +14,7 @@ public class CameraDrag : MonoBehaviour {
   }
 
   public void onMove(InputAction.CallbackContext ctx) {
-    _isMoving = ctx.started || ctx.performed;
+    _isMoving = (ctx.started || ctx.performed) && !ctx.canceled;
   }
   
   private void LateUpdate() {
@@ -21,6 +22,9 @@ public class CameraDrag : MonoBehaviour {
     
     var position = transform.right * (_delta.x * -sensitivity);
     position += transform.forward * (_delta.y * -sensitivity);
-    transform.position += position * Time.deltaTime;
+    
+    // transform.position += position * Time.deltaTime;
+    // ^ Goes crazy on lag
+    transform.position += position;
   }
 }
