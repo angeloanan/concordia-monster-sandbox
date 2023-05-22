@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c5ad8d95-c8ac-4a6f-a312-4c8b6e990182" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.concordia-monster-sandbox/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.concordia-monster-sandbox/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Body.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Body.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CharacterCustomization.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CharacterCustomization.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/CharacterCustomizationHUDBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/CharacterCustomizationHUDBehavior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/CharacterCustomizationListEntry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/CharacterCustomizationListEntry.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +99,8 @@
       <workItem from="1684275785079" duration="2899000" />
       <workItem from="1684734767009" duration="1025000" />
       <workItem from="1684741758174" duration="2243000" />
-      <workItem from="1684744380357" duration="736000" />
+      <workItem from="1684744380357" duration="1602000" />
+      <workItem from="1684749820766" duration="991000" />
     </task>
     <servers />
   </component>
