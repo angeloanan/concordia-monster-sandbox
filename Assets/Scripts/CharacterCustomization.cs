@@ -1,142 +1,68 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterCustomization : MonoBehaviour
-{
+public class CharacterCustomization : MonoBehaviour {
   public GameObject[] body;
-  private int currentBody;
-  
+  private int _currentBody;
+
   public GameObject[] mouth;
-  private int currentMouth;
-  
+  private int _currentMouth;
+
   public GameObject[] eyes;
-  private int currentEyes;
-  
+  private int _currentEyes;
+
   public GameObject[] nose;
-  private int currentNose;
-  
+  private int _currentNose;
+
   public GameObject[] wing;
-  private int currentWing;
+  private int _currentWing;
 
-  private void Update()
-  {
-    for (int i = 0; i < body.Length; i++)
-    {
-      if (i == currentBody)
-      {
-        body[i].SetActive(true);
-      }
-      else
-      {
-        body[i].SetActive(false);
-      }
-    }
-    
-    for (int i = 0; i < eyes.Length; i++)
-    {
-      if (i == currentEyes)
-      {
-        eyes[i].SetActive(true);
-      }
-      else
-      {
-        eyes[i].SetActive(false);
-      }
-    }
-    
-    for (int i = 0; i < mouth.Length; i++)
-    {
-      if (i == currentMouth)
-      {
-        mouth[i].SetActive(true);
-      }
-      else
-      {
-        mouth[i].SetActive(false);
-      }
-    }
-    
-    for (int j = 0; j < nose.Length; j++)
-    {
-      if (j == currentNose)
-      {
-        nose[j].SetActive(true);
-      }
-      else
-      {
-        nose[j].SetActive(false);
-      }
+  private static void ReRenderParts(IReadOnlyList<GameObject> parts, int index) {
+    // Check if index is out of range
+    if (index < 0 || index >= parts.Count) {
+      throw new IndexOutOfRangeException();
     }
 
-    for (int i = 0; i < wing.Length; i++)
-    {
-      if (i == currentWing)
-      {
-        wing[i].SetActive(true);
-      }
-      else
-      {
-        wing[i].SetActive(false);
-      }
+    foreach (var p in parts) {
+      p.SetActive(false);
     }
+    parts[index].SetActive(true);
   }
 
-  public void SwitchEyes()
-  {
-    if (currentEyes == eyes.Length - 1)
-    {
-      currentEyes = 0;
-    }
-    else
-    {
-      currentEyes++;
-    }
+  private void ReRenderCharacter() {
+    ReRenderParts(body, _currentBody);
+    ReRenderParts(mouth, _currentMouth);
+    ReRenderParts(eyes, _currentEyes);
+    ReRenderParts(nose, _currentNose);
+    ReRenderParts(wing, _currentWing);
   }
-  public void SwitchBody()
-  {
-    if (currentBody == body.Length - 1)
-    {
-      currentBody = 0;
-    }
-    else
-    {
-      currentBody++;
-    }
+
+  public void SwitchBody() {
+    _currentBody = (_currentBody + 1) % body.Length;
+    ReRenderParts(body, _currentBody);
   }
-  public void SwitchMouth()
-  {
-    if (currentMouth == mouth.Length - 1)
-    {
-      currentMouth = 0;
-    }
-    else
-    {
-      currentMouth++;
-    }
+
+  public void SwitchMouth() {
+    _currentMouth = (_currentMouth + 1) % mouth.Length;
+    ReRenderParts(mouth, _currentMouth);
   }
-  public void SwitchNose()
-  {
-    if (currentNose == nose.Length - 1)
-    {
-      currentNose = 0;
-    }
-    else
-    {
-      currentNose++;
-    }
+  public void SwitchEyes() {
+    _currentEyes = (_currentEyes + 1) % eyes.Length;
+    ReRenderParts(eyes, _currentEyes);
   }
-  public void SwitchWing()
-  {
-    if (currentWing == wing.Length - 1)
-    {
-      currentWing = 0;
-    }
-    else
-    {
-      currentWing++;
-    }
+
+  public void SwitchNose() {
+    _currentNose = (_currentNose + 1) % nose.Length;
+    ReRenderParts(nose, _currentNose);
+  }
+
+  public void SwitchWing() {
+    _currentWing = (_currentWing + 1) % wing.Length;
+    ReRenderParts(wing, _currentWing);
   }
   
+  private void Awake() {
+    ReRenderCharacter();
+  }
 }
