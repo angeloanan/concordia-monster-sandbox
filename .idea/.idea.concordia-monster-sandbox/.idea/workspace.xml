@@ -7,7 +7,7 @@
     <list default="true" id="c5ad8d95-c8ac-4a6f-a312-4c8b6e990182" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.concordia-monster-sandbox/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.concordia-monster-sandbox/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/CharacterCustomization.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CharacterCustomization.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/packages.config.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/packages.config.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/UIController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +16,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Sound.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2PbODk2brfDaTfy2kT7TyVYTBwP" />
   <component name="ProjectViewState">
@@ -105,7 +108,9 @@
       <workItem from="1684861000288" duration="595000" />
       <workItem from="1684862181980" duration="551000" />
       <workItem from="1684862756262" duration="7204000" />
-      <workItem from="1684930025620" duration="1247000" />
+      <workItem from="1684930025620" duration="1959000" />
+      <workItem from="1684964969060" duration="7954000" />
+      <workItem from="1685025222069" duration="7625000" />
     </task>
     <servers />
   </component>
