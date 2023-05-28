@@ -2,7 +2,9 @@
     <ui:Template name="CustomizationWindow" src="project://database/Assets/UI/CustomizationWindow.uxml?fileID=9197481963319205126&amp;guid=5aff9f5791e5ee224bb907f63eebc209&amp;type=3#CustomizationWindow" />
     <ui:Template name="Button" src="project://database/Assets/UI/Components/Button.uxml?fileID=9197481963319205126&amp;guid=2d7da3ab8208a049f93f54dbb8a9d180&amp;type=3#Button" />
     <ui:VisualElement name="ScreenContainer" style="flex-direction: row; flex-grow: 1;">
-        <ui:Instance template="CustomizationWindow" name="CustomizationWindow" style="flex-grow: 0; flex-direction: column; margin-top: 24px; margin-bottom: 24px;" />
+        <ui:Instance template="CustomizationWindow" name="CustomizationWindow" style="flex-grow: 0; flex-direction: column; margin-top: 24px; margin-bottom: 24px;">
+            <AttributeOverrides element-name="C" focusable="false" />
+        </ui:Instance>
         <ui:VisualElement name="ScreenContainer" style="flex-grow: 1; -unity-text-align: upper-left; justify-content: flex-start; align-items: center; margin-right: 24px; margin-left: 24px; margin-top: 24px; margin-bottom: 24px;">
             <ui:Label text="Choose your monster !" display-tooltip-when-elided="true" name="Title" style="-unity-font: url(&apos;project://database/Assets/UI/Fonts/Sharkbit%20demo.ttf?fileID=12800000&amp;guid=b34e7a3ee7ca06df0bc5b48eae8d2c55&amp;type=3#Sharkbit demo&apos;); -unity-font-definition: initial; font-size: 72px; -unity-text-align: upper-center; white-space: normal; width: 320px; color: rgb(239, 188, 77);" />
             <ui:VisualElement name="MonsterPreview" style="flex-grow: 1; flex-direction: row; align-items: center;">
@@ -14,7 +16,14 @@
                     <AttributeOverrides element-name="Button" text="&gt;" />
                 </ui:Instance>
             </ui:VisualElement>
-            <ui:Instance template="Button" name="DoneButton" />
+            <ui:VisualElement style="flex-direction: row;">
+                <ui:Instance template="Button" name="ScreenshotButton">
+                    <AttributeOverrides element-name="Button" text="Screenshot" />
+                </ui:Instance>
+                <ui:Instance template="Button" name="SpawnButton">
+                    <AttributeOverrides element-name="Button" text="Spawn" />
+                </ui:Instance>
+            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

@@ -30,15 +30,15 @@ public class CharacterCustomizationHUDBehavior : MonoBehaviour {
     var customizationWindowContent = customizationWindow.Q<VisualElement>("ContentContainer");
 
     var screenContainer = root.Q<VisualElement>("ScreenContainer");
-    var doneButtonContainer = screenContainer.Q("DoneButton");
-    var doneButton = doneButtonContainer.Q<Button>("Button");
+    var screenshotButtonContainer = screenContainer.Q("ScreenshotButton");
+    var screenshotButton = screenshotButtonContainer.Q<Button>("Button");
 
     foreach (CustomizationMap type in characterCustomizationMap) {
       var entry = new CharacterCustomizationListEntry(type.Label, type.OnClick);
       customizationWindowContent.Add(entry);
     }
 
-    doneButton.RegisterCallback<ClickEvent>(_ => {
+    screenshotButton.RegisterCallback<ClickEvent>(_ => {
       // TODO: Remove duplicated code; Scripts/Screenshot.cs
       System.Diagnostics.Debug.Assert(Camera.main != null, "Camera.main != null");
 
@@ -64,5 +64,21 @@ public class CharacterCustomizationHUDBehavior : MonoBehaviour {
       System.IO.File.WriteAllBytes(screenshotPathLocation, bytes);
       Debug.Log($"Took screenshot to: {screenshotPathLocation}");
     });
+    
+    var spawnButtonContainer = screenContainer.Q("SpawnButton");
+    var spawnButton = spawnButtonContainer.Q<Button>("Button");
+    
+    spawnButton.RegisterCallback<ClickEvent>(_ => {
+      Spawn();
+    });
+  }
+
+  private static void Spawn() {
+      var prefab = Resources.Load<GameObject>("CubePrefab");
+      var screenCenter = new Vector3(Screen.width / 2, Screen.height / 2, -3);
+      // Project screen center to world
+      var worldCenter = Camera.main.ScreenToWorldPoint(screenCenter);
+
+      Instantiate(prefab, worldCenter, Quaternion.identity);
   }
 }
