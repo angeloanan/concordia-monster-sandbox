@@ -19,6 +19,7 @@ public class CharacterCustomization : MonoBehaviour {
   private int _currentWing;
 
   private static void ReRenderParts(IReadOnlyList<GameObject> parts, int index) {
+    if (parts.Count == 0) return; // Whatever
     // Check if index is out of range
     if (index < 0 || index >= parts.Count) {
       throw new IndexOutOfRangeException();
@@ -27,6 +28,7 @@ public class CharacterCustomization : MonoBehaviour {
     foreach (var p in parts) {
       p.SetActive(false);
     }
+
     parts[index].SetActive(true);
   }
 
@@ -47,6 +49,7 @@ public class CharacterCustomization : MonoBehaviour {
     _currentMouth = (_currentMouth + 1) % mouth.Length;
     ReRenderParts(mouth, _currentMouth);
   }
+
   public void SwitchEyes() {
     _currentEyes = (_currentEyes + 1) % eyes.Length;
     ReRenderParts(eyes, _currentEyes);
@@ -61,7 +64,7 @@ public class CharacterCustomization : MonoBehaviour {
     _currentWing = (_currentWing + 1) % wing.Length;
     ReRenderParts(wing, _currentWing);
   }
-  
+
   private void Awake() {
     ReRenderCharacter();
   }

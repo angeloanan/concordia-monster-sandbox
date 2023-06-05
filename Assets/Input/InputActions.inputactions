@@ -2,55 +2,7 @@
     "name": "InputActions",
     "maps": [
         {
-            "name": "Object Drag",
-            "id": "17a89aa6-9e62-4207-a10c-fb3436229f20",
-            "actions": [
-                {
-                    "name": "Move",
-                    "type": "PassThrough",
-                    "id": "4375109e-0600-412c-8837-48fa857f4751",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "On Drag",
-                    "type": "Button",
-                    "id": "0dd46407-030d-4da2-bd57-3f36a141958d",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "78411393-432c-417e-858b-b51b90ed1f58",
-                    "path": "<Mouse>/delta",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "123847c6-7f1f-4664-afd8-95276a303bc5",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "On Drag",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Camera",
+            "name": "Gameplay",
             "id": "5739f81c-4c2e-49da-8ee5-fd1b9e8e0654",
             "actions": [
                 {
@@ -86,8 +38,30 @@
                 },
                 {
                     "name": "",
+                    "id": "dad1e23d-da2d-4f94-92c8-2d7d4998df08",
+                    "path": "<Touchscreen>/primaryTouch/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "25531e56-f921-411f-be16-ce1f9404116e",
                     "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "870277bb-a49e-491a-b674-712158f80f7e",
+                    "path": "<Touchscreen>/primaryTouch/press",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
