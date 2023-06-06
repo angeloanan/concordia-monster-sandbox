@@ -1,8 +1,9 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-// DEPRECATED - Use CursorDragSystem instead
+/// <summary>
+/// Deprecated - Use <see cref="CursorDragSystem"/> instead.
+/// </summary>
 public class CameraDrag : MonoBehaviour {
   [SerializeField] private float sensitivity = 2f;
 

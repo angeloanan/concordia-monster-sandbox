@@ -5,8 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/OutdoorsScene.unity
-    guid: 8124e5870f4fd4c779e7a5f994e84ad1
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/Scenes/PlaytestTwo/Playtest2MonsterSelect.unity
+    guid: 4540c5195d90f4771b8926bb54bc58a7
+  - enabled: 1
+    path: Assets/Scenes/PlaytestTwo/PlaytestTwo.unity
+    guid: 6635c4709d7df462c8880a3146c4e5a6
+  - enabled: 1
+    path: Assets/Scenes/PlaytestTwo/CustomizeCharacter.unity
+    guid: 2be3f337f2a334dd78ced677ad1d932b
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 4c72356f67fc04659b8fd4b5ae6f0a07,
+      type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: 92b337858a7244fe3b99ea5cc040514f,
+      type: 2}
   m_UseUCBPForAssetBundles: 0
