@@ -23,7 +23,7 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
       MonsterDataManager.Instance.SetCurrentActiveMonster(monster);
       
       // Navigate to next scene
-      SceneManager.LoadScene("PlaytestTwo");
+      SceneManager.LoadScene("Scenes/GameWorld");
     });
   }
 }

@@ -6,18 +6,18 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 // Want to use State Machines but not sure how to do it in Unity
-public enum CharacterSelectionScreenState {
+public enum MonsterSelectBehaviorState {
   CharacterSelection,
   CharacterConfirmation,
 }
 
-public class CharacterSelectionScreen : MonoBehaviour {
+public class MonsterSelectBehavior : MonoBehaviour {
   [SerializeField] private List<GameObject> characters = new();
   [SerializeField] private UIDocument uiDocument;
 
   private Vector2 _cursorPosition;
   private GameObject _selectedMonster;
-  private CharacterSelectionScreenState _state = CharacterSelectionScreenState.CharacterSelection;
+  private MonsterSelectBehaviorState _state = MonsterSelectBehaviorState.CharacterSelection;
 
   // Runs every time the mouse / input moves
   public void OnPointerMovement(InputAction.CallbackContext ctx) {
@@ -27,6 +27,7 @@ public class CharacterSelectionScreen : MonoBehaviour {
 
   public void OnSelect(InputAction.CallbackContext ctx) {
     Debug.Assert(Camera.main != null, "Camera.main != null");
+    Debug.Log("Selecting!");
 
     if (ctx.performed) return;
     if (ctx.canceled) return;
@@ -47,7 +48,7 @@ public class CharacterSelectionScreen : MonoBehaviour {
     }
 
     Debug.Log($"Selected {character.name}");
-    _state = CharacterSelectionScreenState.CharacterConfirmation;
+    _state = MonsterSelectBehaviorState.CharacterConfirmation;
     // Despawn other character
     foreach (var c in characters) {
       if (c == character) continue;
@@ -74,14 +75,14 @@ public class CharacterSelectionScreen : MonoBehaviour {
       Debug.Log("Confirm button clicked");
       MonsterDataManager.Instance.SetCurrentActiveMonster(_selectedMonster);
       DontDestroyOnLoad(_selectedMonster);
-      SceneManager.LoadScene("CustomizeCharacter");
+      SceneManager.LoadScene("Scenes/CustomizeMonster");
     };
     
     // TODO: Verify functionality of the following (Generated via copilot)
     var cancelButton = root.Q<Button>("CancelButton");
     cancelButton.clicked += () => {
       Debug.Log("Cancel button clicked");
-      _state = CharacterSelectionScreenState.CharacterSelection;
+      _state = MonsterSelectBehaviorState.CharacterSelection;
       // Respawn other character
       foreach (var c in characters) {
         if (c == character) continue;

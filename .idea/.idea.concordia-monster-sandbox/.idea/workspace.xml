@@ -5,198 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5ad8d95-c8ac-4a6f-a312-4c8b6e990182" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Shaders/ToonShader.shader" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Shaders/ToonShader.shader.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Shaders/ToonShaderPass.hlsl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Shaders/ToonShaderPass.hlsl.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.concordia-monster-sandbox/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.concordia-monster-sandbox/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Worlds/SpookyWorld.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Worlds/SpookyWorld.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/URP Universal Asset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/URP Universal Asset.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/URP Universal Asset_Renderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/URP Universal Asset_Renderer.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroupTemplates.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroupTemplates/Packed Assets.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroupTemplates/Packed Assets.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Built In Data.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Built In Data.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Localization-Assets-Shared.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Localization-Assets-Shared.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Localization-Locales.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Localization-Locales.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Localization-String-Tables-Dutch (Netherlands) (nl-NL).asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Localization-String-Tables-Dutch (Netherlands) (nl-NL).asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Localization-String-Tables-English (United States) (en-US).asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Localization-String-Tables-English (United States) (en-US).asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Built In Data_PlayerDataGroupSchema.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Built In Data_PlayerDataGroupSchema.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Default Local Group_BundledAssetGroupSchema.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Default Local Group_BundledAssetGroupSchema.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Default Local Group_ContentUpdateGroupSchema.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Default Local Group_ContentUpdateGroupSchema.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-Assets-Shared_BundledAssetGroupSchema.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-Assets-Shared_BundledAssetGroupSchema.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-Assets-Shared_ContentUpdateGroupSchema.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-Assets-Shared_ContentUpdateGroupSchema.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-Locales_BundledAssetGroupSchema.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-Locales_BundledAssetGroupSchema.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-Locales_ContentUpdateGroupSchema.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-Locales_ContentUpdateGroupSchema.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-String-Tables-Dutch (Netherlands) (nl-NL)_BundledAssetGroupSchema.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-String-Tables-Dutch (Netherlands) (nl-NL)_BundledAssetGroupSchema.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-String-Tables-Dutch (Netherlands) (nl-NL)_ContentUpdateGroupSchema.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-String-Tables-Dutch (Netherlands) (nl-NL)_ContentUpdateGroupSchema.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-String-Tables-English (United States) (en-US)_BundledAssetGroupSchema.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-String-Tables-English (United States) (en-US)_BundledAssetGroupSchema.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-String-Tables-English (United States) (en-US)_ContentUpdateGroupSchema.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-String-Tables-English (United States) (en-US)_ContentUpdateGroupSchema.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/DataBuilders.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/DataBuilders/BuildScriptFastMode.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/DataBuilders/BuildScriptFastMode.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/DataBuilders/BuildScriptPackedMode.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/DataBuilders/BuildScriptPackedMode.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/DataBuilders/BuildScriptPackedPlayMode.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/DataBuilders/BuildScriptPackedPlayMode.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/DataBuilders/BuildScriptVirtualMode.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/DataBuilders/BuildScriptVirtualMode.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/DefaultObject.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/DefaultObject.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Images.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Images/Monsters.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Images/Monsters/fairy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Images/Monsters/fairy.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Images/Monsters/fluffy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Images/Monsters/fluffy.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Images/Monsters/legs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Images/Monsters/legs.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Images/Monsters/potato.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Images/Monsters/potato.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Input/ChooseMonsters.inputactions" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Input/ChooseMonsters.inputactions.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Locales.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Locales/Dutch (Netherlands) (nl-NL).asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Locales/Dutch (Netherlands) (nl-NL).asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Locales/English (United States) (en-US).asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Locales/English (United States) (en-US).asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Locales/Game Shared Data.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Locales/Game Shared Data.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Locales/Game.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Locales/Game.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Locales/Game_en-US.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Locales/Game_en-US.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Locales/Game_nl-NL.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Locales/Game_nl-NL.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Locales/Localization Settings.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Locales/Localization Settings.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Material/BGPurple.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Material/BGPurple.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Material/Black.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Material/Black.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Material/Pink.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Material/Pink.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Material/White.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Material/White.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Character/DevilMonster.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Character/DevilMonster.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Character/ExampleCharacter.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Character/FairyMonster.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Character/FairyMonster.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Character/FluffyMonster.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Character/FluffyMonster.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Character/PotatoMonster.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Character/PotatoMonster.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Resources/Objects.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Resources/Objects/BirchTree.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Resources/Objects/BirchTree.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Resources/Objects/CedarTree.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Resources/Objects/CedarTree.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Resources/Objects/DeadTree.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Resources/Objects/DeadTree.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/World.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/World/SpookyWorld.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/World/SpookyWorld.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/PlaytestTwo.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/PlaytestTwo/CustomizeCharacter.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/PlaytestTwo/CustomizeCharacter.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/PlaytestTwo/Playtest2MonsterSelect.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/PlaytestTwo/Playtest2MonsterSelect.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/PlaytestTwo/PlaytestTwo.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/PlaytestTwo/PlaytestTwo.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DataStore.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DataStore/MonsterDataManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SceneBehavior.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SceneBehavior/CharacterSelectionScreen.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SceneBehavior/CharacterSelectionScreen.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SceneBehavior/CustomizeCharacterBehavior.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SceneBehavior/CustomizeCharacterBehavior.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/ChooseAMonster.uxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/ChooseAMonster.uxml.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/Components/CustomizationBox.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/Components/CustomizationBox.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/Components/CustomizationBox.uxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/Components/CustomizationBox.uxml.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/Components/ItemBox.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/Components/ItemBox.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/Components/ItemBox.uxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/Components/ItemBox.uxml.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/Components/TextBubble.uxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/Components/TextBubble.uxml.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/Components/TextBubbleModal.uxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/Components/TextBubbleModal.uxml.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/ConfirmChooseAMonster.uxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/ConfirmChooseAMonster.uxml.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/CustomizationScreen.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/CustomizationScreen.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/Playtest2.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/Playtest2/Playtest2.uxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/Playtest2/Playtest2Behavior.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/BurstAotSettings_StandaloneOSX.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/TimelineSettings.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/concordia-monster-sandbox.sln.DotSettings" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.concordia-monster-sandbox/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.concordia-monster-sandbox/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Input/InputActions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Input/InputActions.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Floor.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/WorldSurface.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Floor.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/WorldSurface.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Character/Character.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Character/Character.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Character/ExampleCharacter.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Resources/CubePrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Resources/CubePrefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CharacterCustomization.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CharacterCustomization.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CharacterCustomization.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CharacterCustomization.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PlaytestTwo.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PlaytestTwo/CustomizeCharacter.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PlaytestTwo/CustomizeCharacter.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PlaytestTwo/Playtest2MonsterSelect.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PlaytestTwo/Playtest2MonsterSelect.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PlaytestTwo/PlaytestTwo.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PlaytestTwo/PlaytestTwo.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraDrag.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraDrag.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterCustomization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CharacterCustomization.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CursorDragSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CursorDragSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CursorDragSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CursorDragSystem.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Draggable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Draggable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ItemPlop.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ItemPlop.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataStore/MonsterDataManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI Toolkit/PanelSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI Toolkit/PanelSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/CharacterCustomizationListEntry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Components/CharacterCustomizationListEntry.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/CharacterCustomizationListEntry.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Components/CharacterCustomizationListEntry.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/CharacterCustomizationListEntry.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Components/CharacterCustomizationListEntry.uxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/CharacterCustomizationListEntry.uxml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Components/CharacterCustomizationListEntry.uxml.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/Components/Bubble.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Components/Bubble.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/Components/Bubble.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Components/Bubble.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/CustomizationSceneUI.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/CustomizationSceneUI.uxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/CustomizationWindow.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Components/CustomizationWindow.uxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/CustomizationWindow.uxml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Components/CustomizationWindow.uxml.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/MonsterGameUI.uxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/MonsterGameUI.uxml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Playtest2/Playtest2.uxml.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/MonsterGameUIBehavior.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/MonsterGameUIBehavior.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Playtest2/Playtest2Behavior.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/UIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneBehavior/CharacterSelectionScreen.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneBehavior/CharacterSelectionScreen.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneBehavior/CustomizeCharacterBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneBehavior/CustomizeCharacterBehavior.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,12 +45,12 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.5.1/InputSystem/Plugins/PlayerInput/PlayerInput.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.vladfaust.unitywakatime@4dedbeac2e/Editor/Plugin.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2PbODk2brfDaTfy2kT7TyVYTBwP" />
   <component name="ProjectViewState">
@@ -232,19 +60,20 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "do_not_show_Android_plugin_suggestion": "true",
+    "git-widget-placeholder": "master",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
     "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "rider.external.source.directories": [
-      "/Users/lixorte/Library/Application Support/JetBrains/Rider2022.3/resharper-host/DecompilerCache",
-      "/Users/lixorte/Library/Application Support/JetBrains/Rider2022.3/resharper-host/SourcesCache",
-      "/Users/lixorte/.local/share/Symbols/src"
       "/Users/xy/Library/Application Support/JetBrains/Rider2023.1/resharper-host/DecompilerCache",
       "/Users/xy/Library/Application Support/JetBrains/Rider2023.1/resharper-host/SourcesCache",
       "/Users/xy/.local/share/Symbols/src"
@@ -264,14 +93,6 @@
       <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2023.1.0b19/Unity.app/Contents/MacOS/Unity" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\user\OneDrive\Documents\!Kuliah\Saxion\concordia-monster-sandbox -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\user\OneDrive\Documents\!Kuliah\Saxion\concordia-monster-sandbox" />
-      <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <method v="2" />
-    </configuration>
-    <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2023.1.0b18/Unity.app/Contents/MacOS/Unity" />
-      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath &quot;$PROJECT_DIR$&quot; -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />

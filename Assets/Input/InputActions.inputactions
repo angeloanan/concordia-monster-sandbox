@@ -6,7 +6,7 @@
             "id": "5739f81c-4c2e-49da-8ee5-fd1b9e8e0654",
             "actions": [
                 {
-                    "name": "Look",
+                    "name": "PointerDelta",
                     "type": "PassThrough",
                     "id": "897ef6eb-50ca-4d85-b27e-dafbf279bc39",
                     "expectedControlType": "Vector2",
@@ -15,13 +15,22 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Move",
+                    "name": "PointerClick",
                     "type": "Button",
                     "id": "2c2edb13-a51c-4e9e-8c0d-a3eff97137c0",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "PointerScreenPosition",
+                    "type": "Value",
+                    "id": "2f7f40e7-818a-416d-a405-c3061ebef28f",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -32,7 +41,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Look",
+                    "action": "PointerDelta",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -43,7 +52,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Look",
+                    "action": "PointerDelta",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -54,18 +63,40 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "PointerClick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "870277bb-a49e-491a-b674-712158f80f7e",
-                    "path": "<Touchscreen>/primaryTouch/press",
+                    "path": "<Touchscreen>/primaryTouch/indirectTouch",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "PointerClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a3416eb7-cbb3-4c36-b57e-6e4c7ccfb935",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PointerScreenPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fd0d325e-f3a2-49af-839c-1b6de3e6790c",
+                    "path": "<Touchscreen>/primaryTouch/startPosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PointerScreenPosition",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

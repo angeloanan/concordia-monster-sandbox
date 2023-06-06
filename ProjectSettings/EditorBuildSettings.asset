@@ -6,13 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/PlaytestTwo/Playtest2MonsterSelect.unity
+    path: Assets/Scenes/SelectMonster.unity
     guid: 4540c5195d90f4771b8926bb54bc58a7
   - enabled: 1
-    path: Assets/Scenes/PlaytestTwo/PlaytestTwo.unity
+    path: Assets/Scenes/GameWorld.unity
     guid: 6635c4709d7df462c8880a3146c4e5a6
   - enabled: 1
-    path: Assets/Scenes/PlaytestTwo/CustomizeCharacter.unity
+    path: Assets/Scenes/CustomizeMonster.unity
     guid: 2be3f337f2a334dd78ced677ad1d932b
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 4c72356f67fc04659b8fd4b5ae6f0a07,
