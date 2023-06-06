@@ -1,29 +1,17 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:Template name="CustomizationWindow" src="project://database/Assets/UI/CustomizationWindow.uxml?fileID=9197481963319205126&amp;guid=5aff9f5791e5ee224bb907f63eebc209&amp;type=3#CustomizationWindow" />
-    <ui:Template name="Button" src="project://database/Assets/UI/Components/Button.uxml?fileID=9197481963319205126&amp;guid=2d7da3ab8208a049f93f54dbb8a9d180&amp;type=3#Button" />
-    <ui:VisualElement name="ScreenContainer" style="flex-direction: row; flex-grow: 1;">
-        <ui:Instance template="CustomizationWindow" name="CustomizationWindow" style="flex-grow: 0; flex-direction: column; margin-top: 24px; margin-bottom: 24px;">
-            <AttributeOverrides element-name="C" focusable="false" />
-        </ui:Instance>
-        <ui:VisualElement name="ScreenContainer" style="flex-grow: 1; -unity-text-align: upper-left; justify-content: flex-start; align-items: center; margin-right: 24px; margin-left: 24px; margin-top: 24px; margin-bottom: 24px;">
-            <ui:Label text="Choose your monster !" display-tooltip-when-elided="true" name="Title" style="-unity-font: url(&apos;project://database/Assets/UI/Fonts/Sharkbit%20demo.ttf?fileID=12800000&amp;guid=b34e7a3ee7ca06df0bc5b48eae8d2c55&amp;type=3#Sharkbit demo&apos;); -unity-font-definition: initial; font-size: 72px; -unity-text-align: upper-center; white-space: normal; width: 320px; color: rgb(239, 188, 77);" />
-            <ui:VisualElement name="MonsterPreview" style="flex-grow: 1; flex-direction: row; align-items: center;">
-                <ui:Instance template="Button" name="PreviousButton" style="align-items: auto;">
-                    <AttributeOverrides element-name="Button" text="&lt;" enable-rich-text="true" />
-                </ui:Instance>
-                <ui:VisualElement style="min-width: 0; max-width: 320px; flex-grow: 1;" />
-                <ui:Instance template="Button" name="NextButton">
-                    <AttributeOverrides element-name="Button" text="&gt;" />
-                </ui:Instance>
-            </ui:VisualElement>
-            <ui:VisualElement style="flex-direction: row;">
-                <ui:Instance template="Button" name="ScreenshotButton">
-                    <AttributeOverrides element-name="Button" text="Screenshot" />
-                </ui:Instance>
-                <ui:Instance template="Button" name="SpawnButton">
-                    <AttributeOverrides element-name="Button" text="Spawn" />
-                </ui:Instance>
-            </ui:VisualElement>
+    <ui:VisualElement name="TopSection" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); align-items: center; flex-direction: row; justify-content: center;">
+        <ui:Label tabindex="-1" text="1 / 6" display-tooltip-when-elided="true" enable-rich-text="false" name="CategoryStep" style="-unity-font-definition: url(&apos;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&amp;guid=fd5d0c29d12e1cf3e978b4be9cc7da69&amp;type=3#NotInter-Regular&apos;); font-size: 32px; color: rgb(240, 188, 68); margin-left: 8px; margin-right: 8px; margin-bottom: 4px;" />
+        <ui:VisualElement name="CategoryContainer" style="flex-grow: 0; background-color: rgb(240, 188, 68); flex-direction: row;">
+            <ui:VisualElement name="Category" style="flex-grow: 1; background-color: rgb(255, 255, 255); width: 86px; height: 86px; margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px;" />
+            <ui:VisualElement name="Category" style="flex-grow: 1; background-color: rgb(255, 255, 255); width: 86px; height: 86px; margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px;" />
         </ui:VisualElement>
     </ui:VisualElement>
+    <ui:VisualElement name="BottomSection" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); align-items: center; flex-direction: row; justify-content: center; position: absolute; bottom: 0; flex-shrink: 0; left: 0; right: 0;">
+        <ui:VisualElement name="CustomizationContainer" style="flex-grow: 0; background-color: rgb(240, 188, 68); flex-direction: row;">
+            <ui:VisualElement name="Customization" style="flex-grow: 1; background-color: rgb(255, 255, 255); width: 128px; height: 128px; margin-left: 8px; margin-right: 8px; margin-top: 8px; margin-bottom: 8px; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px;" />
+            <ui:VisualElement name="Customization" style="flex-grow: 1; background-color: rgb(255, 255, 255); width: 128px; height: 128px; margin-left: 8px; margin-right: 8px; margin-top: 8px; margin-bottom: 8px; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px;" />
+            <ui:VisualElement name="Customization" style="flex-grow: 1; background-color: rgb(255, 255, 255); width: 128px; height: 128px; margin-left: 8px; margin-right: 8px; margin-top: 8px; margin-bottom: 8px; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:Button text="Done" display-tooltip-when-elided="true" enable-rich-text="false" name="DoneButton" style="align-self: center; align-items: auto; position: absolute; right: 16px; top: 16px; font-size: 32px;" />
 </ui:UXML>
