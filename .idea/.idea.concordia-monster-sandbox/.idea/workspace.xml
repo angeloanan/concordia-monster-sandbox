@@ -5,6 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5ad8d95-c8ac-4a6f-a312-4c8b6e990182" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Shaders/ToonShader.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Shaders/ToonShader.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Shaders/ToonShaderPass.hlsl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Shaders/ToonShaderPass.hlsl.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.concordia-monster-sandbox/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.concordia-monster-sandbox/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Worlds/SpookyWorld.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Worlds/SpookyWorld.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP Universal Asset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/URP Universal Asset.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP Universal Asset_Renderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/URP Universal Asset_Renderer.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData.meta" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset.meta" afterDir="false" />
@@ -211,6 +221,9 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2PbODk2brfDaTfy2kT7TyVYTBwP" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -219,20 +232,19 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "do_not_show_Android_plugin_suggestion": "true",
-    "git-widget-placeholder": "master",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "rider.external.source.directories": [
+      "/Users/lixorte/Library/Application Support/JetBrains/Rider2022.3/resharper-host/DecompilerCache",
+      "/Users/lixorte/Library/Application Support/JetBrains/Rider2022.3/resharper-host/SourcesCache",
+      "/Users/lixorte/.local/share/Symbols/src"
       "/Users/xy/Library/Application Support/JetBrains/Rider2023.1/resharper-host/DecompilerCache",
       "/Users/xy/Library/Application Support/JetBrains/Rider2023.1/resharper-host/SourcesCache",
       "/Users/xy/.local/share/Symbols/src"
@@ -252,6 +264,14 @@
       <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2023.1.0b19/Unity.app/Contents/MacOS/Unity" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\user\OneDrive\Documents\!Kuliah\Saxion\concordia-monster-sandbox -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\user\OneDrive\Documents\!Kuliah\Saxion\concordia-monster-sandbox" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2023.1.0b18/Unity.app/Contents/MacOS/Unity" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath &quot;$PROJECT_DIR$&quot; -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
@@ -305,6 +325,7 @@
       <workItem from="1684753595966" duration="1833000" />
       <workItem from="1684924950106" duration="3161000" />
       <workItem from="1685079082171" duration="3369000" />
+      <workItem from="1685537711610" duration="2691000" />
       <workItem from="1685647314809" duration="120000" />
       <workItem from="1685647472255" duration="700000" />
       <workItem from="1685648213787" duration="65000" />
@@ -328,7 +349,7 @@
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
-  <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
