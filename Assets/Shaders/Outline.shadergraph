@@ -1749,7 +1749,7 @@
     "m_CustomColors": {
         "m_SerializableColors": []
     },
-    "m_DepthSamplingMode": 2
+    "m_DepthSamplingMode": 1
 }
 
 {

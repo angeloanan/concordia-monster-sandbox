@@ -35,6 +35,9 @@ CBUFFER_START(UnityPerMaterial)
     float _LightIntensity;
     float _Halftone;
     float _HalftoneFactor;
+    float _Light0Intensity;
+    float _Light1Intensity;
+    float _Light2Intensity;
     float _Smoothness;
     float _RimSharpness;
     float3 _RimColor;
@@ -171,7 +174,23 @@ void GetMainLightData(float3 PositionWS, out Light light)
     float4 shadowCoord = GetMainLightShadowCoord(PositionWS);
     light = GetMainLight(shadowCoord);
 }
-    
+
+void GetAdditionalLightData(float3 PositionWS, out Light addLight)
+{
+    int count = GetAdditionalLightsCount();
+    addLight = GetAdditionalLight(0, PositionWS);
+    for (int i = 1; i < count; i++)
+    {
+        Light add = GetAdditionalLight(i, PositionWS);
+        addLight.direction += add.direction;
+        //if (add.direction != 0)
+        //{
+        addLight.color += add.color;
+        addLight.distanceAttenuation += add.distanceAttenuation;
+        addLight.shadowAttenuation += add.shadowAttenuation;
+        //}
+    }
+}
     
 ///////////////////////////////////////////////////////////////////////////////
 //                      Helper Functions                                     //
@@ -293,10 +312,16 @@ float3 Fragment(Varyings IN) : SV_Target
     IN.viewDirectionWS = normalize(IN.viewDirectionWS);
     
     Light light;
+    Light addLight, addLight0, addLight1, addLight2;
     GetMainLightData(IN.positionWS, light);
+    if (GetAdditionalLightsCount() > 0)
+    {
+        GetAdditionalLightData(IN.positionWS, addLight);
+    }
     
     float NoL = dot(IN.normalWS, light.direction);
-
+    //float addNoL = dot(IN.normalWS, addLight.direction); //add
+    //float addToonLighting = easysmoothstep(_OtherLightsIntensity, addNoL); //add
     
     //float toonLighting = easysmoothstep(0, NoL);
     float toonLighting = lightingCalc(NoL, 0, _Halftone);
@@ -323,7 +348,8 @@ float3 Fragment(Varyings IN) : SV_Target
     rimTerm = easysmoothstep(0.01, rimTerm);
     
     float3 surfaceColor = _Color * SAMPLE_TEXTURE2D(_ColorMap, sampler_ColorMap, IN.uv);
-    
+
+    //float3 addLighting = addToonLighting * addLight.color;
     float3 directionalLighting = toonLighting * toonShadows * light.color;
     directionalLighting += lightIntensityCalc(directionalLighting);
     float3 specularLighting = specularTerm * light.color;
@@ -334,6 +360,39 @@ float3 Fragment(Varyings IN) : SV_Target
     finalLighting += directionalLighting;
     finalLighting += specularLighting;
     finalLighting += rimLighting;
+
+    float3 addLighting0, addLighting1, addLighting2;
+    if (GetAdditionalLightsCount() > 0)
+    {
+        addLight0 = GetAdditionalLight(0, IN.positionWS);
+        float addNoL = dot(IN.normalWS, addLight0.direction); //add
+        float addToonLighting = easysmoothstep(_Light0Intensity, addNoL); //add
+        float addToonShadows = easysmoothstep(0, addLight0.shadowAttenuation);
+        addLighting0 = addToonLighting * addToonShadows * addLight0.color;
+        finalLighting += addLighting0;
+        
+        if (GetAdditionalLightsCount() > 1)
+        {
+            addLight1 = GetAdditionalLight(1, IN.positionWS);
+            float addNoL = dot(IN.normalWS, addLight1.direction); //add
+            float addToonLighting = easysmoothstep(_Light1Intensity, addNoL); //add
+            float addToonShadows = easysmoothstep(0, addLight1.shadowAttenuation);
+            addLighting1 = addToonLighting * addToonShadows * addLight1.color;
+            finalLighting += addLighting1;
+
+            if (GetAdditionalLightsCount() > 2)
+            {
+                addLight2 = GetAdditionalLight(1, IN.positionWS);
+                float addNoL = dot(IN.normalWS, addLight2.direction); //add
+                float addToonLighting = easysmoothstep(_Light2Intensity, addNoL); //add
+                float addToonShadows = easysmoothstep(0, addLight2.shadowAttenuation);
+                addLighting2 = addToonLighting * addToonShadows * addLight2.color;
+                finalLighting += addLighting2;
+            }
+        }
+    }
+    
+    //finalLighting += addLighting;
     
     return surfaceColor * finalLighting;
 }

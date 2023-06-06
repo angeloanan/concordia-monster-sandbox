@@ -19,6 +19,9 @@ Shader"Custom Shaders/Toon Shader"
         _LightIntensity("Light Intensity", Range(-1, 1)) = 1
         _Halftone("Halftone Brightness", Range(0, 1)) = 0.5
         _HalftoneFactor("Halftone Factor", Range(0, 1)) = 0.5
+        _Light0Intensity("Light 2 Intensity", Range(-1, 1)) = 0.5
+        _Light1Intensity("Light 3 Intensity", Range(-1, 1)) = 0.5
+        _Light2Intensity("Light 4 Intensity", Range(-1, 1)) = 0.5
         _Smoothness ("Smoothness", Float) = 16.0
         _RimSharpness ("Rim Sharpness", Float) = 16.0
         [HDR] _RimColor ("Rim Color", Color) = (1.0, 1.0, 1.0)
