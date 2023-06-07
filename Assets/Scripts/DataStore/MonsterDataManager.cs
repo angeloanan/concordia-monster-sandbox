@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MonsterData {
   public string Name;
+
   // Dictionary<MonsterPart, MonsterCustomizationEntry[]>
   public Dictionary<string, List<MonsterCustomizationEntry>> Customizations;
 }
@@ -20,10 +21,10 @@ public class MonsterDataManager : MonoBehaviour {
 
   public static readonly MonsterData[] MonsterData = {
     new() {
-      Name = "Monster 1",
+      Name = "DevilMonster",
       Customizations = new Dictionary<string, List<MonsterCustomizationEntry>> {
         {
-          "body", new List<MonsterCustomizationEntry> {
+          "body", new() {
             new() {
               Label = "Body 1",
               Icon = "body1",
@@ -38,7 +39,7 @@ public class MonsterDataManager : MonoBehaviour {
             },
           }
         }, {
-          "mouth", new List<MonsterCustomizationEntry> {
+          "mouth", new() {
             new() {
               Label = "Mouth 1",
               Icon = "mouth1",
@@ -53,7 +54,7 @@ public class MonsterDataManager : MonoBehaviour {
             },
           }
         }, {
-          "eyes", new List<MonsterCustomizationEntry> {
+          "eyes", new() {
             new() {
               Label = "Eyes 1",
               Icon = "eyes1",
@@ -68,7 +69,7 @@ public class MonsterDataManager : MonoBehaviour {
             },
           }
         }, {
-          "nose", new List<MonsterCustomizationEntry> {
+          "nose", new() {
             new() {
               Label = "Nose 1",
               Icon = "nose1",
@@ -83,7 +84,7 @@ public class MonsterDataManager : MonoBehaviour {
             },
           }
         }, {
-          "wing", new List<MonsterCustomizationEntry> {
+          "wing", new() {
             new() {
               Label = "Wing 1",
               Icon = "wing1",
@@ -102,12 +103,10 @@ public class MonsterDataManager : MonoBehaviour {
     }
   };
 
-  // TODO: Optimize this
   public static MonsterData ResolveMonsterData(string monsterName) {
-    // Filter MonsterData by monsterName
     return MonsterData.FirstOrDefault(data => data.Name == monsterName);
   }
-  
+
   public void SetCurrentActiveMonster(GameObject monster) {
     Debug.Log($"Setting active monster to {monster.name}");
     activeMonsterPrefab = monster;
