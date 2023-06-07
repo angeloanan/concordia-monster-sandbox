@@ -28,6 +28,14 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
 
     categoryStep.text = $"1 / {monsterData.Customizations.Count}";
 
+    // What to do:
+    // 1. Render all body parts in monsterData.Customizations[0] on customizationContainer
+    // 2. Loop over all monsterData.Customization, render icon and register callback on Category Container
+    //   On callback:
+    //     * Clear customizationContainer
+    //     * Render all body parts in monsterData.Customizations[index]
+    //     * Update categoryStep.text
+    
     // Map over all customization data and create UI elements for each and assign callbacks
     foreach (var customization in monsterData.Customizations) {
       var customizationName = customization.Key;
@@ -45,7 +53,8 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
 
     var doneButton = root.Q<Button>("DoneButton");
     doneButton.RegisterCallback<ClickEvent>(_ => {
-      Debug.Log("Done button clicked");
+      Debug.Log("Done button clicked. Transitioning to GameWorld");
+      
       // Update current monster reference
       MonsterDataManager.Instance.SetCurrentActiveMonster(monster);
 
