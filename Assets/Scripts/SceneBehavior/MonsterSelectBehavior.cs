@@ -30,6 +30,8 @@ public class MonsterSelectBehavior : MonoBehaviour {
 
     if (ctx.performed) return;
     if (ctx.canceled) return;
+    // Disable the whole thing if we're not in the right state
+    if (_state == MonsterSelectBehaviorState.CharacterConfirmation) return;
 
     // Raytrace cursor position to world and check if it hits anything
     // If it hits something, then set the object to be dragged
@@ -41,6 +43,7 @@ public class MonsterSelectBehavior : MonoBehaviour {
     }
 
     var character = hit.transform.gameObject;
+    var characterInitialPosition = character.transform.position;
     if (!characters.Contains(character)) {
       Debug.Log($"Selected {character} but it is not a character");
       return;
@@ -48,6 +51,7 @@ public class MonsterSelectBehavior : MonoBehaviour {
 
     Debug.Log($"Selected {character.name}");
     _state = MonsterSelectBehaviorState.CharacterConfirmation;
+    
     // Despawn other character
     foreach (var c in characters) {
       if (c == character) continue;
@@ -65,8 +69,9 @@ public class MonsterSelectBehavior : MonoBehaviour {
     // var characterSelectionContainer = root.Q<VisualElement>("CharacterSelectionContainer");
     // characterSelectionContainer.style.display = DisplayStyle.None;
 
-    var visualTreeAsset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/UI/ConfirmChooseAMonster.uxml");
-    visualTreeAsset.CloneTree(root);
+    var confirmChooseAMonsterUiDoc = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/UI/ConfirmChooseAMonster.uxml");
+    root.Clear();
+    confirmChooseAMonsterUiDoc.CloneTree(root);
 
     // Add event listener to confirm button
     var confirmButton = root.Q<Button>("ConfirmButton");
@@ -82,6 +87,7 @@ public class MonsterSelectBehavior : MonoBehaviour {
     cancelButton.clicked += () => {
       Debug.Log("Cancel button clicked");
       _state = MonsterSelectBehaviorState.CharacterSelection;
+      
       // Respawn other character
       foreach (var c in characters) {
         if (c == character) continue;
@@ -89,16 +95,13 @@ public class MonsterSelectBehavior : MonoBehaviour {
       }
 
       // Center & Enlarge selected character
-      character.transform.position = new Vector3(0, -1.5f, -1);
+      character.transform.position = characterInitialPosition;
       character.transform.localScale = new Vector3(1, 1, 1); // 1x
 
       // Replace UI to confirm selection
-      var root = uiDocument.rootVisualElement;
-      // var characterSelectionContainer = root.Q<VisualElement>("CharacterSelectionContainer");
-      // characterSelectionContainer.style.display = DisplayStyle.None;
-
-      var visualTreeAsset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/UI/ChooseAMonster.uxml");
-      visualTreeAsset.CloneTree(root);
+      root.Clear();
+      var chooseAMonsterUiDoc = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/UI/ChooseAMonster.uxml");
+      chooseAMonsterUiDoc.CloneTree(root);
     };
   }
 }

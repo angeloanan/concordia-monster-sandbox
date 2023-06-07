@@ -6,6 +6,15 @@
             "id": "5739f81c-4c2e-49da-8ee5-fd1b9e8e0654",
             "actions": [
                 {
+                    "name": "PointerScreenPosition",
+                    "type": "Value",
+                    "id": "2f7f40e7-818a-416d-a405-c3061ebef28f",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "PointerDelta",
                     "type": "PassThrough",
                     "id": "897ef6eb-50ca-4d85-b27e-dafbf279bc39",
@@ -22,15 +31,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "PointerScreenPosition",
-                    "type": "Value",
-                    "id": "2f7f40e7-818a-416d-a405-c3061ebef28f",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -48,7 +48,7 @@
                 {
                     "name": "",
                     "id": "dad1e23d-da2d-4f94-92c8-2d7d4998df08",
-                    "path": "<Touchscreen>/delta",
+                    "path": "<Touchscreen>/primaryTouch/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -70,7 +70,7 @@
                 {
                     "name": "",
                     "id": "870277bb-a49e-491a-b674-712158f80f7e",
-                    "path": "<Touchscreen>/Press",
+                    "path": "<Touchscreen>/primaryTouch/press",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -92,7 +92,7 @@
                 {
                     "name": "",
                     "id": "fd0d325e-f3a2-49af-839c-1b6de3e6790c",
-                    "path": "<Touchscreen>/position",
+                    "path": "<Touchscreen>/primaryTouch/position",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

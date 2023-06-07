@@ -27,7 +27,6 @@ public class GameWorldBehavior : MonoBehaviour {
   }
   
   public void OnPointerInitialPosition(InputAction.CallbackContext ctx) {
-    if (ctx.performed || ctx.canceled) return;
     _pointerInitialPosition = ctx.ReadValue<Vector2>();
     Debug.Log("Pointer initial position: " + _pointerInitialPosition);
   }
@@ -50,6 +49,8 @@ public class GameWorldBehavior : MonoBehaviour {
     // If it hits something, then set the object to be dragged
     var ray = Camera.main.ScreenPointToRay(_pointerInitialPosition);
     Physics.Raycast(ray, out var hit, 100);
+    Debug.DrawRay(_pointerInitialPosition, ray.direction * 100, Color.yellow, 30);
+    Debug.Log("Hit: " + hit.transform?.name ?? "null");
     if (hit.collider != null && hit.transform.CompareTag("Draggable")) {
       // Hits a draggable object
       _movingObject = hit.transform.gameObject;
