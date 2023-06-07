@@ -18,9 +18,11 @@ public class GameWorldBehavior : MonoBehaviour {
 
   public void Awake() {
     var monster = MonsterDataManager.Instance.activeMonsterPrefab;
-    
-    monster.transform.position = new Vector3(0, 1, 5);
-    monster.transform.localScale = new Vector3(1, 1, 1);
+    // If null then LateUpdate doesn't trigger :german:
+    if (monster != null) {
+      monster.transform.position = new Vector3(0, 1, 5);
+      monster.transform.localScale = new Vector3(1, 1, 1);
+    }
   }
 
   public void OnStopLooking() {
