@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,6 +14,14 @@ public class GameWorldBehavior : MonoBehaviour {
   
   private GameObject _movingObject;
   private Vector3 _initialObjectScreenPosition;
+
+
+  public void Awake() {
+    var monster = MonsterDataManager.Instance.activeMonsterPrefab;
+    
+    monster.transform.position = new Vector3(0, 1, 5);
+    monster.transform.localScale = new Vector3(1, 1, 1);
+  }
 
   public void OnStopLooking() {
     // Cleanup
