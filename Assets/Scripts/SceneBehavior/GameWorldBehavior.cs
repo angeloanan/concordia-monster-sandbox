@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Debug = System.Diagnostics.Debug;
 
 public class GameWorldBehavior : MonoBehaviour {
   [SerializeField] public bool canMoveCamera = true;
@@ -24,22 +23,28 @@ public class GameWorldBehavior : MonoBehaviour {
   // OnMouseDrag
   public void OnPointerDelta(InputAction.CallbackContext ctx) {
     _pointerDelta = ctx.ReadValue<Vector2>();
+    Debug.Log("Pointer delta: " + _pointerDelta);
   }
   
   public void OnPointerInitialPosition(InputAction.CallbackContext ctx) {
     if (ctx.performed || ctx.canceled) return;
     _pointerInitialPosition = ctx.ReadValue<Vector2>();
+    Debug.Log("Pointer initial position: " + _pointerInitialPosition);
   }
 
   // OnClick
   public void OnPointerClick(InputAction.CallbackContext ctx) {
     Debug.Assert(Camera.main != null, "Camera.main != null");
+    Debug.Log("Pointer click: " + ctx.ReadValueAsObject());
 
     if (ctx.performed) return;
     if (ctx.canceled) {
+      Debug.Log("Canceled click");
       OnStopLooking();
       return;
     }
+    
+    _isClicking = true;
 
     // Raytrace cursor position to world and check if it hits anything
     // If it hits something, then set the object to be dragged
@@ -77,7 +82,7 @@ public class GameWorldBehavior : MonoBehaviour {
       Camera.main.transform.position += position;
 
       // Clamp camera position
-      var clampedPosition = transform.position;
+      var clampedPosition = Camera.main.transform.position;
       clampedPosition.x = Mathf.Clamp(clampedPosition.x, -cameraClampWidth, cameraClampWidth);
       clampedPosition.z = Mathf.Clamp(clampedPosition.z, -cameraClampDepth, cameraClampDepth);
       Camera.main.transform.position = clampedPosition;

@@ -15,8 +15,18 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
     
     // Initialize UI
     var root = uiDocument.rootVisualElement;
-    var doneButton = root.Q<Button>("DoneButton");
     
+    // Get Monster Customization Data based on selected monster
+    var monsterData = MonsterDataManager.ResolveMonsterData(monster.name);
+    Debug.Assert(monsterData != null, nameof(monsterData) + " != null");
+    
+    // Map over all customization data and create UI elements for each and assign callbacks
+    foreach (var customization in monsterData.Customizations) {
+      
+    }
+    
+    
+    var doneButton = root.Q<Button>("DoneButton");
     doneButton.RegisterCallback<ClickEvent>(_ => {
       Debug.Log("Done button clicked");
       // Update current monster reference

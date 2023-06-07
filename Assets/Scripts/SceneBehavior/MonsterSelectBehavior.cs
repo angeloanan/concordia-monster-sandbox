@@ -27,7 +27,6 @@ public class MonsterSelectBehavior : MonoBehaviour {
 
   public void OnSelect(InputAction.CallbackContext ctx) {
     Debug.Assert(Camera.main != null, "Camera.main != null");
-    Debug.Log("Selecting!");
 
     if (ctx.performed) return;
     if (ctx.canceled) return;
