@@ -1,0 +1,99 @@
+.yes-button {
+    width: 60px;
+    height: 60px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    background-color: rgb(255, 255, 255);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    bottom: 50px;
+    left: 30px;
+    background-image: url('project://database/Assets/Images/Icons/yes-button.png?fileID=2800000&guid=b421adcb7de7a13489cdc83bf68db077&type=3#yes-button');
+}
+
+.no-button {
+    width: 60px;
+    height: 60px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    background-color: rgb(255, 255, 255);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    bottom: 50px;
+    right: 30px;
+    background-image: url('project://database/Assets/Images/Icons/no-button.png?fileID=2800000&guid=08fe55f53870e7744b8bbcad1999ddae&type=3#no-button');
+}
+
+.yes-button:hover {
+    width: 80px;
+    height: 80px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    background-color: rgb(255, 255, 255);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    bottom: 50px;
+    left: 30px;
+    background-image: url('project://database/Assets/Images/Icons/yes-button-clicked.png?fileID=2800000&guid=fded9cfd91e848a4dad2871791d701fc&type=3#yes-button-clicked');
+}
+
+.no-button:hover {
+    width: 80px;
+    height: 80px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    background-color: rgb(255, 255, 255);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    bottom: 50px;
+    right: 30px;
+    background-image: url('project://database/Assets/Images/Icons/no-button-clicked.png?fileID=2800000&guid=b6d2940501e17014c85d96e408de8269&type=3#no-button-clicked');
+}
