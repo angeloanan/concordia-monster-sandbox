@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-/// Deprecated - Use <see cref="CursorDragSystem"/> instead and Tag a GameObject as Draggable
+/// Deprecated - Use <see cref="GameWorldBehavior"/> instead and Tag a GameObject as Draggable
 /// </summary>
 public class Draggable : MonoBehaviour {
     private Vector3 _mousePosition;

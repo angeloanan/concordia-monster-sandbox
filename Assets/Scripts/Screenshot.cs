@@ -1,25 +1,20 @@
 using UnityEngine;
 
 public class Screenshot : MonoBehaviour {
-  /// <summary>
-  /// Where to save screenshot, relative to project file's location
-  /// </summary>
-  [SerializeField] string screenshotPathLocation = "Screenshot.png";
-  // 4K res
-  [SerializeField] private int w = 3840;
-  [SerializeField] private int h = 2160;
-
-  public void ScreenshotActiveScene() {
-    ScreenCapture.CaptureScreenshot(this.screenshotPathLocation, 4);
+  public static void ScreenshotActiveScene(string screenshotPathLocation = "Screenshot.png") {
+    ScreenCapture.CaptureScreenshot(screenshotPathLocation, 4);
   }
 
-  /**
-   * Takes a screenshot from the camera's point of view.
-   * Screenshot by default is 4K at 32 bits per pixel.
-   */
-  public void ScreenshotCameraPoint() {
+  /// <summary>
+  /// Takes a screenshot from the camera's POV
+  /// </summary>
+  /// <param name="screenshotPathLocation">Where the screenshot will be saved relative to project's root</param>
+  /// <param name="w">Width of the screenshot</param>
+  /// <param name="h">Height of the screenshot</param>
+  public static void ScreenshotCameraPoint(string screenshotPathLocation = "Screenshot.png", int w = 3840,
+    int h = 2160) {
     System.Diagnostics.Debug.Assert(Camera.main != null, "Camera.main != null");
-    
+
     var targetTexture = new RenderTexture(w, h, 32);
     var screenshotTexture = new Texture2D(w, h, TextureFormat.RGBA32, false);
 
@@ -30,13 +25,13 @@ public class Screenshot : MonoBehaviour {
 
     // Give back control to main camera, render back to screen
     Camera.main.targetTexture = null;
-    
+
     RenderTexture.active = targetTexture;
     screenshotTexture.ReadPixels(new Rect(0, 0, w, h), 0, 0);
-    
+
     RenderTexture.active = null; // JC: added to avoid errors
     Destroy(targetTexture);
-    
+
     // Encode texture into PNG
     var bytes = screenshotTexture.EncodeToPNG();
     System.IO.File.WriteAllBytes(screenshotPathLocation, bytes);
