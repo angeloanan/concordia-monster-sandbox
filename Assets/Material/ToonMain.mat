@@ -117,8 +117,8 @@ Material:
     - _GlossyReflections: 0
     - _Halftone: 0.5
     - _HalftoneFactor: 0.5
-    - _Light0Intensity: 0.13
-    - _Light1Intensity: 0.46
+    - _Light0Intensity: 0.25
+    - _Light1Intensity: 0.3
     - _Light2Intensity: 0.5
     - _LightIntensity: 0.15
     - _Metallic: 0
@@ -134,6 +134,7 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
+    - _ToggleBlend: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:

@@ -16,6 +16,9 @@ Shader"Custom Shaders/Toon Shader"
     {
         [MainTexture] _ColorMap ("Color Map", 2D) = "white" {}
         [MainColor] _Color ("Color", Color) = (1.0, 1.0, 1.0)
+        [Toggle] _ToggleBlend("Blend", Float) = 0
+        [Normal] _NormalMap ("Normal Map", 2D) = "bump" {}
+        [Toggle] _ToggleNormalMap("Use Normal Map", Float) = 0
         _LightIntensity("Light Intensity", Range(-1, 1)) = 1
         _Halftone("Halftone Brightness", Range(0, 1)) = 0.5
         _HalftoneFactor("Halftone Factor", Range(0, 1)) = 0.5
