@@ -48,7 +48,7 @@
     background-image: url('project://database/Assets/Images/Icons/no-button.png?fileID=2800000&guid=08fe55f53870e7744b8bbcad1999ddae&type=3#no-button');
 }
 
-.yes-button:hover {
+.yes-button:active {
     width: 80px;
     height: 80px;
     padding-left: 0;
@@ -73,7 +73,7 @@
     background-image: url('project://database/Assets/Images/Icons/yes-button-clicked.png?fileID=2800000&guid=fded9cfd91e848a4dad2871791d701fc&type=3#yes-button-clicked');
 }
 
-.no-button:hover {
+.no-button:active {
     width: 80px;
     height: 80px;
     margin-left: 0;
