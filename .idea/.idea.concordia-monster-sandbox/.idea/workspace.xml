@@ -6,13 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c5ad8d95-c8ac-4a6f-a312-4c8b6e990182" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.concordia-monster-sandbox/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.concordia-monster-sandbox/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameWorld.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameWorld.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SelectMonster.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SelectMonster.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataStore/MonsterDataManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataStore/MonsterDataManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneBehavior/MonsterSelectBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneBehavior/MonsterSelectBehavior.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/CharacterCustomizationHUDBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/CharacterCustomizationHUDBehavior.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/Playtest2/Playtest2.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Playtest2/Playtest2.uxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/Playtest2/Playtest2Behavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Playtest2/Playtest2Behavior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterCustomization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CharacterCustomization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneBehavior/CustomizeCharacterBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneBehavior/CustomizeCharacterBehavior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Components/CustomizationBox.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Components/CustomizationBox.uxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/CustomizationSceneUI.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/CustomizationSceneUI.uxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/style.uss" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/style.uss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +157,7 @@
       <workItem from="1685952788200" duration="25527000" />
       <workItem from="1686065576245" duration="9275000" />
       <workItem from="1686611461861" duration="1957000" />
-      <workItem from="1686657837987" duration="8617000" />
+      <workItem from="1686657837987" duration="14004000" />
     </task>
     <servers />
   </component>
@@ -188,13 +186,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/UI/Playtest2/Playtest2Behavior.cs</url>
-          <line>52</line>
+          <line>53</line>
           <properties documentPath="C:\Users\user\OneDrive\Documents\!Kuliah\Saxion\concordia-monster-sandbox\Assets\UI\Playtest2\Playtest2Behavior.cs" initialLine="51" containingFunctionPresentation="Lambda expression inside Method 'IntializeUI'">
             <startOffsets>
-              <option value="2050" />
+              <option value="2055" />
             </startOffsets>
             <endOffsets>
-              <option value="2051" />
+              <option value="2056" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />

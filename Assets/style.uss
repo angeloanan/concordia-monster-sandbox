@@ -97,3 +97,49 @@
     right: 30px;
     background-image: url('project://database/Assets/Images/Icons/no-button-clicked.png?fileID=2800000&guid=b6d2940501e17014c85d96e408de8269&type=3#no-button-clicked');
 }
+
+.done-button {
+    align-self: center;
+    align-items: auto;
+    position: absolute;
+    right: 39px;
+    top: 21px;
+    font-size: 32px;
+    background-image: url('project://database/Assets/Images/Icons/yes-button.png?fileID=2800000&guid=b421adcb7de7a13489cdc83bf68db077&type=3#yes-button');
+    width: 60px;
+    height: 60px;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    -unity-text-align: middle-center;
+    left: 930px;
+    bottom: 369px;
+}
+
+.done-button:active {
+    align-self: center;
+    align-items: auto;
+    position: absolute;
+    right: 39px;
+    top: 21px;
+    font-size: 32px;
+    background-image: url('project://database/Assets/Images/Icons/yes-button-clicked.png?fileID=2800000&guid=fded9cfd91e848a4dad2871791d701fc&type=3#yes-button-clicked');
+    width: 60px;
+    height: 60px;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    -unity-text-align: middle-center;
+    left: 930px;
+    bottom: 369px;
+}
