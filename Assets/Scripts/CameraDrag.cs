@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 /// <summary>
-/// Deprecated - Use <see cref="CursorDragSystem"/> instead.
+/// Deprecated - Use <see cref="GameWorldBehavior"/> instead.
 /// </summary>
 public class CameraDrag : MonoBehaviour {
   [SerializeField] private float sensitivity = 2f;

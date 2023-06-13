@@ -32,6 +32,10 @@ CBUFFER_START(UnityPerMaterial)
     SAMPLER(sampler_ColorMap);
     float4 _ColorMap_ST;
     float3 _Color;
+    float _ToggleBlend;
+    TEXTURE2D(_NormalMap);
+    SAMPLER(sampler_NormalMap);
+    float _ToggleNormalMap;
     float _LightIntensity;
     float _Halftone;
     float _HalftoneFactor;
@@ -231,6 +235,57 @@ float lightIntensityCalc(float lighting)
     }
     return _LightIntensity;
 }
+/*(A) If R ≥ G ≥ B  |  H = 60° x [(G-B)/(R-B)]
+(B) If G > R ≥ B  |  H = 60° x [2 - (R-B)/(G-B)]
+(C) If G ≥ B > R  |  H = 60° x [2 + (B-R)/(G-R)]
+(D) If B > G > R  |  H = 60° x [4 - (G-R)/(B-R)]
+(E) If B > R ≥ G  |  H = 60° x [4 + (R-G)/(B-G)]
+(F) If R ≥ B > G  |  H = 60° x [6 - (B-G)/(R-G)]
+
+(A) If L < 1  |  S = (Max(RGB) — Min(RGB)) / (1 — |2L - 1|)
+(B) If L = 1  |  S = 0*/
+
+float3 RGBtoHSL(float3 rgb)
+{
+    float r = rgb[0] / 255;
+    float g = rgb[1] / 255;
+    float b = rgb[2] / 255;
+    float maxRGB = max(r, max(g, b)), minRGB = min(r, min(g, b));
+    float l = 0.5 * (maxRGB + minRGB), h, s;
+    if (r >= g && g >= b)
+    {
+        h = 60 * ((g - b) / (r - b));
+    } else if (g > r && r >= b)
+    {
+        h = 60 * (2 - (r - b) / (g - b));
+    } else if (g >= b && b > r)
+    {
+        h = 60 * (2 + (b - r) / (g - r));
+    } else if (b > g && g > r)
+    {
+        h = 60 * (4 - (g - r) / (b - r));
+    } else if (b > r && r >= g)
+    {
+        h = 60 * (4 + (r - g) / (b - g));
+    } else if (r >= b && b > g)
+    {
+        h = 60 * (6 - (b - g) / (r - g));
+    }
+    if (l < 1)
+    {
+        if (2 * l > 1)
+        {
+            s = (maxRGB - minRGB) / (1 - (2 * l - 1));
+        } else
+        {
+            s = (maxRGB - minRGB) / (1 - (1 - 2 * l));
+        }
+    } else
+    {
+        s = 0;
+    }
+    return float3(h, s, l);
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 //                      Functions                                            //
@@ -307,7 +362,11 @@ float3 Fragment(Varyings IN) : SV_Target
     // These macros are required for VR SPI compatibility
 	UNITY_SETUP_INSTANCE_ID(IN);
 	UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(IN);
-    
+
+    if (_ToggleNormalMap)
+    {
+        IN.normalWS = SAMPLE_TEXTURE2D(_NormalMap, sampler_NormalMap, IN.uv);
+    }
     IN.normalWS = normalize(IN.normalWS);
     IN.viewDirectionWS = normalize(IN.viewDirectionWS);
     
@@ -348,6 +407,14 @@ float3 Fragment(Varyings IN) : SV_Target
     rimTerm = easysmoothstep(0.01, rimTerm);
     
     float3 surfaceColor = _Color * SAMPLE_TEXTURE2D(_ColorMap, sampler_ColorMap, IN.uv);
+    if (_ToggleBlend)
+    {
+        float3 _ColorHSL = RgbToHsv(_Color);
+        float3 textureHSL = RgbToHsv(SAMPLE_TEXTURE2D(_ColorMap, sampler_ColorMap, IN.uv));
+        _ColorHSL[2] = textureHSL[2];
+        //textureHSL[1] = _ColorHSL[1];
+        surfaceColor = SoftLight(SAMPLE_TEXTURE2D(_ColorMap, sampler_ColorMap, IN.uv), _Color);
+    }
 
     //float3 addLighting = addToonLighting * addLight.color;
     float3 directionalLighting = toonLighting * toonShadows * light.color;

@@ -13,9 +13,19 @@ public class Playtest2Behavior : MonoBehaviour {
   [SerializeField] private GameObject worldRoot;
 
   private ItemMap[] uiItemMap = {
-    new() { Label = "Dead Tree", OnClickEventCallback = _ => { SpawnPrefab("Objects/DeadTree"); } },
-    new() { Label = "Birch Tree", OnClickEventCallback = _ => { SpawnPrefab("Objects/BirchTree"); } },
-    new() { Label = "Cedar Tree", OnClickEventCallback = _ => { SpawnPrefab("Objects/CedarTree"); } },
+    new() { Label = "Arc", OnClickEventCallback = _ => { SpawnPrefab("Objects/arc"); } },
+    new() { Label = "Bench", OnClickEventCallback = _ => { SpawnPrefab("Objects/bench"); } },
+    new() { Label = "Chest", OnClickEventCallback = _ => { SpawnPrefab("Objects/chest"); } },
+    new() { Label = "Fence", OnClickEventCallback = _ => { SpawnPrefab("Objects/fence"); } },
+    new() { Label = "House", OnClickEventCallback = _ => { SpawnPrefab("Objects/house"); } },
+    new() { Label = "Lantern", OnClickEventCallback = _ => { SpawnPrefab("Objects/lantern"); } },
+    new() { Label = "Pine Tree", OnClickEventCallback = _ => { SpawnPrefab("Objects/pinetree"); } },
+    new() { Label = "Pumpkin", OnClickEventCallback = _ => { SpawnPrefab("Objects/pumpkin"); } },
+    new() { Label = "Rock", OnClickEventCallback = _ => { SpawnPrefab("Objects/rock"); } },
+    new() { Label = "Double Rock", OnClickEventCallback = _ => { SpawnPrefab("Objects/rockDouble"); } },
+    new() { Label = "Tall Rock", OnClickEventCallback = _ => { SpawnPrefab("Objects/rockTall"); } },
+    new() { Label = "Skull", OnClickEventCallback = _ => { SpawnPrefab("Objects/skull"); } },
+    new() { Label = "Dead Tree", OnClickEventCallback = _ => { SpawnPrefab("Objects/treeDead"); } },
   };
 
   private static void SpawnPrefab(string prefabPath) {
