@@ -17,6 +17,7 @@ public class MonsterCustomizationEntry {
 public class MonsterDataManager : MonoBehaviour {
   public static MonsterDataManager Instance { get; private set; }
 
+  public string activeMonsterName;
   public GameObject activeMonsterPrefab;
 
   public static readonly MonsterData[] MonsterData = {
@@ -110,6 +111,11 @@ public class MonsterDataManager : MonoBehaviour {
   public void SetCurrentActiveMonster(GameObject monster) {
     Debug.Log($"Setting active monster to {monster.name}");
     activeMonsterPrefab = monster;
+  }
+
+  public void SetCurrentActiveMonsterName(string monsterName) {
+    Debug.Log($"Setting active monster name to {monsterName}");
+    activeMonsterName = monsterName;
   }
 
   private void Awake() {
