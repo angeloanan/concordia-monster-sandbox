@@ -111,6 +111,7 @@ public class MonsterDataManager : MonoBehaviour {
     Debug.Log($"Setting active monster to {monster.name}");
     activeMonsterPrefab = monster;
   }
+  
 
   private void Awake() {
     if (Instance == null) {

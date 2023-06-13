@@ -1,3 +1,5 @@
+//Scene ini jadi contoh
+
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;

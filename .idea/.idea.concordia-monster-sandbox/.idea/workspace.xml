@@ -6,31 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="c5ad8d95-c8ac-4a6f-a312-4c8b6e990182" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.concordia-monster-sandbox/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.concordia-monster-sandbox/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Localization-Assets-Shared.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Localization-Assets-Shared.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Localization-String-Tables-Dutch (Netherlands) (nl-NL).asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Localization-String-Tables-Dutch (Netherlands) (nl-NL).asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Localization-String-Tables-English (United States) (en-US).asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Localization-String-Tables-English (United States) (en-US).asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/ToonMain.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/ToonMain.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/island.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/island.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mesh/bench2.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mesh/bench2.obj.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mesh/cube.obj.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mesh/cube.obj.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mesh/island bad.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mesh/island bad.obj.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mesh/pumpkin.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mesh/pumpkin.obj.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mesh/rock.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mesh/rock.obj.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mesh/tree2.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mesh/tree2.obj.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mesh/tree3.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mesh/tree3.obj.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/World/SpookyWorld.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/World/SpookyWorld.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PlaytestTwo/PlaytestTwo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PlaytestTwo/PlaytestTwo.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Outline.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Outline.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/ToonShader.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/ToonShader.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/ToonShaderPass.hlsl" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/ToonShaderPass.hlsl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameWorld.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameWorld.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SelectMonster.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SelectMonster.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataStore/MonsterDataManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataStore/MonsterDataManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneBehavior/MonsterSelectBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneBehavior/MonsterSelectBehavior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/CharacterCustomizationHUDBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/CharacterCustomizationHUDBehavior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Playtest2/Playtest2.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Playtest2/Playtest2.uxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Playtest2/Playtest2Behavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Playtest2/Playtest2Behavior.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +69,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2023.1.0b19/Unity.app/Contents/MacOS/Unity" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2023.1.0b19\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\user\OneDrive\Documents\!Kuliah\Saxion\concordia-monster-sandbox -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\user\OneDrive\Documents\!Kuliah\Saxion\concordia-monster-sandbox" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -95,7 +77,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.24f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2023.1.0b19\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\user\OneDrive\Documents\!Kuliah\Saxion\concordia-monster-sandbox -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\user\OneDrive\Documents\!Kuliah\Saxion\concordia-monster-sandbox" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -176,6 +158,8 @@
       <workItem from="1685925176988" duration="1694000" />
       <workItem from="1685952788200" duration="25527000" />
       <workItem from="1686065576245" duration="9275000" />
+      <workItem from="1686611461861" duration="1957000" />
+      <workItem from="1686657837987" duration="8617000" />
     </task>
     <servers />
   </component>
@@ -198,6 +182,25 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/UI/Playtest2/Playtest2Behavior.cs</url>
+          <line>52</line>
+          <properties documentPath="C:\Users\user\OneDrive\Documents\!Kuliah\Saxion\concordia-monster-sandbox\Assets\UI\Playtest2\Playtest2Behavior.cs" initialLine="51" containingFunctionPresentation="Lambda expression inside Method 'IntializeUI'">
+            <startOffsets>
+              <option value="2050" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2051" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UIElements;
-
 public class CustomizationMap {
   public string Label;
   public EventCallback<ClickEvent> OnClick;
@@ -71,6 +70,7 @@ public class CharacterCustomizationHUDBehavior : MonoBehaviour {
     spawnButton.RegisterCallback<ClickEvent>(_ => {
       Spawn();
     });
+    
   }
 
   private static void Spawn() {
