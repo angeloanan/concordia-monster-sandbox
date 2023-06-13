@@ -74,7 +74,7 @@ public class Playtest2Behavior : MonoBehaviour {
       // Show PopUp
       // TODO: Move this to a separate file
       var visualTreeAsset =
-        AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/UI/Components/TextBubbleModal.uxml");
+        Resources.Load<VisualTreeAsset>("UI/Components/TextBubbleModal");
       visualTreeAsset.CloneTree(root);
       
       var doneButton = root.Q<TemplateContainer>("DoneButtonContainer").Q<Button>("Button");

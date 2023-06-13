@@ -163,7 +163,7 @@ fabric.properties
 # End of https://www.toptal.com/developers/gitignore/api/rider
 
 mono_crash.*
-.idea/*
+.idea
 
 # Created by https://www.toptal.com/developers/gitignore/api/macos,windows,linux
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,windows,linux
@@ -243,3 +243,7 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,windows,linux
+
+*.symbols.zip
+debug-android_*
+
