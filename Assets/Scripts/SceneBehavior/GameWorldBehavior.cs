@@ -4,9 +4,10 @@ using UnityEngine.InputSystem;
 
 public class GameWorldBehavior : MonoBehaviour {
   [SerializeField] public bool canMoveCamera = true;
-  [SerializeField] private float cameraSensitivity = 0.01f;
-  [SerializeField] private int cameraClampDepth = 10;
-  [SerializeField] private int cameraClampWidth = 10;
+  [SerializeField] private float cameraSensitivity = 0.1f;
+  [SerializeField] private Vector3 cameraCenter = new Vector3(0, 0, 0);
+  [SerializeField] private float cameraRadiusFromCenter = 20.0f;
+  [SerializeField] private float cameraClampRotationDeg = 45.0f;
 
   private Vector2 _pointerDelta;
   private Vector2 _pointerInitialPosition;
@@ -14,7 +15,6 @@ public class GameWorldBehavior : MonoBehaviour {
   
   private GameObject _movingObject;
   private Vector3 _initialObjectScreenPosition;
-
 
   public void Awake() {
     var monster = MonsterDataManager.Instance.activeMonsterPrefab;
@@ -86,18 +86,21 @@ public class GameWorldBehavior : MonoBehaviour {
       // _movingObject.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - _initialWorldMousePosition);
     }
     else { // Moving camera
-      var position = Vector3.right * (_pointerDelta.x * -cameraSensitivity);
-      position += Vector3.forward * (_pointerDelta.y * -cameraSensitivity);
+      float rotationAroundXAxis = _pointerDelta.y * cameraSensitivity;
+      float rotationAroundYAxis = _pointerDelta.x * cameraSensitivity;
+      
+      // TP Camera to center position
+      var cam = Camera.main;
+      cam.transform.position = cameraCenter;
+      cam.transform.Rotate(Vector3.right, rotationAroundXAxis);
+      cam.transform.Rotate(Vector3.up, rotationAroundYAxis, Space.World);
+      
+      // Clamp rotation
+      var currentRotation = cam.transform.rotation.eulerAngles;
+      currentRotation.x = Mathf.Clamp(currentRotation.x, -cameraClampRotationDeg, cameraClampRotationDeg);
+      cam.transform.rotation = Quaternion.Euler(currentRotation);
 
-      // transform.position += position * Time.deltaTime;
-      // ^ Goes crazy on lag
-      Camera.main.transform.position += position;
-
-      // Clamp camera position
-      var clampedPosition = Camera.main.transform.position;
-      clampedPosition.x = Mathf.Clamp(clampedPosition.x, -cameraClampWidth, cameraClampWidth);
-      clampedPosition.z = Mathf.Clamp(clampedPosition.z, -cameraClampDepth, cameraClampDepth);
-      Camera.main.transform.position = clampedPosition;
+      cam.transform.Translate(new Vector3(0, 0, -cameraRadiusFromCenter));
     }
   }
 }
