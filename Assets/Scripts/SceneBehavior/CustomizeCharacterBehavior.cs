@@ -50,7 +50,6 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
       }
     }
 
-
     var doneButton = root.Q<Button>("DoneButton");
     doneButton.RegisterCallback<ClickEvent>(_ => {
       Debug.Log("Done button clicked. Transitioning to GameWorld");
