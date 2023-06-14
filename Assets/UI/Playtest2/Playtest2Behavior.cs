@@ -32,7 +32,7 @@ public class Playtest2Behavior : MonoBehaviour {
     var prefab = Resources.Load<GameObject>(prefabPath);
     // Get the center of the screen
     Debug.Assert(Camera.main != null, "Camera.main != null");
-    var screenCenterRay = Camera.main.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
+    var screenCenterRay = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
 
     // Project ray to world
     Physics.Raycast(screenCenterRay, out var hit, 100, LayerMask.GetMask("World"));
@@ -62,7 +62,7 @@ public class Playtest2Behavior : MonoBehaviour {
       Instantiate(activeMonster, Vector3.zero, Quaternion.identity);
     });
     itemListContainer.Add(monsterEntry);
-    
+
     // Adding ItemBoxes dynamically to the Item List
     foreach (var item in uiItemMap) {
       var entry = new ItemBox(item.Label, item.OnClickEventCallback);
@@ -76,7 +76,7 @@ public class Playtest2Behavior : MonoBehaviour {
       var visualTreeAsset =
         Resources.Load<VisualTreeAsset>("UI/Components/TextBubbleModal");
       visualTreeAsset.CloneTree(root);
-      
+
       var doneButton = root.Q<TemplateContainer>("DoneButtonContainer").Q<Button>("Button");
       doneButton.RegisterCallback<ClickEvent>(e => {
         // Spawn Text Bubble
@@ -90,7 +90,7 @@ public class Playtest2Behavior : MonoBehaviour {
         // Reset Bubble
         root.Remove(root.Q<VisualElement>("TextBubbleModalBackground"));
       });
-      
+
       // Instantly focus on the TextField
       root.Q<TextField>().Focus();
       TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default, false, false, false, false, "I was thinking of...");
