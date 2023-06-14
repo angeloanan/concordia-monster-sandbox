@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 1946302088}
+  m_SkyboxMaterial: {fileID: 2096181183}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -711,6 +711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f7e146283eb42afa8cca9a955baf10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activeMonsterName: 
   activeMonsterPrefab: {fileID: 0}
 --- !u!4 &310981572
 Transform:
@@ -2033,9 +2034,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMoveCamera: 1
   cameraSensitivity: 0.1
-  cameraCenter: {x: 0, y: 0, z: 0}
+  cameraCenter: {x: 0, y: 0, z: 5}
   cameraRadiusFromCenter: 20
-  cameraClampRotationDeg: 20
+  cameraClampRotationDeg: 45
 --- !u!4 &1850669989
 Transform:
   m_ObjectHideFlags: 0
@@ -2416,7 +2417,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1932480066}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &1946302088
+--- !u!21 &2096181183
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 0
