@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c5ad8d95-c8ac-4a6f-a312-4c8b6e990182" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.concordia-monster-sandbox/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.concordia-monster-sandbox/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterCustomization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CharacterCustomization.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneBehavior/CustomizeCharacterBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneBehavior/CustomizeCharacterBehavior.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/Components/CustomizationBox.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Components/CustomizationBox.uxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/CustomizationSceneUI.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/CustomizationSceneUI.uxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/style.uss" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/style.uss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +20,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraDrag.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CursorDragSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FPSLimiter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SceneBehavior/MonsterName.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Screenshot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UI/CharacterCustomizationHUDBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UI/UIController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -157,7 +155,7 @@
       <workItem from="1685952788200" duration="25527000" />
       <workItem from="1686065576245" duration="9275000" />
       <workItem from="1686611461861" duration="1957000" />
-      <workItem from="1686657837987" duration="14004000" />
+      <workItem from="1686657837987" duration="27306000" />
     </task>
     <servers />
   </component>
@@ -196,6 +194,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/UI/CharacterCustomizationHUDBehavior.cs</url>
+          <line>15</line>
+          <properties documentPath="C:\Users\user\OneDrive\Documents\!Kuliah\Saxion\concordia-monster-sandbox\Assets\UI\CharacterCustomizationHUDBehavior.cs" initialLine="15" containingFunctionPresentation="Lambda expression inside Method 'OnEnable'">
+            <startOffsets>
+              <option value="541" />
+            </startOffsets>
+            <endOffsets>
+              <option value="578" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

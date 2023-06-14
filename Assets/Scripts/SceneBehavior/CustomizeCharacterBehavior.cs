@@ -64,7 +64,7 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
       MonsterDataManager.Instance.SetCurrentActiveMonster(monster);
 
       // Navigate to next scene
-      SceneManager.LoadScene("Scenes/GameWorld");
+      SceneManager.LoadScene("Scenes/MonsterName");
     });
   }
 }
