@@ -1,0 +1,131 @@
+.Building {
+    -unity-text-align: middle-center;
+    white-space: nowrap;
+    -unity-font-definition: url('project://database/Assets/UI/Fonts/Sharkbit%20demo.ttf?fileID=12800000&guid=b34e7a3ee7ca06df0bc5b48eae8d2c55&type=3#Sharkbit demo');
+    color: rgb(240, 188, 68);
+    background-color: rgb(255, 255, 255);
+    border-left-color: rgb(240, 188, 68);
+    border-right-color: rgb(240, 188, 68);
+    border-top-color: rgb(240, 188, 68);
+    border-bottom-color: rgb(240, 188, 68);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.Building:active {
+    -unity-text-align: middle-center;
+    white-space: nowrap;
+    -unity-font-definition: url('project://database/Assets/UI/Fonts/Sharkbit%20demo.ttf?fileID=12800000&guid=b34e7a3ee7ca06df0bc5b48eae8d2c55&type=3#Sharkbit demo');
+    color: rgb(240, 188, 68);
+    background-color: rgb(250, 232, 192);
+    border-left-color: rgb(240, 188, 68);
+    border-right-color: rgb(240, 188, 68);
+    border-top-color: rgb(240, 188, 68);
+    border-bottom-color: rgb(240, 188, 68);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.Tree {
+    -unity-font-definition: url('project://database/Assets/UI/Fonts/Sharkbit%20demo.ttf?fileID=12800000&guid=b34e7a3ee7ca06df0bc5b48eae8d2c55&type=3#Sharkbit demo');
+    color: rgb(240, 188, 68);
+    background-color: rgb(255, 255, 255);
+    border-left-color: rgb(240, 188, 68);
+    border-right-color: rgb(240, 188, 68);
+    border-top-color: rgb(240, 188, 68);
+    border-bottom-color: rgb(240, 188, 68);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.Tree:active {
+    -unity-font-definition: url('project://database/Assets/UI/Fonts/Sharkbit%20demo.ttf?fileID=12800000&guid=b34e7a3ee7ca06df0bc5b48eae8d2c55&type=3#Sharkbit demo');
+    color: rgb(240, 188, 68);
+    background-color: rgb(250, 232, 192);
+    border-left-color: rgb(240, 188, 68);
+    border-right-color: rgb(240, 188, 68);
+    border-top-color: rgb(240, 188, 68);
+    border-bottom-color: rgb(240, 188, 68);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.Decor {
+    -unity-font-definition: url('project://database/Assets/UI/Fonts/Sharkbit%20demo.ttf?fileID=12800000&guid=b34e7a3ee7ca06df0bc5b48eae8d2c55&type=3#Sharkbit demo');
+    border-left-color: rgb(240, 188, 68);
+    border-right-color: rgb(240, 188, 68);
+    border-top-color: rgb(240, 188, 68);
+    border-bottom-color: rgb(240, 188, 68);
+    color: rgb(240, 188, 68);
+    background-color: rgb(255, 255, 255);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.Decor:active {
+    -unity-font-definition: url('project://database/Assets/UI/Fonts/Sharkbit%20demo.ttf?fileID=12800000&guid=b34e7a3ee7ca06df0bc5b48eae8d2c55&type=3#Sharkbit demo');
+    border-left-color: rgb(240, 188, 68);
+    border-right-color: rgb(240, 188, 68);
+    border-top-color: rgb(240, 188, 68);
+    border-bottom-color: rgb(240, 188, 68);
+    color: rgb(240, 188, 68);
+    background-color: rgb(250, 232, 192);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.Text {
+    -unity-font-definition: url('project://database/Assets/UI/Fonts/Sharkbit%20demo.ttf?fileID=12800000&guid=b34e7a3ee7ca06df0bc5b48eae8d2c55&type=3#Sharkbit demo');
+    color: rgb(240, 188, 68);
+    background-color: rgb(255, 255, 255);
+    border-left-color: rgb(240, 188, 68);
+    border-right-color: rgb(240, 188, 68);
+    border-top-color: rgb(240, 188, 68);
+    border-bottom-color: rgb(240, 188, 68);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.Text:active {
+    -unity-font-definition: url('project://database/Assets/UI/Fonts/Sharkbit%20demo.ttf?fileID=12800000&guid=b34e7a3ee7ca06df0bc5b48eae8d2c55&type=3#Sharkbit demo');
+    color: rgb(240, 188, 68);
+    background-color: rgb(250, 232, 192);
+    border-left-color: rgb(240, 188, 68);
+    border-right-color: rgb(240, 188, 68);
+    border-top-color: rgb(240, 188, 68);
+    border-bottom-color: rgb(240, 188, 68);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}

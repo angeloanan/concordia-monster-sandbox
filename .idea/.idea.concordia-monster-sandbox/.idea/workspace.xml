@@ -5,10 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5ad8d95-c8ac-4a6f-a312-4c8b6e990182" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.concordia-monster-sandbox/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.concordia-monster-sandbox/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneBehavior/CustomizeCharacterBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneBehavior/CustomizeCharacterBehavior.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/style.uss" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/style.uss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/container.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/container.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/left-arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/left-arrow.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/no-button-clicked.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/no-button-clicked.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/no-button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/no-button.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/reset-button-clicked.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/reset-button-clicked.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/reset-button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/reset-button.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/right-arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/right-arrow.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/screenshot-button-clicked.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/screenshot-button-clicked.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/screenshot-button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/screenshot-button.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/yes-button-clicked.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/yes-button-clicked.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/yes-button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/yes-button.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Monsters.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Monsters/fairy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Monsters/fairy.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Monsters/fluffy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Monsters/fluffy.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Monsters/legs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Monsters/legs.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Monsters/potato.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Monsters/potato.png.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +184,8 @@
       <workItem from="1685952788200" duration="25527000" />
       <workItem from="1686065576245" duration="9275000" />
       <workItem from="1686611461861" duration="1957000" />
-      <workItem from="1686657837987" duration="27306000" />
+      <workItem from="1686657837987" duration="27908000" />
+      <workItem from="1686734564130" duration="6123000" />
     </task>
     <servers />
   </component>

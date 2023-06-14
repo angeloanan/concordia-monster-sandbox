@@ -6,7 +6,8 @@ public class CustomizationBox : VisualElement {
   public new class UxmlFactory : UxmlFactory<Button> { }
 
   public CustomizationBox() { }
-  private Button BoxButton => this.Q<Button>();
+  private Button BoxButton => this.Q<Button>("AttributeContainer");
+  private VisualElement Attribute => this.Q<VisualElement>("Attribute");
 
   public CustomizationBox(string imagePath, EventCallback<ClickEvent> onClick = null) {
     Init(imagePath, onClick);
@@ -17,7 +18,7 @@ public class CustomizationBox : VisualElement {
     asset.CloneTree(this);
 
     if (imagePath != null) {
-      BoxButton.style.backgroundImage = new StyleBackground(AssetDatabase.LoadAssetAtPath<Texture2D>(imagePath));
+      Attribute.style.backgroundImage = new StyleBackground(AssetDatabase.LoadAssetAtPath<Texture2D>(imagePath));
     }
     if (onClick != null) {
       this.RegisterCallback(onClick);
