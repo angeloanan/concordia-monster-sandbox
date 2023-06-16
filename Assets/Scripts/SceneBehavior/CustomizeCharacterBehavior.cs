@@ -1,3 +1,5 @@
+using System.Data.Common;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -43,9 +45,12 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
       // Used for passing the index of monster part to the callback
       var monsterPartIndex = 0;
       foreach (var monsterPart in customization.Value) {
-        var box = new CustomizationBox(monsterPart.Icon, evt => { monsterCustomizationScript.SwitchEyes(); });
+        var box = new CustomizationBox(monsterPart.Icon, evt =>
+        {
+              monsterCustomizationScript.SwitchEyes();
+              
+        });
         customizationContainer.Add(box);
-
         monsterPartIndex++;
       }
     }
@@ -58,7 +63,7 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
       MonsterDataManager.Instance.SetCurrentActiveMonster(monster);
 
       // Navigate to next scene
-      SceneManager.LoadScene("Scenes/GameWorld");
+      SceneManager.LoadScene("Scenes/MonsterName");
     });
   }
 }

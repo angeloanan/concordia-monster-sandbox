@@ -3,6 +3,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 using Debug = System.Diagnostics.Debug;
+using UnityEngine.SceneManagement;
 
 public class ItemMap {
   public string Label;
@@ -11,7 +12,7 @@ public class ItemMap {
 
 public class Playtest2Behavior : MonoBehaviour {
   [SerializeField] private GameObject worldRoot;
-
+  
   private ItemMap[] uiItemMap = {
     new() { Label = "Arc", OnClickEventCallback = _ => { SpawnPrefab("Objects/arc"); } },
     new() { Label = "Bench", OnClickEventCallback = _ => { SpawnPrefab("Objects/bench"); } },
@@ -55,6 +56,21 @@ public class Playtest2Behavior : MonoBehaviour {
   private void IntializeUI() {
     var root = GetComponent<UIDocument>().rootVisualElement;
     var itemListContainer = root.Q<VisualElement>("ItemListContainer");
+    
+    //Add Reset Button
+    
+    var resetButton = root.Q<Button>("resetButton");
+    resetButton.clicked += () =>
+    {
+      SceneManager.LoadScene("Scenes/SelectMonster");
+      // Remove activeMonsterPrefab from DontDestroyOnLoad
+      if (MonsterDataManager.Instance != null && MonsterDataManager.Instance.activeMonsterPrefab != null)
+      {
+        Destroy(MonsterDataManager.Instance.activeMonsterPrefab);
+      }
+    };
+    
+    
 
     // Add current monster to the UI
     var monsterEntry = new ItemBox("Monster", _ => {
@@ -96,6 +112,8 @@ public class Playtest2Behavior : MonoBehaviour {
       TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default, false, false, false, false, "I was thinking of...");
     });
     itemListContainer.Add(textBubbleItem);
+    
+
   }
 
   private void OnEnable() {

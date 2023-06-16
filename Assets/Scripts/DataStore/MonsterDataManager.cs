@@ -112,6 +112,7 @@ public class MonsterDataManager : MonoBehaviour {
     Debug.Log($"Setting active monster to {monster.name}");
     activeMonsterPrefab = monster;
   }
+  
 
   public void SetCurrentActiveMonsterName(string monsterName) {
     Debug.Log($"Setting active monster name to {monsterName}");
