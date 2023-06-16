@@ -14,16 +14,26 @@ public class Playtest2Behavior : MonoBehaviour {
   [SerializeField] private GameObject worldRoot;
   
   private ItemMap[] uiItemMap = {
-    new() { Label = "Dead Tree", OnClickEventCallback = _ => { SpawnPrefab("Objects/DeadTree"); } },
-    new() { Label = "Birch Tree", OnClickEventCallback = _ => { SpawnPrefab("Objects/BirchTree"); } },
-    new() { Label = "Cedar Tree", OnClickEventCallback = _ => { SpawnPrefab("Objects/CedarTree"); } },
+    new() { Label = "Arc", OnClickEventCallback = _ => { SpawnPrefab("Objects/arc"); } },
+    new() { Label = "Bench", OnClickEventCallback = _ => { SpawnPrefab("Objects/bench"); } },
+    new() { Label = "Chest", OnClickEventCallback = _ => { SpawnPrefab("Objects/chest"); } },
+    new() { Label = "Fence", OnClickEventCallback = _ => { SpawnPrefab("Objects/fence"); } },
+    new() { Label = "House", OnClickEventCallback = _ => { SpawnPrefab("Objects/house"); } },
+    new() { Label = "Lantern", OnClickEventCallback = _ => { SpawnPrefab("Objects/lantern"); } },
+    new() { Label = "Pine Tree", OnClickEventCallback = _ => { SpawnPrefab("Objects/pinetree"); } },
+    new() { Label = "Pumpkin", OnClickEventCallback = _ => { SpawnPrefab("Objects/pumpkin"); } },
+    new() { Label = "Rock", OnClickEventCallback = _ => { SpawnPrefab("Objects/rock"); } },
+    new() { Label = "Double Rock", OnClickEventCallback = _ => { SpawnPrefab("Objects/rockDouble"); } },
+    new() { Label = "Tall Rock", OnClickEventCallback = _ => { SpawnPrefab("Objects/rockTall"); } },
+    new() { Label = "Skull", OnClickEventCallback = _ => { SpawnPrefab("Objects/skull"); } },
+    new() { Label = "Dead Tree", OnClickEventCallback = _ => { SpawnPrefab("Objects/treeDead"); } },
   };
 
   private static void SpawnPrefab(string prefabPath) {
     var prefab = Resources.Load<GameObject>(prefabPath);
     // Get the center of the screen
     Debug.Assert(Camera.main != null, "Camera.main != null");
-    var screenCenterRay = Camera.main.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
+    var screenCenterRay = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
 
     // Project ray to world
     Physics.Raycast(screenCenterRay, out var hit, 100, LayerMask.GetMask("World"));
@@ -68,7 +78,7 @@ public class Playtest2Behavior : MonoBehaviour {
       Instantiate(activeMonster, Vector3.zero, Quaternion.identity);
     });
     itemListContainer.Add(monsterEntry);
-    
+
     // Adding ItemBoxes dynamically to the Item List
     foreach (var item in uiItemMap) {
       var entry = new ItemBox(item.Label, item.OnClickEventCallback);
@@ -80,9 +90,9 @@ public class Playtest2Behavior : MonoBehaviour {
       // Show PopUp
       // TODO: Move this to a separate file
       var visualTreeAsset =
-        AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/UI/Components/TextBubbleModal.uxml");
+        Resources.Load<VisualTreeAsset>("UI/Components/TextBubbleModal");
       visualTreeAsset.CloneTree(root);
-      
+
       var doneButton = root.Q<TemplateContainer>("DoneButtonContainer").Q<Button>("Button");
       doneButton.RegisterCallback<ClickEvent>(e => {
         // Spawn Text Bubble
@@ -96,7 +106,7 @@ public class Playtest2Behavior : MonoBehaviour {
         // Reset Bubble
         root.Remove(root.Q<VisualElement>("TextBubbleModalBackground"));
       });
-      
+
       // Instantly focus on the TextField
       root.Q<TextField>().Focus();
       TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default, false, false, false, false, "I was thinking of...");

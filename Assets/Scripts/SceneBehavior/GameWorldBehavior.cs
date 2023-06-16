@@ -1,23 +1,29 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class GameWorldBehavior : MonoBehaviour {
   [SerializeField] public bool canMoveCamera = true;
-  [SerializeField] private float cameraSensitivity = 0.01f;
-  [SerializeField] private int cameraClampDepth = 10;
-  [SerializeField] private int cameraClampWidth = 10;
+  [SerializeField] private float cameraSensitivity = 0.1f;
+  [SerializeField] private Vector3 cameraCenter = new Vector3(0, 0, 0);
+  [SerializeField] private float cameraRadiusFromCenter = 20.0f;
+  [SerializeField] private float cameraClampRotationDeg = 45.0f;
 
   private Vector2 _pointerDelta;
   private Vector2 _pointerInitialPosition;
-  private bool _isClicking;
   
-  private GameObject _movingObject;
-  private Vector3 _initialObjectScreenPosition;
+  private bool _isClicking;
+  /// <summary>
+  /// Tracking whether camera did move within a life-cycle of a thing
+  /// </summary>
+  private bool _cameraDidMove;
 
+  private GameObject _activeObject;
+  private Vector3 _initialObjectScreenPosition;
 
   public void Awake() {
     var monster = MonsterDataManager.Instance.activeMonsterPrefab;
+    
+    // Place monster on default position
     // If null then LateUpdate doesn't trigger :german:
     if (monster != null) {
       monster.transform.position = new Vector3(0, 1, 5);
@@ -25,35 +31,59 @@ public class GameWorldBehavior : MonoBehaviour {
     }
   }
 
-  public void OnStopLooking() {
-    // Cleanup
+  /// <summary>
+  /// Utility function to clean-up camera's internal state.
+  ///
+  /// Could be better represented via a State-Machine of some sort, but idk how to do that and cba to learn.
+  /// </summary>
+  private void OnStopLooking() {
+    Debug.Log($"Camera did move: {_cameraDidMove}");
     _isClicking = false;
-    _movingObject = null;
+    
+    // If an object is selected WHILE camera is being moved, then don't deselect the camera
+    if (!_cameraDidMove) {
+      _activeObject = null;
+      _cameraDidMove = false;
+    }
+  }
+
+  private void ChangeActiveObject(GameObject newActiveObject) {
+    if (_activeObject != null) {
+      // Cleanup old object
+      // 1. Remove outline shader
+      // 2. Remove mounted UI element
+
+      _activeObject = null;
+    }
+
+    if (newActiveObject != null) {
+      // Assign new object to stuff
+      // 1. Add outline shader
+      // 2. Mount UI element
+
+      _activeObject = newActiveObject;
+    }
   }
 
   // OnMouseDrag
   public void OnPointerDelta(InputAction.CallbackContext ctx) {
     _pointerDelta = ctx.ReadValue<Vector2>();
-    Debug.Log("Pointer delta: " + _pointerDelta);
   }
-  
   public void OnPointerInitialPosition(InputAction.CallbackContext ctx) {
     _pointerInitialPosition = ctx.ReadValue<Vector2>();
-    Debug.Log("Pointer initial position: " + _pointerInitialPosition);
   }
 
   // OnClick
   public void OnPointerClick(InputAction.CallbackContext ctx) {
     Debug.Assert(Camera.main != null, "Camera.main != null");
-    Debug.Log("Pointer click: " + ctx.ReadValueAsObject());
 
     if (ctx.performed) return;
     if (ctx.canceled) {
-      Debug.Log("Canceled click");
+      // Stop clicking / holding M1
       OnStopLooking();
       return;
     }
-    
+
     _isClicking = true;
 
     // Raytrace cursor position to world and check if it hits anything
@@ -61,43 +91,45 @@ public class GameWorldBehavior : MonoBehaviour {
     var ray = Camera.main.ScreenPointToRay(_pointerInitialPosition);
     Physics.Raycast(ray, out var hit, 100);
     Debug.DrawRay(_pointerInitialPosition, ray.direction * 100, Color.yellow, 30);
-    Debug.Log("Hit: " + hit.transform?.name ?? "null");
     if (hit.collider != null && hit.transform.CompareTag("Draggable")) {
-      // Hits a draggable object
-      _movingObject = hit.transform.gameObject;
-
-      _initialObjectScreenPosition = Camera.main.WorldToScreenPoint(_movingObject.transform.position);
+      ChangeActiveObject(hit.transform.gameObject);
     }
     else {
       // Handle camera move
-      _movingObject = null; // Sanity check, shouldn't need this but whatever
+      _activeObject = null; // Sanity check, shouldn't need this but whatever
     }
   }
 
   private void LateUpdate() {
     Debug.Assert(Camera.main != null, "Camera.main != null");
+    
+    UpdateCameraPosition();
+  }
+
+  private void UpdateCameraPosition() {
     // Only handle drag stuff if we're clicking
     if (!_isClicking) return;
 
-    if (_movingObject != null) { // Moving object
-      Vector3 mouseDelta = _pointerDelta;
-      Vector3 targetObjectScreenPosition =
-        _initialObjectScreenPosition + new Vector3(mouseDelta.x, mouseDelta.y, mouseDelta.z);
-      // _movingObject.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - _initialWorldMousePosition);
+    if (_activeObject != null) { // Moving object
+      // TODO: stuff (See ENG-38)
     }
     else { // Moving camera
-      var position = Vector3.right * (_pointerDelta.x * -cameraSensitivity);
-      position += Vector3.forward * (_pointerDelta.y * -cameraSensitivity);
+      if (!_cameraDidMove && _pointerDelta.magnitude > 1f) _cameraDidMove = true;
+      float rotationAroundXAxis = -_pointerDelta.y * cameraSensitivity;
+      float rotationAroundYAxis = _pointerDelta.x * cameraSensitivity;
 
-      // transform.position += position * Time.deltaTime;
-      // ^ Goes crazy on lag
-      Camera.main.transform.position += position;
+      // TP Camera to center position
+      var cam = Camera.main;
+      cam.transform.position = cameraCenter;
+      cam.transform.Rotate(Vector3.right, rotationAroundXAxis);
+      cam.transform.Rotate(Vector3.up, rotationAroundYAxis, Space.World);
 
-      // Clamp camera position
-      var clampedPosition = Camera.main.transform.position;
-      clampedPosition.x = Mathf.Clamp(clampedPosition.x, -cameraClampWidth, cameraClampWidth);
-      clampedPosition.z = Mathf.Clamp(clampedPosition.z, -cameraClampDepth, cameraClampDepth);
-      Camera.main.transform.position = clampedPosition;
+      // Clamp rotation
+      var currentRotation = cam.transform.rotation.eulerAngles;
+      currentRotation.x = Mathf.Clamp(currentRotation.x, -cameraClampRotationDeg, cameraClampRotationDeg);
+      cam.transform.rotation = Quaternion.Euler(currentRotation);
+
+      cam.transform.Translate(new Vector3(0, 0, -cameraRadiusFromCenter));
     }
   }
 }

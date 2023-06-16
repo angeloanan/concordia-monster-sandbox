@@ -71,7 +71,7 @@ public class MonsterSelectBehavior : MonoBehaviour {
     // var characterSelectionContainer = root.Q<VisualElement>("CharacterSelectionContainer");
     // characterSelectionContainer.style.display = DisplayStyle.None;
 
-    var confirmChooseAMonsterUiDoc = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/UI/ConfirmChooseAMonster.uxml");
+    var confirmChooseAMonsterUiDoc = Resources.Load<VisualTreeAsset>("UI/ConfirmChooseAMonster");
     root.Clear();
     confirmChooseAMonsterUiDoc.CloneTree(root);
 
@@ -102,7 +102,7 @@ public class MonsterSelectBehavior : MonoBehaviour {
 
       // Replace UI to confirm selection
       root.Clear();
-      var chooseAMonsterUiDoc = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/UI/ChooseAMonster.uxml");
+      var chooseAMonsterUiDoc = Resources.Load<VisualTreeAsset>("UI/ChooseAMonster");
       chooseAMonsterUiDoc.CloneTree(root);
     };
   }
