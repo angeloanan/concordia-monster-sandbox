@@ -4,41 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5ad8d95-c8ac-4a6f-a312-4c8b6e990182" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Images.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/container.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/container.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/left-arrow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/left-arrow.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/no-button-clicked.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/no-button-clicked.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/no-button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/no-button.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/reset-button-clicked.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/reset-button-clicked.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/reset-button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/reset-button.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/right-arrow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/right-arrow.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/screenshot-button-clicked.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/screenshot-button-clicked.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/screenshot-button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/screenshot-button.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/yes-button-clicked.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/yes-button-clicked.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/yes-button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Icons/yes-button.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Monsters.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Monsters/fairy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Monsters/fairy.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Monsters/fluffy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Monsters/fluffy.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Monsters/legs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Monsters/legs.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Monsters/potato.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Monsters/potato.png.meta" beforeDir="false" />
-    </list>
+    <list default="true" id="c5ad8d95-c8ac-4a6f-a312-4c8b6e990182" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -217,10 +183,10 @@
           <line>53</line>
           <properties documentPath="C:\Users\user\OneDrive\Documents\!Kuliah\Saxion\concordia-monster-sandbox\Assets\UI\Playtest2\Playtest2Behavior.cs" initialLine="51" containingFunctionPresentation="Lambda expression inside Method 'IntializeUI'">
             <startOffsets>
-              <option value="2055" />
+              <option value="2219" />
             </startOffsets>
             <endOffsets>
-              <option value="2056" />
+              <option value="2220" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />

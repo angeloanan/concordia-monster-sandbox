@@ -7,16 +7,16 @@
         </ui:VisualElement>
         <ui:VisualElement name="BuildingTypeContainer" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; min-width: auto; min-height: auto; align-items: flex-end; align-self: center; justify-content: center; max-height: 80px; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; left: auto; right: auto; width: auto; max-width: 70%;">
             <ui:VisualElement name="BuildingContainer" style="flex-grow: 1; background-color: rgba(255, 255, 255, 0); justify-content: flex-start; align-self: flex-end; align-items: stretch; border-left-color: rgba(255, 255, 255, 0); border-right-color: rgba(255, 255, 255, 0); border-top-color: rgba(255, 255, 255, 0); border-bottom-color: rgba(255, 255, 255, 0); -unity-background-image-tint-color: rgb(255, 255, 255); -unity-background-scale-mode: stretch-to-fill; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;">
-                <ui:Button text="Building" display-tooltip-when-elided="true" focusable="true" name="Building" class="Type Building" />
+                <ui:Button text="Building" display-tooltip-when-elided="true" focusable="true" name="Building" class="Type Building" style="background-image: resource(&apos;Images/Icons/long-container&apos;); border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px;" />
             </ui:VisualElement>
             <ui:VisualElement name="TreesContainer" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); align-self: flex-end; background-image: none;">
-                <ui:Button text="Trees" display-tooltip-when-elided="true" focusable="true" name="Trees" class="Type Tree" />
+                <ui:Button text="Trees" display-tooltip-when-elided="true" focusable="true" name="Trees" class="Type Tree" style="border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; background-image: resource(&apos;Images/Icons/long-container&apos;);" />
             </ui:VisualElement>
             <ui:VisualElement name="DecorContainer" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); align-self: flex-end;">
-                <ui:Button text="Decor" display-tooltip-when-elided="true" focusable="true" name="Decor" class="Type Tree Decor" />
+                <ui:Button text="Decor" display-tooltip-when-elided="true" focusable="true" name="Decor" class="Type Tree Decor" style="border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; background-image: resource(&apos;Images/Icons/long-container&apos;);" />
             </ui:VisualElement>
-            <ui:VisualElement name="ButtonContainer" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); align-self: flex-end;">
-                <ui:Button text="Text" display-tooltip-when-elided="true" focusable="true" name="Text" class="Type Text" />
+            <ui:VisualElement name="ButtonContainer" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); align-self: flex-end; border-top-left-radius: 0; border-bottom-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0;">
+                <ui:Button text="Text" display-tooltip-when-elided="true" focusable="true" name="Text" class="Type Text" style="background-image: resource(&apos;Images/Icons/long-container&apos;); border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px;" />
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="ItemListContainer" style="justify-content: center; flex-basis: auto; align-items: center; background-color: rgba(0, 0, 0, 0.18); flex-direction: row; padding-top: 16px; padding-bottom: 16px; margin-left: 0;" />
