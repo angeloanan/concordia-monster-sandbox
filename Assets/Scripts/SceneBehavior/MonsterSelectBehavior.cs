@@ -24,7 +24,6 @@ public class MonsterSelectBehavior : MonoBehaviour {
   // Runs every time the mouse / input moves
   public void OnPointerMovement(InputAction.CallbackContext ctx) {
     _cursorPosition = ctx.ReadValue<Vector2>();
-    Debug.Log($"Cursor position updated: {_cursorPosition}");
   }
 
   public void OnSelect(InputAction.CallbackContext ctx) {
@@ -32,6 +31,7 @@ public class MonsterSelectBehavior : MonoBehaviour {
 
     if (ctx.performed) return;
     if (ctx.canceled) return;
+
     // Disable the whole thing if we're not in the right state
     if (_state == MonsterSelectBehaviorState.CharacterConfirmation) return;
 
@@ -54,6 +54,8 @@ public class MonsterSelectBehavior : MonoBehaviour {
     Debug.Log($"Selected {character.name}");
     _state = MonsterSelectBehaviorState.CharacterConfirmation;
     
+    AudioManager.Instance.PlayUiClick();
+
     // Despawn other character
     foreach (var c in characters) {
       if (c == character) continue;
@@ -77,19 +79,20 @@ public class MonsterSelectBehavior : MonoBehaviour {
 
     // Add event listener to confirm button
     var confirmButton = root.Q<Button>("ConfirmButton");
-    confirmButton.clicked += () => {
+    confirmButton.RegisterCallback<ClickEvent>(_ => { AudioManager.Instance.PlayUiClick(); });
+    confirmButton.RegisterCallback<ClickEvent>(_ => {
       Debug.Log("Confirm button clicked");
       MonsterDataManager.Instance.SetCurrentActiveMonster(_selectedMonster);
       DontDestroyOnLoad(_selectedMonster);
       SceneManager.LoadScene("Scenes/CustomizeMonster");
-    };
-    
-    // TODO: Verify functionality of the following (Generated via copilot)
+    });
+
     var cancelButton = root.Q<Button>("CancelButton");
-    cancelButton.clicked += () => {
+    cancelButton.RegisterCallback<ClickEvent>(_ => { AudioManager.Instance.PlayUiClick(); });
+    cancelButton.RegisterCallback<ClickEvent>(_ => {
       Debug.Log("Cancel button clicked");
       _state = MonsterSelectBehaviorState.CharacterSelection;
-      
+
       // Respawn other character
       foreach (var c in characters) {
         if (c == character) continue;
@@ -104,6 +107,6 @@ public class MonsterSelectBehavior : MonoBehaviour {
       root.Clear();
       var chooseAMonsterUiDoc = Resources.Load<VisualTreeAsset>("UI/ChooseAMonster");
       chooseAMonsterUiDoc.CloneTree(root);
-    };
+    });
   }
 }

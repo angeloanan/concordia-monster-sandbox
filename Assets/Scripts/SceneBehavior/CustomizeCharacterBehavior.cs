@@ -37,7 +37,7 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
     //     * Clear customizationContainer
     //     * Render all body parts in monsterData.Customizations[index]
     //     * Update categoryStep.text
-    
+
     // Map over all customization data and create UI elements for each and assign callbacks
     foreach (var customization in monsterData.Customizations) {
       var customizationName = customization.Key;
@@ -45,20 +45,17 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
       // Used for passing the index of monster part to the callback
       var monsterPartIndex = 0;
       foreach (var monsterPart in customization.Value) {
-        var box = new CustomizationBox(monsterPart.Icon, evt =>
-        {
-              monsterCustomizationScript.SwitchEyes();
-              
-        });
+        var box = new CustomizationBox(monsterPart.Icon, evt => { monsterCustomizationScript.SwitchEyes(); });
         customizationContainer.Add(box);
         monsterPartIndex++;
       }
     }
 
     var doneButton = root.Q<Button>("DoneButton");
+    doneButton.RegisterCallback<ClickEvent>(_ => { AudioManager.Instance.PlayUiClick(); });
     doneButton.RegisterCallback<ClickEvent>(_ => {
       Debug.Log("Done button clicked. Transitioning to GameWorld");
-      
+
       // Update current monster reference
       MonsterDataManager.Instance.SetCurrentActiveMonster(monster);
 

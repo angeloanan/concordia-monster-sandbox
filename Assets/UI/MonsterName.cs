@@ -8,6 +8,7 @@ public class MonsterName : MonoBehaviour {
     var continueButton = root.Q<Button>("ContinueButton");
     var monsterNameTextFeld = root.Q<TextField>();
 
+    continueButton.RegisterCallback<ClickEvent>(_ => { AudioManager.Instance.PlayUiClick(); });
     continueButton.RegisterCallback<ClickEvent>(_ => {
       MonsterDataManager.Instance.SetCurrentActiveMonsterName(monsterNameTextFeld.value);
 
