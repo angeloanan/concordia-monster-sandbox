@@ -78,7 +78,7 @@ public class GameWorldBehavior : MonoBehaviour {
 
       // 2. Remove mounted UI element
       var deleteButton = root.Q<VisualElement>("DeleteObjectButton");
-      deleteButton?.Clear();
+      root.Remove(deleteButton);
     }
 
     if (newActiveObject != null) {
@@ -92,6 +92,11 @@ public class GameWorldBehavior : MonoBehaviour {
 
       // 2. Mount UI element
       Resources.Load<VisualTreeAsset>("UI/Components/DeleteObjectButton").CloneTree(root);
+      var deleteButton = root.Q<VisualElement>("DeleteObjectButton");
+      deleteButton.RegisterCallback<ClickEvent>(_ => {
+        Destroy(newActiveObject);
+        ChangeActiveObject(null);
+      });
     }
 
     _activeObject = newActiveObject;
