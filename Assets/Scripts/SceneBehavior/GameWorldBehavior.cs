@@ -1,7 +1,10 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class GameWorldBehavior : MonoBehaviour {
+  [SerializeField] private UIDocument uiDocument;
   [SerializeField] public bool canMoveCamera = true;
   [SerializeField] private float cameraSensitivity = 0.1f;
   [SerializeField] private Vector3 cameraCenter = new Vector3(0, 0, 0);
@@ -10,8 +13,9 @@ public class GameWorldBehavior : MonoBehaviour {
 
   private Vector2 _pointerDelta;
   private Vector2 _pointerInitialPosition;
-  
+
   private bool _isClicking;
+
   /// <summary>
   /// Tracking whether camera did move within a life-cycle of a thing
   /// </summary>
@@ -22,7 +26,7 @@ public class GameWorldBehavior : MonoBehaviour {
 
   public void Awake() {
     var monster = MonsterDataManager.Instance.activeMonsterPrefab;
-    
+
     // Place monster on default position
     // If null then LateUpdate doesn't trigger :german:
     if (monster != null) {
@@ -40,7 +44,7 @@ public class GameWorldBehavior : MonoBehaviour {
   /// </summary>
   private void OnStopLooking() {
     _isClicking = false;
-    
+
     // If an object is selected WHILE camera is being moved, then don't deselect the camera
     // Do whatever onClick callbacks here
     if (!_cameraDidMove) {
@@ -53,7 +57,7 @@ public class GameWorldBehavior : MonoBehaviour {
         ChangeActiveObject(hit.transform.gameObject);
       }
     }
-    
+
     _cameraDidMove = false;
   }
 
@@ -63,15 +67,18 @@ public class GameWorldBehavior : MonoBehaviour {
   /// <param name="newActiveObject">Objects to be newly selected</param>
   private void ChangeActiveObject(GameObject newActiveObject) {
     if (_activeObject == newActiveObject) return;
-    
+    var root = uiDocument.rootVisualElement;
+
     if (_activeObject != null) {
       // Cleanup old object
       // 1. Remove outline shader
       if (_activeObject.TryGetComponent<Outline>(out var outline)) {
         Destroy(outline);
       }
-      
+
       // 2. Remove mounted UI element
+      var deleteButton = root.Q<VisualElement>("DeleteObjectButton");
+      deleteButton?.Clear();
     }
 
     if (newActiveObject != null) {
@@ -82,9 +89,11 @@ public class GameWorldBehavior : MonoBehaviour {
       outline.OutlineMode = Outline.Mode.OutlineAll;
       outline.OutlineColor = Color.yellow;
       outline.OutlineWidth = 5f;
+
       // 2. Mount UI element
+      Resources.Load<VisualTreeAsset>("UI/Components/DeleteObjectButton").CloneTree(root);
     }
-    
+
     _activeObject = newActiveObject;
   }
 
@@ -92,6 +101,7 @@ public class GameWorldBehavior : MonoBehaviour {
   public void OnPointerDelta(InputAction.CallbackContext ctx) {
     _pointerDelta = ctx.ReadValue<Vector2>();
   }
+
   // OnMouseMove - Run every frame
   public void OnPointerInitialPosition(InputAction.CallbackContext ctx) {
     _pointerInitialPosition = ctx.ReadValue<Vector2>();
@@ -114,7 +124,7 @@ public class GameWorldBehavior : MonoBehaviour {
   // Ran on the end of every frame
   private void LateUpdate() {
     Debug.Assert(Camera.main != null, "Camera.main != null");
-    
+
     UpdateCameraPosition();
   }
 
@@ -138,5 +148,26 @@ public class GameWorldBehavior : MonoBehaviour {
     cam.transform.rotation = Quaternion.Euler(currentRotation);
 
     cam.transform.Translate(new Vector3(0, 0, -cameraRadiusFromCenter));
+  }
+
+  private void updateActiveObjectUIElement() {
+    if (_activeObject == null) return;
+    var root = uiDocument.rootVisualElement;
+    var button = root.Q<VisualElement>("DeleteObjectButton");
+
+    if (button == null) {
+      Debug.LogWarning("DeleteObjectButton not found in UI but active object is not null.");
+      return;
+    }
+
+    var activeObjectScreenPos = Camera.main.WorldToScreenPoint(_activeObject.transform.position);
+    // Debug.Log($"Active object screen pos: {activeObjectScreenPos}");
+    button.style.left = activeObjectScreenPos.x / 2;
+    // TODO: Fix this
+    // button.style.top = activeObjectScreenPos.y;
+  }
+
+  private void Update() {
+    updateActiveObjectUIElement();
   }
 }
