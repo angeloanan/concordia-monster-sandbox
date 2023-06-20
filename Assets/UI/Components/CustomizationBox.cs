@@ -21,7 +21,7 @@ public class CustomizationBox : VisualElement {
       Attribute.style.backgroundImage = new StyleBackground(AssetDatabase.LoadAssetAtPath<Texture2D>(imagePath));
     }
     if (onClick != null) {
-      this.RegisterCallback(onClick);
+      this.RegisterCallback(onClick); 
     }
   }
 }

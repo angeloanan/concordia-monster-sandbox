@@ -86,9 +86,9 @@ public class Playtest2Behavior : MonoBehaviour {
       var doneButton = root.Q<TemplateContainer>("DoneButtonContainer").Q<Button>("Button");
       doneButton.RegisterCallback<ClickEvent>(e => {
         // Spawn Text Bubble
-        Debug.Print("Done button clicked");
+        UnityEngine.Debug.Log("Done button clicked");
         var content = root.Q<TextField>().text;
-        Debug.Print($"Text content: {content}");
+        UnityEngine.Debug.Log($"Text content: {content}");
         // var textBubblePrefab = Resources.Load<GameObject>("Objects/TextBubble");
         // var textBubble = Instantiate(textBubblePrefab, worldRoot.transform);
         // textBubble.GetComponent<TextBubbleBehavior>().SetText(content);

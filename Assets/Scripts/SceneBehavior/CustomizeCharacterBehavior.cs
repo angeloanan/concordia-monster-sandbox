@@ -1,6 +1,7 @@
 using System.Data.Common;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
@@ -22,7 +23,9 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
     // Get Monster Customization Data based on selected monster
     var monsterData = MonsterDataManager.ResolveMonsterData(monster.name);
     Debug.Assert(monsterData != null, nameof(monsterData) + " != null");
-    var monsterCustomizationScript = monster.GetComponent<CharacterCustomization>();
+    var monsterCustomizationScript = monster.GetComponent<CharacterCustomization>(); 
+    
+    //monsterData.Customizations.
 
     var categoryStep = root.Q<Label>("CategoryStep");
     var categoryContainer = root.Q<VisualElement>("CategoryContainer");
@@ -47,7 +50,7 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
       foreach (var monsterPart in customization.Value) {
         var box = new CustomizationBox(monsterPart.Icon, evt =>
         {
-              monsterCustomizationScript.SwitchEyes();
+          monsterCustomizationScript.SwitchEyes();
               
         });
         customizationContainer.Add(box);

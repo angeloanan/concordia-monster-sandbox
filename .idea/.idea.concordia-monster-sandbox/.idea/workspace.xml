@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5ad8d95-c8ac-4a6f-a312-4c8b6e990182" name="Changes" comment="" />
+    <list default="true" id="c5ad8d95-c8ac-4a6f-a312-4c8b6e990182" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.concordia-monster-sandbox/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.concordia-monster-sandbox/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneBehavior/CustomizeCharacterBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneBehavior/CustomizeCharacterBehavior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Components/CustomizationBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Components/CustomizationBox.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Components/TextBubbleModal.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Components/TextBubbleModal.uxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/MonsterName.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/MonsterName.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/MonsterName.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/MonsterName.uxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Playtest2/Playtest2Behavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Playtest2/Playtest2Behavior.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -152,6 +160,8 @@
       <workItem from="1686611461861" duration="1957000" />
       <workItem from="1686657837987" duration="27908000" />
       <workItem from="1686734564130" duration="6123000" />
+      <workItem from="1687183991323" duration="2024000" />
+      <workItem from="1687251266030" duration="10984000" />
     </task>
     <servers />
   </component>
@@ -183,10 +193,10 @@
           <line>53</line>
           <properties documentPath="C:\Users\user\OneDrive\Documents\!Kuliah\Saxion\concordia-monster-sandbox\Assets\UI\Playtest2\Playtest2Behavior.cs" initialLine="51" containingFunctionPresentation="Lambda expression inside Method 'IntializeUI'">
             <startOffsets>
-              <option value="2219" />
+              <option value="2517" />
             </startOffsets>
             <endOffsets>
-              <option value="2220" />
+              <option value="2518" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />
