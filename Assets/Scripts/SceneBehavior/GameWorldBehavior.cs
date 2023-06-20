@@ -28,11 +28,13 @@ public class GameWorldBehavior : MonoBehaviour {
     if (monster != null) {
       monster.transform.position = new Vector3(0, 1, 5);
       monster.transform.localScale = new Vector3(1, 1, 1);
+      monster.transform.LookAt(Camera.main.transform.position);
     }
   }
 
   /// <summary>
   /// Utility function to clean-up camera's internal state.
+  /// Also serves as the "onClick" callback for the camera.
   ///
   /// Could be better represented via a State-Machine of some sort, but idk how to do that and cba to learn.
   /// </summary>
@@ -55,6 +57,10 @@ public class GameWorldBehavior : MonoBehaviour {
     _cameraDidMove = false;
   }
 
+  /// <summary>
+  /// Utility function to switch the active object to a new one.
+  /// </summary>
+  /// <param name="newActiveObject">Objects to be newly selected</param>
   private void ChangeActiveObject(GameObject newActiveObject) {
     if (_activeObject == newActiveObject) return;
     
@@ -105,6 +111,7 @@ public class GameWorldBehavior : MonoBehaviour {
     _isClicking = true;
   }
 
+  // Ran on the end of every frame
   private void LateUpdate() {
     Debug.Assert(Camera.main != null, "Camera.main != null");
     
@@ -116,8 +123,8 @@ public class GameWorldBehavior : MonoBehaviour {
     if (!_isClicking) return;
 
     if (!_cameraDidMove && _pointerDelta.magnitude > 1f) _cameraDidMove = true;
-    float rotationAroundXAxis = -_pointerDelta.y * cameraSensitivity;
-    float rotationAroundYAxis = _pointerDelta.x * cameraSensitivity;
+    var rotationAroundXAxis = -_pointerDelta.y * cameraSensitivity;
+    var rotationAroundYAxis = _pointerDelta.x * cameraSensitivity;
 
     // TP Camera to center position
     var cam = Camera.main;
