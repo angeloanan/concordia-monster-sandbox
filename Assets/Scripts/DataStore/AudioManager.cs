@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Timeline;
 
 public class AudioManager : MonoBehaviour {
   public static AudioManager Instance { get; private set; }
@@ -19,7 +18,7 @@ public class AudioManager : MonoBehaviour {
     }
   }
 
-  public static void PlayBgm() {
+  public void PlayBgm() {
     var bgmNames = new[] {"nature1", "nature2"};
     
     var random = new System.Random();
@@ -29,11 +28,11 @@ public class AudioManager : MonoBehaviour {
     PlayAudio($"bgm/{bgmName}");
   }
     
-  public static void PlayUiClick() {
+  public void PlayUiClick() {
     PlayAudio("ui");
   }
   
-  private static void PlayAudio(string audioPath) {
+  private void PlayAudio(string audioPath, bool oneShot = false) {
     var resourcePath = $"Audio/{audioPath}";
 
     var sound = Resources.Load<AudioClip>(resourcePath);
@@ -42,8 +41,14 @@ public class AudioManager : MonoBehaviour {
       return;
     }
 
-    var audioSrc = new AudioSource();
+    // TODO: Memory leak here due to not destroying the audio source
+    var audioSrc = gameObject.AddComponent<AudioSource>();
     audioSrc.clip = sound;
-    audioSrc.Play();
+    if (oneShot) {
+      audioSrc.PlayOneShot(sound);
+    }
+    else {
+      audioSrc.Play();
+    }
   }
 }
