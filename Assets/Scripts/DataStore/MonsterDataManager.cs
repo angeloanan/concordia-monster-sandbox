@@ -12,8 +12,8 @@ public class MonsterData {
 }
 
 public class MonsterCustomizationEntry {
-  public string label;
-  public string icon;
+  public string Label;
+  public string IconPath;
 }
 
 /// <summary>
@@ -59,21 +59,22 @@ public class MonsterDataManager : MonoBehaviour {
       name = "DevilMonster",
       customizations = new Dictionary<string, List<MonsterCustomizationEntry>> {
         {
-          "body", new() {
+          "Eyes", new() {
             new() {
-              label = "Body 1",
-              icon = "body1",
+              Label = "Eyes 1",
+              IconPath = "Images/Monsters/devil/Eyes/1",
             },
             new() {
-              label = "Body 2",
-              icon = "body2",
+              Label = "Eyes 2",
+              IconPath = "Images/Monsters/devil/Eyes/2",
             },
             new() {
-              label = "Body 3",
-              icon = "body3",
+              Label = "Eyes 3",
+              IconPath = "Images/Monsters/devil/Eyes/3",
             },
           }
-        }, {
+        }, 
+        /*{
           "mouth", new() {
             new() {
               label = "Mouth 1",
@@ -138,6 +139,7 @@ public class MonsterDataManager : MonoBehaviour {
       sfxData = new MonsterSfxData {
         interaction = "interactions/monster/1",
         spawn = "spawn/monster/1",
+        }*/
       }
     },
   };

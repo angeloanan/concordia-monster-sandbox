@@ -1,6 +1,7 @@
 using System.Data.Common;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
@@ -22,7 +23,9 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
     // Get Monster Customization Data based on selected monster
     var monsterData = MonsterDataManager.ResolveMonsterData(monster.name);
     Debug.Assert(monsterData != null, nameof(monsterData) + " != null");
-    var monsterCustomizationScript = monster.GetComponent<CharacterCustomization>();
+    var monsterCustomizationScript = monster.GetComponent<CharacterCustomization>(); 
+    
+    //monsterData.Customizations.
 
     var categoryStep = root.Q<Label>("CategoryStep");
     var categoryContainer = root.Q<VisualElement>("CategoryContainer");
@@ -39,14 +42,22 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
     //     * Update categoryStep.text
 
     // Map over all customization data and create UI elements for each and assign callbacks
-    foreach (var customization in monsterData.customizations) {
+    foreach (var customization in monsterData.Customizations)
+    {
       var customizationName = customization.Key;
-
-      // Used for passing the index of monster part to the callback
       var monsterPartIndex = 0;
-      foreach (var monsterPart in customization.Value) {
-        var box = new CustomizationBox(monsterPart.icon, evt => { monsterCustomizationScript.SwitchEyes(); });
+
+      foreach (var monsterPart in customization.Value)
+      {
+        var iconPath = Resources.Load<Sprite>(monsterPart.IconPath);
+        
+        var box = new CustomizationBox(iconPath, evt =>
+        {
+          monsterCustomizationScript.SwitchEyes();
+        });
+
         customizationContainer.Add(box);
+        Debug.Log($"Added CustomizationBox for {monster.name} {customizationName} ({monsterPart.IconPath})");
         monsterPartIndex++;
       }
     }
