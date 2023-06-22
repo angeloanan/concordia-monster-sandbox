@@ -39,7 +39,7 @@ public class AudioManager : MonoBehaviour {
     PlayAudio("ui");
   }
 
-  private void PlayAudio(string audioPath, bool oneShot = false, bool looping = false, float volume = 1.0f) {
+  public void PlayAudio(string audioPath, bool oneShot = false, bool looping = false, float volume = 1.0f) {
     var resourcePath = $"Audio/{audioPath}";
 
     var sound = Resources.Load<AudioClip>(resourcePath);
