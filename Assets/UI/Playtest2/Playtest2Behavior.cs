@@ -1,33 +1,12 @@
-using Unity.VisualScripting;
-using UnityEditor;
+using DataStore;
 using UnityEngine;
 using UnityEngine.UIElements;
 using Debug = System.Diagnostics.Debug;
 using UnityEngine.SceneManagement;
 
-public class ItemMap {
-  public string Label;
-  public EventCallback<ClickEvent> OnClickEventCallback;
-}
 
 public class Playtest2Behavior : MonoBehaviour {
   [SerializeField] private GameObject worldRoot;
-
-  private ItemMap[] uiItemMap = {
-    new() { Label = "Arc", OnClickEventCallback = _ => { SpawnPrefab("Objects/arc"); } },
-    new() { Label = "Bench", OnClickEventCallback = _ => { SpawnPrefab("Objects/bench"); } },
-    new() { Label = "Chest", OnClickEventCallback = _ => { SpawnPrefab("Objects/chest"); } },
-    new() { Label = "Fence", OnClickEventCallback = _ => { SpawnPrefab("Objects/fence"); } },
-    new() { Label = "House", OnClickEventCallback = _ => { SpawnPrefab("Objects/house"); } },
-    new() { Label = "Lantern", OnClickEventCallback = _ => { SpawnPrefab("Objects/lantern"); } },
-    new() { Label = "Pine Tree", OnClickEventCallback = _ => { SpawnPrefab("Objects/pinetree"); } },
-    new() { Label = "Pumpkin", OnClickEventCallback = _ => { SpawnPrefab("Objects/pumpkin"); } },
-    new() { Label = "Rock", OnClickEventCallback = _ => { SpawnPrefab("Objects/rock"); } },
-    new() { Label = "Double Rock", OnClickEventCallback = _ => { SpawnPrefab("Objects/rockDouble"); } },
-    new() { Label = "Tall Rock", OnClickEventCallback = _ => { SpawnPrefab("Objects/rockTall"); } },
-    new() { Label = "Skull", OnClickEventCallback = _ => { SpawnPrefab("Objects/skull"); } },
-    new() { Label = "Dead Tree", OnClickEventCallback = _ => { SpawnPrefab("Objects/treeDead"); } },
-  };
 
   private static void SpawnPrefab(string prefabPath) {
     var prefab = Resources.Load<GameObject>(prefabPath);
@@ -53,7 +32,7 @@ public class Playtest2Behavior : MonoBehaviour {
     // spawnedObject.transform.position += new Vector3(0, prefabHeight / 2, 0);
   }
 
-  private void IntializeUI() {
+  private void InitializeUI() {
     var root = GetComponent<UIDocument>().rootVisualElement;
     var itemListContainer = root.Q<VisualElement>("ItemListContainer");
     var resetButton = root.Q<Button>("resetButton");
@@ -78,8 +57,9 @@ public class Playtest2Behavior : MonoBehaviour {
     itemListContainer.Add(monsterEntry);
 
     // Adding ItemBoxes dynamically to the Item List
+    var uiItemMap = ItemData.uiItemMap;
     foreach (var item in uiItemMap) {
-      var entry = new ItemBox(item.Label, item.OnClickEventCallback);
+      var entry = new ItemBox(item.itemLabel, _ => SpawnPrefab(item.prefabPath)); 
       itemListContainer.Add(entry);
     }
 
@@ -113,7 +93,7 @@ public class Playtest2Behavior : MonoBehaviour {
   }
 
   private void OnEnable() {
-    this.IntializeUI();
+    this.InitializeUI();
 
     // TODO: Below's code is for item dragging
     // cubeItem.RegisterCallback<PointerDownEvent>(e => { Debug.Log("Pointer Down"); });

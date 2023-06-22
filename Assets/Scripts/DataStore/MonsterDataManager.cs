@@ -7,6 +7,7 @@ public class MonsterData {
 
   // Dictionary<MonsterPart, MonsterCustomizationEntry[]>
   public Dictionary<string, List<MonsterCustomizationEntry>> customizations;
+  
   public MonsterSfxData sfxData;
 }
 
