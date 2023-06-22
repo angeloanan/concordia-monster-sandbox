@@ -42,18 +42,22 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
     //     * Update categoryStep.text
     
     // Map over all customization data and create UI elements for each and assign callbacks
-    foreach (var customization in monsterData.Customizations) {
+    foreach (var customization in monsterData.Customizations)
+    {
       var customizationName = customization.Key;
-
-      // Used for passing the index of monster part to the callback
       var monsterPartIndex = 0;
-      foreach (var monsterPart in customization.Value) {
-        var box = new CustomizationBox(monsterPart.Icon, evt =>
+
+      foreach (var monsterPart in customization.Value)
+      {
+        var iconPath = Resources.Load<Sprite>(monsterPart.IconPath);
+        
+        var box = new CustomizationBox(iconPath, evt =>
         {
           monsterCustomizationScript.SwitchEyes();
-              
         });
+
         customizationContainer.Add(box);
+        Debug.Log($"Added CustomizationBox for {monster.name} {customizationName} ({monsterPart.IconPath})");
         monsterPartIndex++;
       }
     }

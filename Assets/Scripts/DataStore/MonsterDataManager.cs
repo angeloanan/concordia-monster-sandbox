@@ -11,7 +11,7 @@ public class MonsterData {
 
 public class MonsterCustomizationEntry {
   public string Label;
-  public string Icon;
+  public string IconPath;
 }
 
 public class MonsterDataManager : MonoBehaviour {
@@ -24,21 +24,22 @@ public class MonsterDataManager : MonoBehaviour {
       Name = "DevilMonster",
       Customizations = new Dictionary<string, List<MonsterCustomizationEntry>> {
         {
-          "body", new() {
+          "Eyes", new() {
             new() {
-              Label = "Body 1",
-              Icon = "body1",
+              Label = "Eyes 1",
+              IconPath = "Images/Monsters/devil/Eyes/1",
             },
             new() {
-              Label = "Body 2",
-              Icon = "body2",
+              Label = "Eyes 2",
+              IconPath = "Images/Monsters/devil/Eyes/2",
             },
             new() {
-              Label = "Body 3",
-              Icon = "body3",
+              Label = "Eyes 3",
+              IconPath = "Images/Monsters/devil/Eyes/3",
             },
           }
-        }, {
+        }, 
+        /*{
           "mouth", new() {
             new() {
               Label = "Mouth 1",
@@ -98,7 +99,7 @@ public class MonsterDataManager : MonoBehaviour {
               Icon = "wing3",
             },
           }
-        }
+        }*/
       }
     }
   };

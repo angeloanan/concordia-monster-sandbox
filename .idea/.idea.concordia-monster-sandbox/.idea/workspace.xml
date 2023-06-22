@@ -6,9 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="c5ad8d95-c8ac-4a6f-a312-4c8b6e990182" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.concordia-monster-sandbox/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.concordia-monster-sandbox/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Gameworld.uss" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Gameworld.uss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Images/Monsters/Devil/Emotion/1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Images/Monsters/Devil/Emotion/1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Images/Monsters/Devil/Emotion/2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Images/Monsters/Devil/Emotion/2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Images/Monsters/Devil/Emotion/3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Images/Monsters/Devil/Emotion/3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Images/Monsters/Devil/Eyes/1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Images/Monsters/Devil/Eyes/1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Images/Monsters/Devil/Eyes/2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Images/Monsters/Devil/Eyes/2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Images/Monsters/Devil/Eyes/3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Images/Monsters/Devil/Eyes/3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Images/Monsters/Devil/Eyes/4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Images/Monsters/Devil/Eyes/4.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Images/Monsters/Devil/Horn/1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Images/Monsters/Devil/Horn/1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Images/Monsters/Devil/Horn/2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Images/Monsters/Devil/Horn/2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Images/Monsters/Devil/Mouth/1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Images/Monsters/Devil/Mouth/1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Images/Monsters/Devil/Mouth/2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Images/Monsters/Devil/Mouth/2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Images/Monsters/Devil/Mouth/3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Images/Monsters/Devil/Mouth/3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataStore/MonsterDataManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataStore/MonsterDataManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneBehavior/CustomizeCharacterBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneBehavior/CustomizeCharacterBehavior.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/Playtest2/Playtest2.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Playtest2/Playtest2.uxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Components/CustomizationBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Components/CustomizationBox.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +170,9 @@
       <workItem from="1686657837987" duration="27908000" />
       <workItem from="1686734564130" duration="6123000" />
       <workItem from="1687183991323" duration="2024000" />
-      <workItem from="1687251266030" duration="12461000" />
+      <workItem from="1687251266030" duration="18201000" />
+      <workItem from="1687340278887" duration="15747000" />
+      <workItem from="1687423540751" duration="6928000" />
     </task>
     <servers />
   </component>
