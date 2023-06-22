@@ -1,19 +1,22 @@
-using System;
+using RuntimeHandle;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
 public class GameWorldBehavior : MonoBehaviour {
   [SerializeField] private UIDocument uiDocument;
-  [SerializeField] public bool canMoveCamera = true;
+  [SerializeField] private GameObject transformGizmo;
+
   [SerializeField] private float cameraSensitivity = 0.1f;
-  [SerializeField] private Vector3 cameraCenter = new Vector3(0, 0, 0);
+  [SerializeField] private Vector3 cameraCenter = new(0, 0, 0);
   [SerializeField] private float cameraRadiusFromCenter = 20.0f;
-  [SerializeField] private float cameraClampRotationDeg = 45.0f;
+  [SerializeField, Range(0, 180)] private float cameraClampRotationDeg = 45.0f;
 
   private Vector2 _pointerDelta;
   private Vector2 _pointerInitialPosition;
 
+  [SerializeField] private bool canMoveCamera = true;
   private bool _isClicking;
 
   /// <summary>
@@ -24,7 +27,15 @@ public class GameWorldBehavior : MonoBehaviour {
   private GameObject _activeObject;
   private Vector3 _initialObjectScreenPosition;
 
+  private void SetLayerAllChildren(Transform root, string layerName) {
+    root.gameObject.layer = LayerMask.NameToLayer(layerName);
+    foreach (Transform child in root) {
+      SetLayerAllChildren(child, layerName);
+    }
+  }
+  
   public void Awake() {
+    Debug.Assert(transformGizmo, $"Transform gizmo is not assigned in {name}");
     var monster = MonsterDataManager.Instance.activeMonsterPrefab;
 
     // Place monster on default position
@@ -32,12 +43,24 @@ public class GameWorldBehavior : MonoBehaviour {
     if (monster != null) {
       monster.transform.position = new Vector3(0, 1, 5);
       monster.transform.localScale = new Vector3(1, 1, 1);
-      monster.transform.LookAt(Camera.main.transform.position);
+      // monster.transform.LookAt(Camera.main.transform.position);
     }
+
+    // Initialize transform gizmo
+    var transformHandle = transformGizmo.GetOrAddComponent<RuntimeTransformHandle>();
+    transformHandle.type = HandleType.POSITION;
+    transformHandle.autoScale = true;
+    transformHandle.axes = HandleAxes.XZ;
+    transformHandle.target = null;
+
+    SetLayerAllChildren(transformGizmo.transform, "UI");
+
+    transformGizmo.SetActive(false);
   }
 
   /// <summary>
   /// Utility function to clean-up camera's internal state.
+  /// Ran only once AFTER mouse button is UP
   /// Also serves as the "onClick" callback for the camera.
   ///
   /// Could be better represented via a State-Machine of some sort, but idk how to do that and cba to learn.
@@ -56,9 +79,13 @@ public class GameWorldBehavior : MonoBehaviour {
       if (hit.collider != null && hit.transform.CompareTag("Draggable")) {
         ChangeActiveObject(hit.transform.gameObject);
       }
+      else {
+        ChangeActiveObject(null);
+      }
     }
 
     _cameraDidMove = false;
+    canMoveCamera = true;
   }
 
   /// <summary>
@@ -79,6 +106,10 @@ public class GameWorldBehavior : MonoBehaviour {
       // 2. Remove mounted UI element
       var deleteButton = root.Q<VisualElement>("DeleteObjectButton");
       root.Remove(deleteButton);
+
+      // 3. Remove Runtime Transform Handles
+      transformGizmo.GetComponent<RuntimeTransformHandle>().target = null;
+      transformGizmo.SetActive(false);
     }
 
     if (newActiveObject != null) {
@@ -93,10 +124,15 @@ public class GameWorldBehavior : MonoBehaviour {
       // 2. Mount UI element
       Resources.Load<VisualTreeAsset>("UI/Components/DeleteObjectButton").CloneTree(root);
       var deleteButton = root.Q<VisualElement>("DeleteObjectButton");
+      deleteButton.RegisterCallback<ClickEvent>(_ => { AudioManager.Instance.PlayUiClick(); });
       deleteButton.RegisterCallback<ClickEvent>(_ => {
         Destroy(newActiveObject);
         ChangeActiveObject(null);
       });
+
+      // 3. Add Runtime Transform Handles
+      transformGizmo.SetActive(true);
+      transformGizmo.GetComponent<RuntimeTransformHandle>().target = newActiveObject.transform;
     }
 
     _activeObject = newActiveObject;
@@ -123,6 +159,13 @@ public class GameWorldBehavior : MonoBehaviour {
       return;
     }
 
+    // Check if we're clicking on UI
+    var ray = Camera.main.ScreenPointToRay(_pointerInitialPosition);
+    if (Physics.Raycast(ray, out var hit, LayerMask.NameToLayer("UI"),  100)) {
+      Debug.Log("Can move camera = false");
+      canMoveCamera = false;
+    }
+
     _isClicking = true;
   }
 
@@ -131,11 +174,13 @@ public class GameWorldBehavior : MonoBehaviour {
     Debug.Assert(Camera.main != null, "Camera.main != null");
 
     UpdateCameraPosition();
+    UpdateActiveObjectUIElement();
   }
 
   private void UpdateCameraPosition() {
     // Only handle drag stuff if we're clicking
     if (!_isClicking) return;
+    if (!canMoveCamera) return;
 
     if (!_cameraDidMove && _pointerDelta.magnitude > 1f) _cameraDidMove = true;
     var rotationAroundXAxis = -_pointerDelta.y * cameraSensitivity;
@@ -155,7 +200,7 @@ public class GameWorldBehavior : MonoBehaviour {
     cam.transform.Translate(new Vector3(0, 0, -cameraRadiusFromCenter));
   }
 
-  private void updateActiveObjectUIElement() {
+  private void UpdateActiveObjectUIElement() {
     if (_activeObject == null) return;
     var root = uiDocument.rootVisualElement;
     var button = root.Q<VisualElement>("DeleteObjectButton");
@@ -170,9 +215,5 @@ public class GameWorldBehavior : MonoBehaviour {
     button.style.left = activeObjectScreenPos.x / 2;
     // TODO: Fix this
     // button.style.top = activeObjectScreenPos.y;
-  }
-
-  private void Update() {
-    updateActiveObjectUIElement();
   }
 }
