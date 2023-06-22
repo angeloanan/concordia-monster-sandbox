@@ -42,7 +42,7 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
     //     * Update categoryStep.text
 
     // Map over all customization data and create UI elements for each and assign callbacks
-    foreach (var customization in monsterData.Customizations)
+    foreach (var customization in monsterData.customizations)
     {
       var customizationName = customization.Key;
       var monsterPartIndex = 0;
