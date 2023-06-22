@@ -28,16 +28,16 @@ public class Playtest2Behavior : MonoBehaviour {
     var prefab = Resources.Load<GameObject>(prefabPath);
     // Get the center of the screen
     Debug.Assert(Camera.main != null, "Camera.main != null");
-    var screenCenterRay = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
-
-    // Project ray to world
-    Physics.Raycast(screenCenterRay, out var hit, 100, LayerMask.GetMask("World"));
-    var spawnPoint = hit.point;
+    // var screenCenterRay = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+    //
+    // // Project ray to world
+    // Physics.Raycast(screenCenterRay, out var hit, 100, LayerMask.GetMask("World"));
+    var spawnPoint = new Vector3(0, 0, 8);
 
     // Spawn prefab
     var spawnedObject = Instantiate(prefab, spawnPoint, Quaternion.identity);
     spawnedObject.gameObject.tag = "Draggable";
-
+    
     // // Adapt spawnPoint height to prefab's height
     // // This needs to be done after initial object spawn because Collider will be empty
     // // when the object is not active
