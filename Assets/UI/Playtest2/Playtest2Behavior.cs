@@ -59,7 +59,10 @@ public class Playtest2Behavior : MonoBehaviour {
     // Adding ItemBoxes dynamically to the Item List
     var uiItemMap = ItemData.UIItemMap;
     foreach (var item in uiItemMap.buildings) {
-      var entry = new ItemBox(item.itemLabel, _ => SpawnPrefab(item.prefabPath)); 
+      var entry = new ItemBox(item.itemLabel, _ => {
+        AudioManager.Instance.PlayAudio($"spawn/{item.spawnSfxPath}", oneShot: true);
+        SpawnPrefab(item.prefabPath);
+      }); 
       itemListContainer.Add(entry);
     }
 
