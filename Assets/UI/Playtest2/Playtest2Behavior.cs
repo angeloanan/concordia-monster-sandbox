@@ -57,8 +57,8 @@ public class Playtest2Behavior : MonoBehaviour {
     itemListContainer.Add(monsterEntry);
 
     // Adding ItemBoxes dynamically to the Item List
-    var uiItemMap = ItemData.uiItemMap;
-    foreach (var item in uiItemMap) {
+    var uiItemMap = ItemData.UIItemMap;
+    foreach (var item in uiItemMap.buildings) {
       var entry = new ItemBox(item.itemLabel, _ => SpawnPrefab(item.prefabPath)); 
       itemListContainer.Add(entry);
     }
