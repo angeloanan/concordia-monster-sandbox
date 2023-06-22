@@ -1,13 +1,29 @@
+using System.Collections.Generic;
 using DataStore;
 using UnityEngine;
 using UnityEngine.UIElements;
-using Debug = System.Diagnostics.Debug;
 using UnityEngine.SceneManagement;
-
 
 public class Playtest2Behavior : MonoBehaviour {
   [SerializeField] private GameObject worldRoot;
 
+  private void InitializeHotbarItems(IEnumerable<ItemData.ItemEntry> items) {
+    var root = GetComponent<UIDocument>().rootVisualElement;
+    var itemListContainer = root.Q<VisualElement>("ItemListContainer");
+    
+    itemListContainer.Clear();
+    
+    foreach (var item in items) {
+      var entry = new ItemBox(item.itemLabel, _ => {
+        AudioManager.Instance.PlayAudio($"spawn/{item.spawnSfxPath}", oneShot: true);
+        // TODO: Override this with a custom spawn function later on
+        SpawnPrefab(item.prefabPath);
+      }); 
+      
+      itemListContainer.Add(entry);
+    }
+  }
+  
   private static void SpawnPrefab(string prefabPath) {
     var prefab = Resources.Load<GameObject>(prefabPath);
     // Get the center of the screen
@@ -49,23 +65,32 @@ public class Playtest2Behavior : MonoBehaviour {
       SceneManager.LoadScene("Scenes/SelectMonster");
     };
 
-    // Add current monster to the UI
-    var monsterEntry = new ItemBox("Monster", _ => {
-      var activeMonster = MonsterDataManager.Instance.activeMonsterPrefab;
-      Instantiate(activeMonster, Vector3.zero, Quaternion.identity);
-    });
-    itemListContainer.Add(monsterEntry);
-
+    // Category buttons
     // Adding ItemBoxes dynamically to the Item List
     var uiItemMap = ItemData.UIItemMap;
-    foreach (var item in uiItemMap.buildings) {
-      var entry = new ItemBox(item.itemLabel, _ => {
-        AudioManager.Instance.PlayAudio($"spawn/{item.spawnSfxPath}", oneShot: true);
-        SpawnPrefab(item.prefabPath);
-      }); 
-      itemListContainer.Add(entry);
-    }
-
+    InitializeHotbarItems(uiItemMap.buildings);
+    
+    var buildingCategoryButton = root.Q<Button>("Building");
+    buildingCategoryButton.RegisterCallback<ClickEvent>(_ => {
+      AudioManager.Instance.PlayUiClick();
+      InitializeHotbarItems(ItemData.UIItemMap.buildings);
+    });
+    var treesCategoryButton = root.Q<Button>("Trees");
+    treesCategoryButton.RegisterCallback<ClickEvent>(_ => {
+      AudioManager.Instance.PlayUiClick();
+      InitializeHotbarItems(ItemData.UIItemMap.trees);
+    });
+    var decorCategoryButton = root.Q<Button>("Decor");
+    decorCategoryButton.RegisterCallback<ClickEvent>(_ => {
+      AudioManager.Instance.PlayUiClick();
+      InitializeHotbarItems(ItemData.UIItemMap.decorations);
+    });
+    var textCategoryButton = root.Q<Button>("Text");
+    textCategoryButton.RegisterCallback<ClickEvent>(_ => {
+      AudioManager.Instance.PlayUiClick();
+      InitializeHotbarItems(ItemData.UIItemMap.textBoxes);
+    });
+    
     // SPECIAL CASE: Text Bubble
     var textBubbleItem = new ItemBox("Text Bubble", _ => {
       // Show PopUp
