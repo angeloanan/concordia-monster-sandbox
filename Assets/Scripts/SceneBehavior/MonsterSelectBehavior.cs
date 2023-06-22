@@ -51,8 +51,9 @@ public class MonsterSelectBehavior : MonoBehaviour {
 
     Debug.Log($"Selected {character.name}");
     _state = MonsterSelectBehaviorState.CharacterConfirmation;
-    
-    AudioManager.Instance.PlayUiClick();
+
+    var monsterData = MonsterDataManager.ResolveMonsterData(character.name);
+    AudioManager.Instance.PlayAudio(monsterData.sfxData.interaction);
 
     // Despawn other character
     foreach (var c in characters) {

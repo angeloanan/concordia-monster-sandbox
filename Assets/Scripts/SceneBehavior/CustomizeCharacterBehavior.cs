@@ -28,7 +28,7 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
     var categoryContainer = root.Q<VisualElement>("CategoryContainer");
     var customizationContainer = root.Q<VisualElement>("CustomizationContainer");
 
-    categoryStep.text = $"1 / {monsterData.Customizations.Count}";
+    categoryStep.text = $"1 / {monsterData.customizations.Count}";
 
     // What to do:
     // 1. Render all body parts in monsterData.Customizations[0] on customizationContainer
@@ -39,13 +39,13 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
     //     * Update categoryStep.text
 
     // Map over all customization data and create UI elements for each and assign callbacks
-    foreach (var customization in monsterData.Customizations) {
+    foreach (var customization in monsterData.customizations) {
       var customizationName = customization.Key;
 
       // Used for passing the index of monster part to the callback
       var monsterPartIndex = 0;
       foreach (var monsterPart in customization.Value) {
-        var box = new CustomizationBox(monsterPart.Icon, evt => { monsterCustomizationScript.SwitchEyes(); });
+        var box = new CustomizationBox(monsterPart.icon, evt => { monsterCustomizationScript.SwitchEyes(); });
         customizationContainer.Add(box);
         monsterPartIndex++;
       }
