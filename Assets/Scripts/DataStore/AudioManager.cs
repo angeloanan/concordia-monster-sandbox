@@ -48,8 +48,17 @@ public class AudioManager : MonoBehaviour {
       return;
     }
 
-    // TODO: Memory leak here due to not destroying the audio source
-    var audioSrc = gameObject.AddComponent<AudioSource>();
+    AudioSource audioSrc;
+    if (activeBGM == null) {
+      // Abuse the fact that BGM is always going to be the first audio source to be called
+      activeBGM = gameObject.AddComponent<AudioSource>();
+      audioSrc = activeBGM;
+    }
+    else {
+      // TODO: Memory leak here due to not destroying the audio source
+      audioSrc = gameObject.AddComponent<AudioSource>();
+    }
+    
     audioSrc.clip = sound;
     audioSrc.volume = volume;
     if (looping) audioSrc.loop = true;
