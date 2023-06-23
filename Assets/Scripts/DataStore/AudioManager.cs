@@ -22,7 +22,7 @@ public class AudioManager : MonoBehaviour {
     const string bgmTheme = "bgm";
 
     PlayAudio($"bgm/{bgmTheme}", looping: true, volume: 0.5f);
-    PlayRandomNatureBgm();
+    // PlayRandomNatureBgm();
   }
 
   private void PlayRandomNatureBgm() {
