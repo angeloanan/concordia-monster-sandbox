@@ -27,7 +27,7 @@ public class GameWorldBehavior : MonoBehaviour {
   private GameObject _activeObject;
   private Vector3 _initialObjectScreenPosition;
 
-  private void SetLayerAllChildren(Transform root, string layerName) {
+  private static void SetLayerAllChildren(Transform root, string layerName) {
     root.gameObject.layer = LayerMask.NameToLayer(layerName);
     foreach (Transform child in root) {
       SetLayerAllChildren(child, layerName);
@@ -133,6 +133,9 @@ public class GameWorldBehavior : MonoBehaviour {
       // 3. Add Runtime Transform Handles
       transformGizmo.SetActive(true);
       transformGizmo.GetComponent<RuntimeTransformHandle>().target = newActiveObject.transform;
+      
+      // 4. Set Runtime Transform Handle layer to UI
+      SetLayerAllChildren(transformGizmo.transform, "UI");
     }
 
     _activeObject = newActiveObject;
@@ -161,7 +164,8 @@ public class GameWorldBehavior : MonoBehaviour {
 
     // Check if we're clicking on UI
     var ray = Camera.main.ScreenPointToRay(_pointerInitialPosition);
-    if (Physics.Raycast(ray, out var hit, LayerMask.NameToLayer("UI"),  100)) {
+    if (Physics.Raycast(ray, out var hit, 100F, LayerMask.NameToLayer("UI"))) {
+      Debug.Log(hit);
       Debug.Log("Can move camera = false");
       canMoveCamera = false;
     }
@@ -193,10 +197,10 @@ public class GameWorldBehavior : MonoBehaviour {
     cam.transform.Rotate(Vector3.up, rotationAroundYAxis, Space.World);
 
     // Clamp rotation
-    var currentRotation = cam.transform.rotation.eulerAngles;
-    currentRotation.x = Mathf.Clamp(currentRotation.x, -cameraClampRotationDeg, cameraClampRotationDeg);
-    cam.transform.rotation = Quaternion.Euler(currentRotation);
-
+    // var currentRotation = cam.transform.rotation.eulerAngles;
+    // currentRotation.x = Mathf.Clamp(currentRotation.x, -cameraClampRotationDeg, cameraClampRotationDeg);
+    // cam.transform.rotation = Quaternion.Euler(currentRotation);
+    
     cam.transform.Translate(new Vector3(0, 0, -cameraRadiusFromCenter));
   }
 
