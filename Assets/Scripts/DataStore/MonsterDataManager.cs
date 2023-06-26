@@ -73,73 +73,11 @@ public class MonsterDataManager : MonoBehaviour {
               IconPath = "Images/Monsters/devil/Eyes/3",
             },
           }
-        }, 
-        /*{
-          "mouth", new() {
-            new() {
-              label = "Mouth 1",
-              icon = "mouth1",
-            },
-            new() {
-              label = "Mouth 2",
-              icon = "mouth2",
-            },
-            new() {
-              label = "Mouth 3",
-              icon = "mouth3",
-            },
-          }
-        }, {
-          "eyes", new() {
-            new() {
-              label = "Eyes 1",
-              icon = "eyes1",
-            },
-            new() {
-              label = "Eyes 2",
-              icon = "eyes2",
-            },
-            new() {
-              label = "Eyes 3",
-              icon = "eyes3",
-            },
-          }
-        }, {
-          "nose", new() {
-            new() {
-              label = "Nose 1",
-              icon = "nose1",
-            },
-            new() {
-              label = "Nose 2",
-              icon = "nose2",
-            },
-            new() {
-              label = "Nose 3",
-              icon = "nose3",
-            },
-          }
-        }, {
-          "wing", new() {
-            new() {
-              label = "Wing 1",
-              icon = "wing1",
-            },
-            new() {
-              label = "Wing 2",
-              icon = "wing2",
-            },
-            new() {
-              label = "Wing 3",
-              icon = "wing3",
-            },
-          }
-        }
+        },
       },
       sfxData = new MonsterSfxData {
         interaction = "interactions/monster/1",
         spawn = "spawn/monster/1",
-        }*/
       }
     },
   };
