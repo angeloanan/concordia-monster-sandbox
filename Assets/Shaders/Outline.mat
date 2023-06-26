@@ -41,7 +41,7 @@ Material:
     m_Floats:
     - _Color_Threshold: 1.9
     - _Depth_Threshold: 0.5
-    - _Normal_Threshold: 0.5
+    - _Normal_Threshold: 1
     - _OVERLAY: 1
     - _Outline_Depth_Threshold: 1.7
     - _Outline_Multiplier: 2.57
