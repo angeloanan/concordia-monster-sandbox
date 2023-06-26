@@ -45,7 +45,7 @@ Material:
     - _OVERLAY: 1
     - _Outline_Depth_Threshold: 1.7
     - _Outline_Multiplier: 2.57
-    - _Outline_Thickness: 0
+    - _Outline_Thickness: 1
     m_Colors:
     - _Outline_Color: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 0}
   m_BuildTextureStacks: []

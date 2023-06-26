@@ -25,8 +25,7 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
-  m_InvalidKeywords:
-  - _TOGGLENORMALMAP_ON
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -120,12 +119,12 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Halftone: 0.555
-    - _HalftoneFactor: 0.151
+    - _Halftone: 0.569
+    - _HalftoneFactor: 0.24
     - _Light0Intensity: 0.5
     - _Light1Intensity: 0.5
     - _Light2Intensity: 0.5
-    - _LightIntensity: 0.5
+    - _LightIntensity: 0.47
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
@@ -139,7 +138,7 @@ Material:
     - _SrcBlendAlpha: 1
     - _Surface: 0
     - _ToggleBlend: 0
-    - _ToggleNormalMap: 1
+    - _ToggleNormalMap: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:

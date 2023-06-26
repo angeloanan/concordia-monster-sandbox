@@ -405,7 +405,6 @@ float3 Fragment(Varyings IN) : SV_Target
     float rimTerm = pow(1.0 - NoV, _RimSharpness);
     rimTerm *= toonLighting * toonShadows;
     rimTerm = easysmoothstep(0.01, rimTerm);
-    
     float3 surfaceColor = _Color * SAMPLE_TEXTURE2D(_ColorMap, sampler_ColorMap, IN.uv);
     if (_ToggleBlend)
     {
@@ -460,7 +459,6 @@ float3 Fragment(Varyings IN) : SV_Target
     }
     
     //finalLighting += addLighting;
-    
     return surfaceColor * finalLighting;
 }
 #endif

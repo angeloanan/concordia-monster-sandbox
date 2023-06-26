@@ -120,9 +120,9 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Halftone: 0.5
-    - _HalftoneFactor: 0.5
+    - _HalftoneFactor: 0
     - _Light0Intensity: 0.58
-    - _Light1Intensity: 0.3
+    - _Light1Intensity: 0.25
     - _Light2Intensity: 0.5
     - _LightIntensity: 1
     - _Metallic: 0
@@ -147,5 +147,5 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _WorldColor: {r: 0.49056602, g: 0.49056602, b: 0.49056602, a: 1}
+    - _WorldColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
