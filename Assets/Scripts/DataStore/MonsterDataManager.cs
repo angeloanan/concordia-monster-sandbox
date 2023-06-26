@@ -3,113 +3,160 @@ using System.Linq;
 using UnityEngine;
 
 public class MonsterData {
-  public string Name;
+  public string name;
 
   // Dictionary<MonsterPart, MonsterCustomizationEntry[]>
-  public Dictionary<string, List<MonsterCustomizationEntry>> Customizations;
+  public Dictionary<string, List<MonsterCustomizationEntry>> customizations;
+
+  public MonsterSfxData sfxData;
 }
 
 public class MonsterCustomizationEntry {
   public string Label;
-  public string Icon;
+  public string IconPath;
+}
+
+/// <summary>
+/// String location relative to `/Assets/Resources/Audio/` to the audio clip
+/// </summary>
+public class MonsterSfxData {
+  public string spawn;
+  public string interaction;
 }
 
 public class MonsterDataManager : MonoBehaviour {
   public static MonsterDataManager Instance { get; private set; }
 
+  public string activeMonsterName;
   public GameObject activeMonsterPrefab;
 
   public static readonly MonsterData[] MonsterData = {
     new() {
-      Name = "DevilMonster",
-      Customizations = new Dictionary<string, List<MonsterCustomizationEntry>> {
+      name = "FairyMonster",
+      customizations = new Dictionary<string, List<MonsterCustomizationEntry>> { },
+      sfxData = new MonsterSfxData {
+        interaction = "interactions/monster/4",
+        spawn = "spawn/monster/4",
+      }
+    },
+    new() {
+      name = "FluffyMonster",
+      customizations = new Dictionary<string, List<MonsterCustomizationEntry>> { },
+      sfxData = new MonsterSfxData {
+        interaction = "interactions/monster/3",
+        spawn = "spawn/monster/3",
+      }
+    },
+    new() {
+      name = "PotatoMonster",
+      customizations = new Dictionary<string, List<MonsterCustomizationEntry>> { },
+      sfxData = new MonsterSfxData {
+        interaction = "interactions/monster/2",
+        spawn = "spawn/monster/2",
+      }
+    },
+    new() {
+      name = "DevilMonster",
+      customizations = new Dictionary<string, List<MonsterCustomizationEntry>> {
         {
-          "body", new() {
+          "Eyes", new() {
             new() {
-              Label = "Body 1",
-              Icon = "body1",
+              Label = "Eyes 1",
+              IconPath = "Images/Monsters/devil/Eyes/1",
             },
             new() {
-              Label = "Body 2",
-              Icon = "body2",
+              Label = "Eyes 2",
+              IconPath = "Images/Monsters/devil/Eyes/2",
             },
             new() {
-              Label = "Body 3",
-              Icon = "body3",
+              Label = "Eyes 3",
+              IconPath = "Images/Monsters/devil/Eyes/3",
             },
           }
-        }, {
+        }, 
+        /*{
           "mouth", new() {
             new() {
-              Label = "Mouth 1",
-              Icon = "mouth1",
+              label = "Mouth 1",
+              icon = "mouth1",
             },
             new() {
-              Label = "Mouth 2",
-              Icon = "mouth2",
+              label = "Mouth 2",
+              icon = "mouth2",
             },
             new() {
-              Label = "Mouth 3",
-              Icon = "mouth3",
+              label = "Mouth 3",
+              icon = "mouth3",
             },
           }
         }, {
           "eyes", new() {
             new() {
-              Label = "Eyes 1",
-              Icon = "eyes1",
+              label = "Eyes 1",
+              icon = "eyes1",
             },
             new() {
-              Label = "Eyes 2",
-              Icon = "eyes2",
+              label = "Eyes 2",
+              icon = "eyes2",
             },
             new() {
-              Label = "Eyes 3",
-              Icon = "eyes3",
+              label = "Eyes 3",
+              icon = "eyes3",
             },
           }
         }, {
           "nose", new() {
             new() {
-              Label = "Nose 1",
-              Icon = "nose1",
+              label = "Nose 1",
+              icon = "nose1",
             },
             new() {
-              Label = "Nose 2",
-              Icon = "nose2",
+              label = "Nose 2",
+              icon = "nose2",
             },
             new() {
-              Label = "Nose 3",
-              Icon = "nose3",
+              label = "Nose 3",
+              icon = "nose3",
             },
           }
         }, {
           "wing", new() {
             new() {
-              Label = "Wing 1",
-              Icon = "wing1",
+              label = "Wing 1",
+              icon = "wing1",
             },
             new() {
-              Label = "Wing 2",
-              Icon = "wing2",
+              label = "Wing 2",
+              icon = "wing2",
             },
             new() {
-              Label = "Wing 3",
-              Icon = "wing3",
+              label = "Wing 3",
+              icon = "wing3",
             },
           }
         }
+      },
+      sfxData = new MonsterSfxData {
+        interaction = "interactions/monster/1",
+        spawn = "spawn/monster/1",
+        }*/
       }
-    }
+    },
   };
 
   public static MonsterData ResolveMonsterData(string monsterName) {
-    return MonsterData.FirstOrDefault(data => data.Name == monsterName);
+    return MonsterData.FirstOrDefault(data => data.name == monsterName);
   }
 
   public void SetCurrentActiveMonster(GameObject monster) {
     Debug.Log($"Setting active monster to {monster.name}");
     activeMonsterPrefab = monster;
+  }
+
+
+  public void SetCurrentActiveMonsterName(string monsterName) {
+    Debug.Log($"Setting active monster name to {monsterName}");
+    activeMonsterName = monsterName;
   }
 
   private void Awake() {

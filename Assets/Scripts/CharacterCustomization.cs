@@ -12,9 +12,24 @@ public class CharacterCustomization : MonoBehaviour {
   public GameObject[] eyes;
   private int _currentEyes;
 
-  public GameObject[] nose;
-  private int _currentNose;
+  public GameObject[] emotion;
+  private int _currentEmotion;
 
+  public GameObject[] hair;
+  private int _currentHair;
+  
+  public GameObject[] arms;
+  private int _currentArms;
+  
+  public GameObject[] legs;
+  private int _currentLegs;
+  
+  public GameObject[] ears;
+  private int _currentEars;
+  
+  public GameObject[] accessories;
+  private int _currentAccessories;
+  
   public GameObject[] wing;
   private int _currentWing;
 
@@ -36,8 +51,13 @@ public class CharacterCustomization : MonoBehaviour {
     ReRenderParts(body, _currentBody);
     ReRenderParts(mouth, _currentMouth);
     ReRenderParts(eyes, _currentEyes);
-    ReRenderParts(nose, _currentNose);
+    ReRenderParts(emotion, _currentEmotion);
+    ReRenderParts(hair, _currentHair);
+    ReRenderParts(arms, _currentArms);
+    ReRenderParts(ears, _currentEars);
+    ReRenderParts(accessories, _currentAccessories);
     ReRenderParts(wing, _currentWing);
+    ReRenderParts(legs, _currentLegs);
   }
 
   public void SwitchBody() {
@@ -55,11 +75,30 @@ public class CharacterCustomization : MonoBehaviour {
     ReRenderParts(eyes, _currentEyes);
   }
 
-  public void SwitchNose() {
-    _currentNose = (_currentNose + 1) % nose.Length;
-    ReRenderParts(nose, _currentNose);
+  public void SwitchEmotion() {
+    _currentEmotion = (_currentEmotion + 1) % emotion.Length;
+    ReRenderParts(emotion, _currentEmotion);
   }
 
+  public void SwitchHair() {
+    _currentHair = (_currentHair + 1) % hair.Length;
+    ReRenderParts(hair, _currentHair);
+  }
+  public void SwitchArms() {
+    _currentArms = (_currentArms + 1) % arms.Length;
+    ReRenderParts(arms, _currentArms);
+  }
+  
+  public void SwitchEars() {
+    _currentEars = (_currentEars + 1) % ears.Length;
+    ReRenderParts(ears, _currentEars);
+  }
+  
+  public void SwitchAccessories() {
+    _currentAccessories = (_currentAccessories + 1) % accessories.Length;
+    ReRenderParts(accessories, _currentAccessories);
+  }
+  
   public void SwitchWing() {
     _currentWing = (_currentWing + 1) % wing.Length;
     ReRenderParts(wing, _currentWing);

@@ -1,8 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:Label tabindex="-1" text="Continue?" display-tooltip-when-elided="true" style="-unity-font-definition: url(&apos;project://database/Assets/UI/Fonts/Sharkbit%20demo.ttf?fileID=12800000&amp;guid=b34e7a3ee7ca06df0bc5b48eae8d2c55&amp;type=3#Sharkbit demo&apos;); font-size: 96px; -unity-text-align: upper-center; color: rgb(240, 188, 68);" />
-    <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);" />
-    <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); -unity-font-definition: url(&apos;project://database/Assets/UI/Fonts/Flamante-Round-Book-FFP.ttf?fileID=12800000&amp;guid=32543ce8cbd64bdb3b9417f9ebd59d77&amp;type=3#Flamante-Round-Book-FFP&apos;); flex-direction: row; justify-content: flex-end;">
-        <ui:Button text="Cancel" display-tooltip-when-elided="true" enable-rich-text="false" selectable="true" name="CancelButton" />
-        <ui:Button text="Yes" display-tooltip-when-elided="true" enable-rich-text="false" name="ConfirmButton" />
-    </ui:VisualElement>
-</ui:UXML>

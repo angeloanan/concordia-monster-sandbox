@@ -1,0 +1,79 @@
+.building {
+    background-image: resource('Images/Icons/long-container');
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    -unity-font-definition: url('project://database/Assets/UI/Fonts/Sharkbit%20demo.ttf?fileID=12800000&guid=b34e7a3ee7ca06df0bc5b48eae8d2c55&type=3#Sharkbit demo');
+    color: rgb(240, 188, 68);
+}
+
+.building:active {
+    background-image: resource('Images/Icons/long-container-active');
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    -unity-font-definition: url('project://database/Assets/UI/Fonts/Sharkbit%20demo.ttf?fileID=12800000&guid=b34e7a3ee7ca06df0bc5b48eae8d2c55&type=3#Sharkbit demo');
+    color: rgb(240, 188, 68);
+}
+
+.trees {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-image: resource('Images/Icons/long-container');
+    -unity-font-definition: url('project://database/Assets/UI/Fonts/Sharkbit%20demo.ttf?fileID=12800000&guid=b34e7a3ee7ca06df0bc5b48eae8d2c55&type=3#Sharkbit demo');
+    color: rgb(240, 188, 68);
+}
+
+.trees:active {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-image: resource('Images/Icons/long-container-active');
+    -unity-font-definition: url('project://database/Assets/UI/Fonts/Sharkbit%20demo.ttf?fileID=12800000&guid=b34e7a3ee7ca06df0bc5b48eae8d2c55&type=3#Sharkbit demo');
+    color: rgb(240, 188, 68);
+}
+
+.decor {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-image: resource('Images/Icons/long-container');
+    color: rgb(240, 188, 68);
+    -unity-font-definition: url('project://database/Assets/UI/Fonts/Sharkbit%20demo.ttf?fileID=12800000&guid=b34e7a3ee7ca06df0bc5b48eae8d2c55&type=3#Sharkbit demo');
+}
+
+.decor:active {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-image: resource('Images/Icons/long-container-active');
+    color: rgb(240, 188, 68);
+    -unity-font-definition: url('project://database/Assets/UI/Fonts/Sharkbit%20demo.ttf?fileID=12800000&guid=b34e7a3ee7ca06df0bc5b48eae8d2c55&type=3#Sharkbit demo');
+}
+
+.text {
+    background-image: resource('Images/Icons/long-container');
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    -unity-font-definition: url('project://database/Assets/UI/Fonts/Sharkbit%20demo.ttf?fileID=12800000&guid=b34e7a3ee7ca06df0bc5b48eae8d2c55&type=3#Sharkbit demo');
+    color: rgb(240, 188, 68);
+}
+
+.text:active {
+    background-image: resource('Images/Icons/long-container-active');
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    -unity-font-definition: url('project://database/Assets/UI/Fonts/Sharkbit%20demo.ttf?fileID=12800000&guid=b34e7a3ee7ca06df0bc5b48eae8d2c55&type=3#Sharkbit demo');
+    color: rgb(240, 188, 68);
+}

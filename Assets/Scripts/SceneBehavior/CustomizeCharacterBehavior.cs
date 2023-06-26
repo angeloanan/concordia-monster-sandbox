@@ -1,4 +1,7 @@
+using System.Data.Common;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
@@ -20,13 +23,15 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
     // Get Monster Customization Data based on selected monster
     var monsterData = MonsterDataManager.ResolveMonsterData(monster.name);
     Debug.Assert(monsterData != null, nameof(monsterData) + " != null");
-    var monsterCustomizationScript = monster.GetComponent<CharacterCustomization>();
+    var monsterCustomizationScript = monster.GetComponent<CharacterCustomization>(); 
+    
+    //monsterData.Customizations.
 
     var categoryStep = root.Q<Label>("CategoryStep");
     var categoryContainer = root.Q<VisualElement>("CategoryContainer");
     var customizationContainer = root.Q<VisualElement>("CustomizationContainer");
 
-    categoryStep.text = $"1 / {monsterData.Customizations.Count}";
+    categoryStep.text = $"1 / {monsterData.customizations.Count}";
 
     // What to do:
     // 1. Render all body parts in monsterData.Customizations[0] on customizationContainer
@@ -35,31 +40,38 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
     //     * Clear customizationContainer
     //     * Render all body parts in monsterData.Customizations[index]
     //     * Update categoryStep.text
-    
+
     // Map over all customization data and create UI elements for each and assign callbacks
-    foreach (var customization in monsterData.Customizations) {
+    foreach (var customization in monsterData.customizations)
+    {
       var customizationName = customization.Key;
-
-      // Used for passing the index of monster part to the callback
       var monsterPartIndex = 0;
-      foreach (var monsterPart in customization.Value) {
-        var box = new CustomizationBox(monsterPart.Icon, evt => { monsterCustomizationScript.SwitchEyes(); });
-        customizationContainer.Add(box);
 
+      foreach (var monsterPart in customization.Value)
+      {
+        var iconPath = Resources.Load<Sprite>(monsterPart.IconPath);
+        
+        var box = new CustomizationBox(iconPath, evt =>
+        {
+          monsterCustomizationScript.SwitchEyes();
+        });
+
+        customizationContainer.Add(box);
+        Debug.Log($"Added CustomizationBox for {monster.name} {customizationName} ({monsterPart.IconPath})");
         monsterPartIndex++;
       }
     }
 
-
     var doneButton = root.Q<Button>("DoneButton");
+    doneButton.RegisterCallback<ClickEvent>(_ => { AudioManager.Instance.PlayUiClick(); });
     doneButton.RegisterCallback<ClickEvent>(_ => {
       Debug.Log("Done button clicked. Transitioning to GameWorld");
-      
+
       // Update current monster reference
       MonsterDataManager.Instance.SetCurrentActiveMonster(monster);
 
       // Navigate to next scene
-      SceneManager.LoadScene("Scenes/GameWorld");
+      SceneManager.LoadScene("Scenes/MonsterName");
     });
   }
 }

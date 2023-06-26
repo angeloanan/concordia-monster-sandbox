@@ -1,47 +1,43 @@
-using Unity.VisualScripting;
-using UnityEditor;
+using System.Collections.Generic;
+using DataStore;
 using UnityEngine;
 using UnityEngine.UIElements;
-using Debug = System.Diagnostics.Debug;
-
-public class ItemMap {
-  public string Label;
-  public EventCallback<ClickEvent> OnClickEventCallback;
-}
+using UnityEngine.SceneManagement;
 
 public class Playtest2Behavior : MonoBehaviour {
   [SerializeField] private GameObject worldRoot;
 
-  private ItemMap[] uiItemMap = {
-    new() { Label = "Arc", OnClickEventCallback = _ => { SpawnPrefab("Objects/arc"); } },
-    new() { Label = "Bench", OnClickEventCallback = _ => { SpawnPrefab("Objects/bench"); } },
-    new() { Label = "Chest", OnClickEventCallback = _ => { SpawnPrefab("Objects/chest"); } },
-    new() { Label = "Fence", OnClickEventCallback = _ => { SpawnPrefab("Objects/fence"); } },
-    new() { Label = "House", OnClickEventCallback = _ => { SpawnPrefab("Objects/house"); } },
-    new() { Label = "Lantern", OnClickEventCallback = _ => { SpawnPrefab("Objects/lantern"); } },
-    new() { Label = "Pine Tree", OnClickEventCallback = _ => { SpawnPrefab("Objects/pinetree"); } },
-    new() { Label = "Pumpkin", OnClickEventCallback = _ => { SpawnPrefab("Objects/pumpkin"); } },
-    new() { Label = "Rock", OnClickEventCallback = _ => { SpawnPrefab("Objects/rock"); } },
-    new() { Label = "Double Rock", OnClickEventCallback = _ => { SpawnPrefab("Objects/rockDouble"); } },
-    new() { Label = "Tall Rock", OnClickEventCallback = _ => { SpawnPrefab("Objects/rockTall"); } },
-    new() { Label = "Skull", OnClickEventCallback = _ => { SpawnPrefab("Objects/skull"); } },
-    new() { Label = "Dead Tree", OnClickEventCallback = _ => { SpawnPrefab("Objects/treeDead"); } },
-  };
-
+  private void InitializeHotbarItems(IEnumerable<ItemData.ItemEntry> items) {
+    var root = GetComponent<UIDocument>().rootVisualElement;
+    var itemListContainer = root.Q<VisualElement>("ItemListContainer");
+    
+    itemListContainer.Clear();
+    
+    foreach (var item in items) {
+      var entry = new ItemBox(item.itemLabel, _ => {
+        AudioManager.Instance.PlayAudio($"spawn/{item.spawnSfxPath}", oneShot: true);
+        // TODO: Override this with a custom spawn function later on
+        SpawnPrefab(item.prefabPath);
+      }); 
+      
+      itemListContainer.Add(entry);
+    }
+  }
+  
   private static void SpawnPrefab(string prefabPath) {
     var prefab = Resources.Load<GameObject>(prefabPath);
     // Get the center of the screen
     Debug.Assert(Camera.main != null, "Camera.main != null");
-    var screenCenterRay = Camera.main.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
-
-    // Project ray to world
-    Physics.Raycast(screenCenterRay, out var hit, 100, LayerMask.GetMask("World"));
-    var spawnPoint = hit.point;
+    // var screenCenterRay = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+    //
+    // // Project ray to world
+    // Physics.Raycast(screenCenterRay, out var hit, 100, LayerMask.GetMask("World"));
+    var spawnPoint = new Vector3(0, 0, 8);
 
     // Spawn prefab
     var spawnedObject = Instantiate(prefab, spawnPoint, Quaternion.identity);
     spawnedObject.gameObject.tag = "Draggable";
-
+    
     // // Adapt spawnPoint height to prefab's height
     // // This needs to be done after initial object spawn because Collider will be empty
     // // when the object is not active
@@ -52,37 +48,63 @@ public class Playtest2Behavior : MonoBehaviour {
     // spawnedObject.transform.position += new Vector3(0, prefabHeight / 2, 0);
   }
 
-  private void IntializeUI() {
+  private void InitializeUI() {
     var root = GetComponent<UIDocument>().rootVisualElement;
     var itemListContainer = root.Q<VisualElement>("ItemListContainer");
+    var resetButton = root.Q<Button>("resetButton");
 
-    // Add current monster to the UI
-    var monsterEntry = new ItemBox("Monster", _ => {
-      var activeMonster = MonsterDataManager.Instance.activeMonsterPrefab;
-      Instantiate(activeMonster, Vector3.zero, Quaternion.identity);
+    // Handle reset button
+    resetButton.RegisterCallback<ClickEvent>(_ => {
+      AudioManager.Instance.PlayUiClick();
     });
-    itemListContainer.Add(monsterEntry);
-    
-    // Adding ItemBoxes dynamically to the Item List
-    foreach (var item in uiItemMap) {
-      var entry = new ItemBox(item.Label, item.OnClickEventCallback);
-      itemListContainer.Add(entry);
-    }
+    resetButton.clicked += () => {
+      // Remove activeMonsterPrefab from DontDestroyOnLoad
+      if (MonsterDataManager.Instance != null && MonsterDataManager.Instance.activeMonsterPrefab != null) {
+        Destroy(MonsterDataManager.Instance.activeMonsterPrefab);
+      }
+      SceneManager.LoadScene("Scenes/SelectMonster");
+    };
 
+    // Category buttons
+    // Adding ItemBoxes dynamically to the Item List
+    var uiItemMap = ItemData.UIItemMap;
+    InitializeHotbarItems(uiItemMap.buildings);
+    
+    var buildingCategoryButton = root.Q<Button>("Building");
+    buildingCategoryButton.RegisterCallback<ClickEvent>(_ => {
+      AudioManager.Instance.PlayUiClick();
+      InitializeHotbarItems(ItemData.UIItemMap.buildings);
+    });
+    var treesCategoryButton = root.Q<Button>("Trees");
+    treesCategoryButton.RegisterCallback<ClickEvent>(_ => {
+      AudioManager.Instance.PlayUiClick();
+      InitializeHotbarItems(ItemData.UIItemMap.trees);
+    });
+    var decorCategoryButton = root.Q<Button>("Decor");
+    decorCategoryButton.RegisterCallback<ClickEvent>(_ => {
+      AudioManager.Instance.PlayUiClick();
+      InitializeHotbarItems(ItemData.UIItemMap.decorations);
+    });
+    var textCategoryButton = root.Q<Button>("Text");
+    textCategoryButton.RegisterCallback<ClickEvent>(_ => {
+      AudioManager.Instance.PlayUiClick();
+      InitializeHotbarItems(ItemData.UIItemMap.textBoxes);
+    });
+    
     // SPECIAL CASE: Text Bubble
     var textBubbleItem = new ItemBox("Text Bubble", _ => {
       // Show PopUp
       // TODO: Move this to a separate file
       var visualTreeAsset =
-        AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/UI/Components/TextBubbleModal.uxml");
+        Resources.Load<VisualTreeAsset>("UI/Components/TextBubbleModal");
       visualTreeAsset.CloneTree(root);
-      
+
       var doneButton = root.Q<TemplateContainer>("DoneButtonContainer").Q<Button>("Button");
       doneButton.RegisterCallback<ClickEvent>(e => {
         // Spawn Text Bubble
-        Debug.Print("Done button clicked");
+        UnityEngine.Debug.Log("Done button clicked");
         var content = root.Q<TextField>().text;
-        Debug.Print($"Text content: {content}");
+        UnityEngine.Debug.Log($"Text content: {content}");
         // var textBubblePrefab = Resources.Load<GameObject>("Objects/TextBubble");
         // var textBubble = Instantiate(textBubblePrefab, worldRoot.transform);
         // textBubble.GetComponent<TextBubbleBehavior>().SetText(content);
@@ -90,7 +112,7 @@ public class Playtest2Behavior : MonoBehaviour {
         // Reset Bubble
         root.Remove(root.Q<VisualElement>("TextBubbleModalBackground"));
       });
-      
+
       // Instantly focus on the TextField
       root.Q<TextField>().Focus();
       TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default, false, false, false, false, "I was thinking of...");
@@ -99,7 +121,7 @@ public class Playtest2Behavior : MonoBehaviour {
   }
 
   private void OnEnable() {
-    this.IntializeUI();
+    this.InitializeUI();
 
     // TODO: Below's code is for item dragging
     // cubeItem.RegisterCallback<PointerDownEvent>(e => { Debug.Log("Pointer Down"); });

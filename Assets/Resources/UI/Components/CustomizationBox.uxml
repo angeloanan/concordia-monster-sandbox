@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Button display-tooltip-when-elided="true" enable-rich-text="false" name="AttributeContainer" style="width: 86px; height: 86px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px; background-color: rgb(255, 255, 255); border-top-left-radius: 16px; border-bottom-left-radius: 16px; border-top-right-radius: 16px; border-bottom-right-radius: 16px; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; background-image: url(&apos;project://database/Assets/Resources/Images/Icons/container.png?fileID=2800000&amp;guid=b9ed5a127ac9d8d4397bd37024eaba62&amp;type=3#container&apos;);">
+        <ui:VisualElement name="Attribute" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); background-image: none;" />
+    </ui:Button>
+</ui:UXML>
