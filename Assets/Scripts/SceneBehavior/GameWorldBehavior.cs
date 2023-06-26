@@ -193,10 +193,10 @@ public class GameWorldBehavior : MonoBehaviour {
     cam.transform.Rotate(Vector3.up, rotationAroundYAxis, Space.World);
 
     // Clamp rotation
-    var currentRotation = cam.transform.rotation.eulerAngles;
-    currentRotation.x = Mathf.Clamp(currentRotation.x, -cameraClampRotationDeg, cameraClampRotationDeg);
-    cam.transform.rotation = Quaternion.Euler(currentRotation);
-
+    // var currentRotation = cam.transform.rotation.eulerAngles;
+    // currentRotation.x = Mathf.Clamp(currentRotation.x, -cameraClampRotationDeg, cameraClampRotationDeg);
+    // cam.transform.rotation = Quaternion.Euler(currentRotation);
+    
     cam.transform.Translate(new Vector3(0, 0, -cameraRadiusFromCenter));
   }
 
