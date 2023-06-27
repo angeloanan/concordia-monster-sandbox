@@ -36,7 +36,11 @@ public class AudioManager : MonoBehaviour {
   }
 
   public void PlayUiClick() {
-    PlayAudio("ui");
+    PlayAudio("ui", oneShot: true);
+  }
+
+  public void PlayCameraClick() {
+    PlayAudio("camera", oneShot: true);
   }
 
   public void PlayAudio(string audioPath, bool oneShot = false, bool looping = false, float volume = 1.0f) {

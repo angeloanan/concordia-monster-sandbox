@@ -53,6 +53,7 @@ public class Playtest2Behavior : MonoBehaviour {
     var root = GetComponent<UIDocument>().rootVisualElement;
     var itemListContainer = root.Q<VisualElement>("ItemListContainer");
     var resetButton = root.Q<Button>("resetButton");
+    var screenshotButton = root.Q<Button>("screenshotButton");
 
     // Handle reset button
     resetButton.RegisterCallback<ClickEvent>(_ => {
@@ -65,6 +66,15 @@ public class Playtest2Behavior : MonoBehaviour {
       }
       SceneManager.LoadScene("Scenes/SelectMonster");
     };
+    
+    screenshotButton.RegisterCallback<ClickEvent>(_ => {
+      AudioManager.Instance.PlayCameraClick();
+    });
+    screenshotButton.RegisterCallback<ClickEvent>(_ => {
+      Screenshot.ScreenshotCameraPoint();
+    });
+
+
 
     // Category buttons
     // Adding ItemBoxes dynamically to the Item List
