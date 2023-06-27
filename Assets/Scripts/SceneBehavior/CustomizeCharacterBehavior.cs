@@ -1,13 +1,30 @@
-using System.Data.Common;
-using Unity.VisualScripting;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class CustomizeCharacterBehavior : MonoBehaviour {
   [SerializeField] private Vector3 screenCenter;
   [SerializeField] private UIDocument uiDocument;
+
+  private Label _categoryStep;
+  private VisualElement _categoryContainer;
+  private VisualElement _customizationContainer;
+
+  public void RenderMonsterAttributesBox(List<MonsterCustomizationEntry> customizations
+    ) {
+    _customizationContainer.Clear();
+
+    foreach (var monsterPart in customizations) {
+      var image = Resources.Load<Texture2D>(monsterPart.IconPath);
+      var box = new CustomizationBox(image, _ => {
+        // TODO: Actually handle callbacks
+      });
+
+      _customizationContainer.Add(box);
+    }
+  }
 
   public void Awake() {
     Debug.Log("Switched to CustomizeCharacter Scene");
@@ -19,19 +36,26 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
 
     // Initialize UI
     var root = uiDocument.rootVisualElement;
+    _categoryStep = root.Q<Label>("CategoryStep");
+    _categoryContainer = root.Q<VisualElement>("CategoryContainer");
+    _customizationContainer = root.Q<VisualElement>("CustomizationContainer");
 
     // Get Monster Customization Data based on selected monster
     var monsterData = MonsterDataManager.ResolveMonsterData(monster.name);
     Debug.Assert(monsterData != null, nameof(monsterData) + " != null");
     var monsterCustomizationScript = monster.GetComponent<CharacterCustomization>();
 
-    //monsterData.Customizations.
+    _categoryStep.text = $"1 / {monsterData.customizations.Count}";
 
-    var categoryStep = root.Q<Label>("CategoryStep");
-    var categoryContainer = root.Q<VisualElement>("CategoryContainer");
-    var customizationContainer = root.Q<VisualElement>("CustomizationContainer");
-
-    categoryStep.text = $"1 / {monsterData.customizations.Count}";
+    // Map over all customization attributes category and create UI and assign callbacks
+    foreach (var customization in monsterData.customizations) {
+      // TODO: Once attributes icon are here, use them
+      // var image = Resources.Load<Texture2D>();
+      var box = new CustomizationBox(null,
+        _ => { RenderMonsterAttributesBox(customization.Value); });
+      
+      _categoryContainer.Add(box);
+    }
 
     // What to do:
     // 1. Render all body parts in monsterData.Customizations[0] on customizationContainer
@@ -40,21 +64,14 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
     //     * Clear customizationContainer
     //     * Render all body parts in monsterData.Customizations[index]
     //     * Update categoryStep.text
+    var firstKey = monsterData.customizations.Keys.First();
+    foreach (var monsterPart in monsterData.customizations[firstKey]) {
+      var iconPath = Resources.Load<Texture2D>(monsterPart.IconPath);
 
-    // Map over all customization data and create UI elements for each and assign callbacks
-    foreach (var customization in monsterData.customizations) {
-      var customizationName = customization.Key;
-      var monsterPartIndex = 0;
+      var box = new CustomizationBox(iconPath, evt => { monsterCustomizationScript.SwitchEyes(); });
 
-      foreach (var monsterPart in customization.Value) {
-        var iconPath = Resources.Load<Sprite>(monsterPart.IconPath);
-
-        var box = new CustomizationBox(iconPath, evt => { monsterCustomizationScript.SwitchEyes(); });
-
-        customizationContainer.Add(box);
-        Debug.Log($"Added CustomizationBox for {monster.name} {customizationName} ({monsterPart.IconPath})");
-        monsterPartIndex++;
-      }
+      _customizationContainer.Add(box);
+      Debug.Log($"Added CustomizationBox for {monster.name} ({monsterPart.IconPath})");
     }
 
     var doneButton = root.Q<Button>("DoneButton");
