@@ -197,6 +197,10 @@ public class MonsterDataManager : MonoBehaviour {
               Label = "Eyes 5",
               IconPath = "Images/Monsters/fluffy/Eyes/3",
             },
+            new() {
+              Label = "Eyes 6",
+              IconPath = "Images/Monsters/fluffy/Eyes/6",
+            },
           }
         },
         /*{
