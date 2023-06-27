@@ -213,10 +213,16 @@ public class GameWorldBehavior : MonoBehaviour {
       return;
     }
 
-    var activeObjectScreenPos = Camera.main.WorldToScreenPoint(_activeObject.transform.position);
+    var _activeObjectCollider = _activeObject.GetComponent<Collider>();
+    var _activeObjectCenter = _activeObjectCollider.bounds.center;
+    var _activeObjectSize = _activeObjectCollider.bounds.size;
+
+    var _activeObjectPostion = (_activeObjectSize / 2) + _activeObjectCenter;
+
+    var activeObjectScreenPos = Camera.main.WorldToScreenPoint(_activeObjectPostion);
     // Debug.Log($"Active object screen pos: {activeObjectScreenPos}");
-    button.style.left = activeObjectScreenPos.x / 2;
+    button.style.left = activeObjectScreenPos.x;
     // TODO: Fix this
-    // button.style.top = activeObjectScreenPos.y;
+    button.style.bottom = activeObjectScreenPos.y;
   }
 }
