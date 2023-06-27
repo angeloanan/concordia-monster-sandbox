@@ -50,7 +50,23 @@ public class Playtest2Behavior : MonoBehaviour {
         
         doneButton.RegisterCallback<ClickEvent>(_ => {
           var content = root.Q<TextField>().text;
-          // TODO: Spawn text bubble
+          
+          var textBubblePlane = Resources.Load<GameObject>("TextBubblePlane");
+          var projectionPanelSetting = Resources.Load<PanelSettings>("ProjectionPanelSettings");
+          
+          var rendererUiDoc = textBubblePlane.AddComponent<UIDocument>();
+          var textBubble = new TextBubble(content);
+          var renderTexture = new RenderTexture(900, 400, 24);
+          
+          // Setup everything to be rendered to a texture
+          projectionPanelSetting.targetTexture = renderTexture;
+          rendererUiDoc.panelSettings = projectionPanelSetting;
+          rendererUiDoc.visualTreeAsset.CloneTree(textBubble);
+          
+          var spawnedTextObject = Instantiate(textBubblePlane);
+          spawnedTextObject.GetComponentInChildren<Plane>();
+          spawnedTextObject.GetComponent<Renderer>().material.mainTexture = renderTexture;
+          spawnedTextObject.tag = "Draggable";
           
           // Remove the whole element
           root.Remove(root.Q<VisualElement>("TextBubbleModalBackground"));
@@ -58,7 +74,7 @@ public class Playtest2Behavior : MonoBehaviour {
 
         // Instantly focus on the TextField
         root.Q<TextField>().Focus();
-        TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default, false, false, false, false, "Hello world!");
+        TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default, false, false, false, false, "");
       });
       
       itemListContainer.Add(entry);
@@ -123,7 +139,7 @@ public class Playtest2Behavior : MonoBehaviour {
     var textCategoryButton = root.Q<Button>("Text");
     textCategoryButton.RegisterCallback<ClickEvent>(_ => {
       AudioManager.Instance.PlayUiClick();
-      InitializeHotbarItems(ItemData.UIItemMap.textBoxes);
+      InitializeTextBubbleHotbarItems(ItemData.UIItemMap.textBoxes);
     });
   }
 

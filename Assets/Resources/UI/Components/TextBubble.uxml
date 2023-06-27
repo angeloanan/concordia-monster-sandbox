@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement name="Container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
-        <ui:VisualElement name="Image" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/UI/Components/bubble.png?fileID=2800000&amp;guid=32b8f91d0e0105c4aa7eabb2f4a9d454&amp;type=3#bubble&apos;); -unity-background-scale-mode: scale-to-fit; justify-content: center; align-items: center;">
-            <ui:Label tabindex="-1" text="I am scary! Roar" display-tooltip-when-elided="true" name="Text" style="-unity-font-definition: url(&apos;project://database/Assets/UI/Fonts/Flamante-Round-Book-FFP.ttf?fileID=12800000&amp;guid=32543ce8cbd64bdb3b9417f9ebd59d77&amp;type=3#Flamante-Round-Book-FFP&apos;); font-size: 64px; -unity-text-align: middle-left; justify-content: center; position: absolute; top: 10%; right: 17%; left: 17%; bottom: 25%; white-space: normal;" />
+    <ui:VisualElement name="Container" style="flex-grow: 1;">
+        <ui:VisualElement name="Image" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); background-image: resource(&apos;Images/textbox&apos;); -unity-background-scale-mode: scale-to-fit; justify-content: center; align-items: flex-start; max-width: 800px; max-height: 400px;">
+            <ui:Label tabindex="-1" text="If you see this, something went really, terribly wrong!" display-tooltip-when-elided="true" name="Text" style="-unity-font-definition: url(&apos;project://database/Assets/UI/Fonts/Flamante-Round-Book-FFP.ttf?fileID=12800000&amp;guid=32543ce8cbd64bdb3b9417f9ebd59d77&amp;type=3#Flamante-Round-Book-FFP&apos;); font-size: 64px; -unity-text-align: middle-left; justify-content: space-evenly; position: absolute; top: 21px; right: 52px; left: 55px; bottom: 83px; white-space: normal;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
