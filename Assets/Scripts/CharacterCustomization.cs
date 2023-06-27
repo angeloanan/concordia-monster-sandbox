@@ -17,19 +17,19 @@ public class CharacterCustomization : MonoBehaviour {
 
   public GameObject[] hair;
   private int _currentHair;
-  
+
   public GameObject[] arms;
   private int _currentArms;
-  
+
   public GameObject[] legs;
   private int _currentLegs;
-  
+
   public GameObject[] ears;
   private int _currentEars;
-  
+
   public GameObject[] accessories;
   private int _currentAccessories;
-  
+
   public GameObject[] wing;
   private int _currentWing;
 
@@ -38,7 +38,8 @@ public class CharacterCustomization : MonoBehaviour {
 
   public Material[] materials;
   private Renderer rend;
-  private static void ReRenderParts(IReadOnlyList<GameObject> parts, int index) {
+
+  public static void ReRenderParts(IReadOnlyList<GameObject> parts, int index) {
     if (parts.Count == 0) return; // Whatever
     // Check if index is out of range
     if (index < 0 || index >= parts.Count) {
@@ -47,21 +48,23 @@ public class CharacterCustomization : MonoBehaviour {
 
     foreach (var p in parts) {
       p.SetActive(false);
+      Debug.Log($"Setting {p} to not active");
     }
 
     parts[index].SetActive(true);
   }
-  private void SetMaterial(IReadOnlyList<GameObject> parts, int index)
-  {
+
+  public void SetMaterial(IReadOnlyList<GameObject> parts, int index) {
     if (parts.Count == 0) return; // Whatever
     // Check if index is out of range
     if (index < 0 || index >= parts.Count) {
       throw new IndexOutOfRangeException();
     }
+
     rend.sharedMaterial = materials[_currentColor];
   }
-  private void ChangeMaterials()
-  {
+
+  private void ChangeMaterials() {
     SetMaterial(body, _currentBody);
     SetMaterial(mouth, _currentMouth);
     SetMaterial(eyes, _currentEyes);
@@ -86,7 +89,7 @@ public class CharacterCustomization : MonoBehaviour {
     ReRenderParts(wing, _currentWing);
     ReRenderParts(legs, _currentLegs);
   }
-  
+
   public void SwitchBody() {
     _currentBody = (_currentBody + 1) % body.Length;
     ReRenderParts(body, _currentBody);
@@ -111,38 +114,68 @@ public class CharacterCustomization : MonoBehaviour {
     _currentHair = (_currentHair + 1) % hair.Length;
     ReRenderParts(hair, _currentHair);
   }
+
   public void SwitchArms() {
     _currentArms = (_currentArms + 1) % arms.Length;
     ReRenderParts(arms, _currentArms);
   }
-  
+
   public void SwitchEars() {
     _currentEars = (_currentEars + 1) % ears.Length;
     ReRenderParts(ears, _currentEars);
   }
-  
+
   public void SwitchAccessories() {
     _currentAccessories = (_currentAccessories + 1) % accessories.Length;
     ReRenderParts(accessories, _currentAccessories);
   }
-  
+
   public void SwitchWing() {
     _currentWing = (_currentWing + 1) % wing.Length;
     ReRenderParts(wing, _currentWing);
   }
 
-  public void SwitchColor()
-  {
+  public void SwitchColor() {
     _currentColor = (_currentColor + 1) % colors.Length;
     ChangeMaterials();
-    
+
   }
+
   private void Awake() {
     rend = GetComponent<Renderer>();
     rend.enabled = true;
     rend.sharedMaterial = materials[0];
-    
+
     ReRenderCharacter();
     ChangeMaterials();
+  }
+
+  public IReadOnlyList<GameObject> this[string part] {
+    get {
+      switch (part.ToLower()) {
+        case "body":
+          return body;
+        case "mouth":
+          return mouth;
+        case "eyes":
+          return eyes;
+        case "emotion":
+          return emotion;
+        case "hair":
+          return hair;
+        case "arms":
+          return arms;
+        case "ears":
+          return ears;
+        case "accessories":
+          return accessories;
+        case "wing":
+          return wing;
+        case "legs":
+          return legs;
+        default:
+          return null;
+      }
+    }
   }
 }

@@ -8,21 +8,27 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
   [SerializeField] private Vector3 screenCenter;
   [SerializeField] private UIDocument uiDocument;
 
+  private CharacterCustomization _characterCustomization;
+
   private Label _categoryStep;
   private VisualElement _categoryContainer;
   private VisualElement _customizationContainer;
 
-  public void RenderMonsterAttributesBox(List<MonsterCustomizationEntry> customizations
-    ) {
+  public void RenderMonsterAttributesBox(string part, List<MonsterCustomizationEntry> customizations) {
     _customizationContainer.Clear();
 
+    var partIndex = 0;
     foreach (var monsterPart in customizations) {
       var image = Resources.Load<Texture2D>(monsterPart.IconPath);
-      var box = new CustomizationBox(image, _ => {
-        // TODO: Actually handle callbacks
-      });
-
+      var i1 = partIndex;
+      var box = new CustomizationBox(image,
+        _ => {
+          Debug.Log($"Rendering {part} index {i1}");
+          // BUG: This doesn't work
+          CharacterCustomization.ReRenderParts(_characterCustomization[part], i1);
+        });
       _customizationContainer.Add(box);
+      partIndex++;
     }
   }
 
@@ -32,6 +38,7 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
       "MonsterDataManager.Instance.activeMonsterPrefab != null");
     var monster = MonsterDataManager.Instance.activeMonsterPrefab;
 
+    _characterCustomization = monster.GetComponent<CharacterCustomization>();
     monster.transform.position = screenCenter;
 
     // Initialize UI
@@ -52,8 +59,8 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
       // TODO: Once attributes icon are here, use them
       // var image = Resources.Load<Texture2D>();
       var box = new CustomizationBox(null,
-        _ => { RenderMonsterAttributesBox(customization.Value); });
-      
+        _ => { RenderMonsterAttributesBox(customization.Key, customization.Value); });
+
       _categoryContainer.Add(box);
     }
 
@@ -65,14 +72,8 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
     //     * Render all body parts in monsterData.Customizations[index]
     //     * Update categoryStep.text
     var firstKey = monsterData.customizations.Keys.First();
-    foreach (var monsterPart in monsterData.customizations[firstKey]) {
-      var iconPath = Resources.Load<Texture2D>(monsterPart.IconPath);
-
-      var box = new CustomizationBox(iconPath, evt => { monsterCustomizationScript.SwitchEyes(); });
-
-      _customizationContainer.Add(box);
-      Debug.Log($"Added CustomizationBox for {monster.name} ({monsterPart.IconPath})");
-    }
+    var firstCustomization = monsterData.customizations[firstKey];
+    RenderMonsterAttributesBox(firstKey, firstCustomization);
 
     var doneButton = root.Q<Button>("DoneButton");
     doneButton.RegisterCallback<ClickEvent>(_ => { AudioManager.Instance.PlayUiClick(); });
