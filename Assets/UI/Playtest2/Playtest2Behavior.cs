@@ -14,7 +14,8 @@ public class Playtest2Behavior : MonoBehaviour {
     itemListContainer.Clear();
     
     foreach (var item in items) {
-      var entry = new ItemBox(item.itemLabel, _ => {
+      var image = Resources.Load<Texture2D>($"Images/Icons/{item.previewImagePath ?? item.prefabPath}");
+      var entry = new CustomizationBox(image, _ => {
         AudioManager.Instance.PlayAudio($"spawn/{item.spawnSfxPath}", oneShot: true);
         // TODO: Override this with a custom spawn function later on
         SpawnPrefab(item.prefabPath);
