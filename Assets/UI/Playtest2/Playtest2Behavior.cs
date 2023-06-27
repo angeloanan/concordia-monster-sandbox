@@ -32,7 +32,7 @@ public class Playtest2Behavior : MonoBehaviour {
     //
     // // Project ray to world
     // Physics.Raycast(screenCenterRay, out var hit, 100, LayerMask.GetMask("World"));
-    var spawnPoint = new Vector3(0, 0, 8);
+    var spawnPoint = new Vector3(0, 0.8F, 8);
 
     // Spawn prefab
     var spawnedObject = Instantiate(prefab, spawnPoint, Quaternion.identity);
