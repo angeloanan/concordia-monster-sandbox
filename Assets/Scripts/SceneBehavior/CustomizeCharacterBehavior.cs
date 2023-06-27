@@ -57,10 +57,13 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
     // Map over all customization attributes category and create UI and assign callbacks
     foreach (var customization in monsterData.customizations) {
       // TODO: Once attributes icon are here, use them
-      // var image = Resources.Load<Texture2D>();
-      var box = new CustomizationBox(null,
+      var image = Resources.Load<Texture2D>($"Images/Icons/customization/{monster.name.ToLower().Substring(0, monster.name.Length - 7)}_{customization.Key.ToLower()}");
+      Debug.Log(monster.name.ToLower().Substring(0, monster.name.Length - 7));
+      Debug.Log(customization.Key.ToLower());
+      
+      var box = new CustomizationBox(image,
         _ => { RenderMonsterAttributesBox(customization.Key, customization.Value); });
-
+  
       _categoryContainer.Add(box);
     }
 

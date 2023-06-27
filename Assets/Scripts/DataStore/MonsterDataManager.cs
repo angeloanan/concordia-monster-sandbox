@@ -50,7 +50,7 @@ public class MonsterDataManager : MonoBehaviour {
             },
           }
         },
-        {
+        /*{
           "Emotion", new() {
             new() {
               Label = "Emotion 1",
@@ -65,7 +65,7 @@ public class MonsterDataManager : MonoBehaviour {
               IconPath = "Images/Monsters/fairy/Emotion/3",
             },
           }
-        },
+        },*/
         {
           "Eyes", new() {
             new() {
@@ -132,6 +132,10 @@ public class MonsterDataManager : MonoBehaviour {
               Label = "Wing 2",
               IconPath = "Images/Monsters/fairy/Wing/2",
             },
+            new() {
+              Label = "Wing 3",
+              IconPath = "Images/Monsters/fairy/Wing/3",
+            },
           }
         },
       },
@@ -195,7 +199,7 @@ public class MonsterDataManager : MonoBehaviour {
             },
           }
         },
-        {
+        /*{
           "Emotion", new() {
             new() {
               Label = "Emotion 1",
@@ -210,7 +214,7 @@ public class MonsterDataManager : MonoBehaviour {
               IconPath = "Images/Monsters/fluffy/Emotion/3",
             },
           }
-        },
+        },*/
         {
           "Arms", new() {
             new() { 
@@ -268,7 +272,7 @@ public class MonsterDataManager : MonoBehaviour {
             },
           }
         },
-        {
+        /*{
           "Emotion", new() {
             new() {
               Label = "Emotion 1",
@@ -283,7 +287,7 @@ public class MonsterDataManager : MonoBehaviour {
               IconPath = "Images/Monsters/potato/Emotion/3",
             },
           }
-        },
+        },*/
         {
           "Hair", new() {
             new() {
@@ -316,11 +320,11 @@ public class MonsterDataManager : MonoBehaviour {
           "Mouth", new() {
             new() {
               Label = "Mouth 1",
-              IconPath = "Images/Monsters/potato/Mouth/1",
+              IconPath = "Images/Monsters/potato/Mouth/2",
             },
             new() {
               Label = "Mouth 2",
-              IconPath = "Images/Monsters/potato/Mouth/2",
+              IconPath = "Images/Monsters/potato/Mouth/1",
             },
             new() {
               Label = "Mouth 3",
@@ -383,9 +387,21 @@ public class MonsterDataManager : MonoBehaviour {
               Label = "Horn 2",
               IconPath = "Images/Monsters/devil/Horn/2",
             },
+            new() {
+              Label = "Horn 3",
+              IconPath = "Images/Monsters/devil/Horn/3",
+            },
+            new() {
+              Label = "Horn 4",
+              IconPath = "Images/Monsters/devil/Horn/4",
+            },
+            new() {
+              Label = "Horn 5",
+              IconPath = "Images/Monsters/devil/Horn/5",
+            },
           }
         },
-        {
+        /*{
           "Emotion", new() {
             new() {
               Label = "Emotion 1",
@@ -399,6 +415,18 @@ public class MonsterDataManager : MonoBehaviour {
               Label = "Emotion 3",
               IconPath = "Images/Monsters/devil/Emotion/3",
             },
+          }
+        },*/
+        {
+          "Legs", new() {
+            new() {
+              Label = "Legs 1",
+              IconPath = "Images/Monsters/devil/Legs/1",
+            },
+            new() {
+              Label = "Legs 2",
+              IconPath = "Images/Monsters/devil/Legs/2",
+            }
           }
         },
       },
