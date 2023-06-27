@@ -44,6 +44,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3348696512845026476}
   - component: {fileID: 7553731072986438519}
+  - component: {fileID: 3431468415409709850}
   m_Layer: 0
   m_Name: FluffyMonster
   m_TagString: Untagged
@@ -112,6 +113,29 @@ MonoBehaviour:
   - {fileID: 9147169140179646175}
   materials:
   - {fileID: 2100000, guid: 3c364be2d15f4b34d9218dd0b692f125, type: 2}
+--- !u!136 &3431468415409709850
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851735268192148287}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.66
+  m_Height: 2.3
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &2605439567633868326
 GameObject:
   m_ObjectHideFlags: 0
