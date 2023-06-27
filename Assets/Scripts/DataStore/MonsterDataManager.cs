@@ -33,7 +33,112 @@ public class MonsterDataManager : MonoBehaviour {
   public static readonly MonsterData[] MonsterData = {
     new() {
       name = "FairyMonster",
-      customizations = new Dictionary<string, List<MonsterCustomizationEntry>> { },
+      customizations = new Dictionary<string, List<MonsterCustomizationEntry>> {
+        {
+          "Ears", new() {
+            new() {
+              Label = "Ears 1",
+              IconPath = "Images/Monsters/fairy/Ears/1",
+            },
+            new() {
+              Label = "Ears 1",
+              IconPath = "Images/Monsters/fairy/Ears/2",
+            },
+            new() {
+              Label = "Ears 1",
+              IconPath = "Images/Monsters/fairy/Ears/3",
+            },
+          }
+        },
+        {
+          "Emotion", new() {
+            new() {
+              Label = "Emotion 1",
+              IconPath = "Images/Monsters/fairy/Emotion/1",
+            },
+            new() {
+              Label = "Emotion 1",
+              IconPath = "Images/Monsters/fairy/Emotion/2",
+            },
+            new() {
+              Label = "Emotion 1",
+              IconPath = "Images/Monsters/fairy/Emotion/3",
+            },
+          }
+        },
+        {
+          "Eyes", new() {
+            new() {
+              Label = "Eyes 1",
+              IconPath = "Images/Monsters/fairy/Eyes/1",
+            },
+            new() {
+              Label = "Eyes 1",
+              IconPath = "Images/Monsters/fairy/Eyes/2",
+            },
+            new() {
+              Label = "Eyes 1",
+              IconPath = "Images/Monsters/fairy/Eyes/3",
+            },
+          }
+        },
+        {
+          "Hair", new() {
+            new() {
+              Label = "Hair 1",
+              IconPath = "Images/Monsters/fairy/Hair/1",
+            },
+            new() {
+              Label = "Hair 1",
+              IconPath = "Images/Monsters/fairy/Hair/2",
+            },
+            new() {
+              Label = "Hair 1",
+              IconPath = "Images/Monsters/fairy/Hair/3",
+            },
+          }
+        },
+        {
+          "Mouth", new() {
+            new() {
+              Label = "Mouth 1",
+              IconPath = "Images/Monsters/fairy/Mouth/1",
+            },
+            new() {
+              Label = "Mouth 1",
+              IconPath = "Images/Monsters/fairy/Mouth/2",
+            },
+            new() {
+              Label = "Mouth 1",
+              IconPath = "Images/Monsters/fairy/Mouth/3",
+            },
+          }
+        },
+        {
+          "Necklace", new() {
+            new() {
+              Label = "Necklace 1",
+              IconPath = "Images/Monsters/fairy/Necklace/1",
+            },
+            new() {
+              Label = "Necklace 1",
+              IconPath = "Images/Monsters/fairy/Necklace/2",
+            },
+          }
+        },
+        {
+          "Wing", new() {
+            new() {
+              Label = "Wing 1",
+              IconPath = "Images/Monsters/fairy/Wing/1",
+            },
+            new() {
+              Label = "Wing 1",
+              IconPath = "Images/Monsters/fairy/Wing/2",
+            },
+          }
+        },
+      },
       sfxData = new MonsterSfxData {
         interaction = "interactions/monster/4",
         spawn = "spawn/monster/4",
@@ -183,6 +288,50 @@ public class MonsterDataManager : MonoBehaviour {
             },
           }
         },
+        {
+          "Hair", new() {
+            new() {
+              Label = "Hair 1",
+              IconPath = "Images/Monsters/potato/Hair/1",
+            },
+            new() {
+              Label = "Hair 2",
+              IconPath = "Images/Monsters/potato/Hair/2",
+            },
+            new() {
+              Label = "Hair 3",
+              IconPath = "Images/Monsters/potato/Hair/3",
+            },
+          }
+        },
+        {
+          "Legs", new() {
+            new() {
+              Label = "Legs 1",
+              IconPath = "Images/Monsters/potato/Legs/1",
+            },
+            new() {
+              Label = "Legs 2",
+              IconPath = "Images/Monsters/potato/Legs/2",
+            },
+          }
+        },
+        {
+          "Mouth", new() {
+            new() {
+              Label = "Mouth 1",
+              IconPath = "Images/Monsters/potato/Mouth/1",
+            },
+            new() {
+              Label = "Mouth 2",
+              IconPath = "Images/Monsters/potato/Mouth/2",
+            },
+            new() {
+              Label = "Mouth 3",
+              IconPath = "Images/Monsters/potato/Mouth/3",
+            },
+          }
+        },
       },
       sfxData = new MonsterSfxData {
         interaction = "interactions/monster/2",
@@ -215,15 +364,15 @@ public class MonsterDataManager : MonoBehaviour {
         {
           "Mouth", new() {
             new() {
-              Label = "Eyes 1",
+              Label = "Mouth 1",
               IconPath = "Images/Monsters/devil/Mouth/1",
             },
             new() {
-              Label = "Eyes 2",
+              Label = "Mouth 2",
               IconPath = "Images/Monsters/devil/Mouth/2",
             },
             new() {
-              Label = "Eyes 3",
+              Label = "Mouth 3",
               IconPath = "Images/Monsters/devil/Mouth/3",
             },
           }
