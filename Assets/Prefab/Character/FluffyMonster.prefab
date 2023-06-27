@@ -548,7 +548,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c497e13aa01a9144997a822b1b45b37a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2178292113738115180, guid: c497e13aa01a9144997a822b1b45b37a,
         type: 3}
@@ -1487,7 +1487,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b1bea728d67b2ee4d8037f7bafd32792,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1829,6 +1829,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: fluff_TONGUE
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b1d00a9bbf914924893df9fe2dd578c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1938,6 +1943,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: fluff_BASE_DOWN
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a0d3316f4b73ea441b7069beccae6e3f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
