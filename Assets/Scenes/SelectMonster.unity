@@ -610,29 +610,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1674108639}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &1015976251
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1015976249}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.66
-  m_Height: 2.3
-  m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!23 &1015976254
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1074,10 +1051,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4538502316658349601, guid: f868512cb12ae403aa99f74fa48e31fb,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1520421276}
-    - targetCorrespondingSourceObject: {fileID: 4538502316658349601, guid: f868512cb12ae403aa99f74fa48e31fb,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1520421279}
   m_SourcePrefab: {fileID: 100100000, guid: f868512cb12ae403aa99f74fa48e31fb, type: 3}
 --- !u!1 &1174713429
@@ -1365,29 +1338,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1148438243}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &1520421276
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1520421274}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.66
-  m_Height: 2.3
-  m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!23 &1520421279
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1614,10 +1564,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1851735268192148287, guid: 2a420e5de3a1449faa7b0d3559b89085,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1015976251}
     - targetCorrespondingSourceObject: {fileID: 1851735268192148287, guid: 2a420e5de3a1449faa7b0d3559b89085,
         type: 3}
       insertIndex: -1
