@@ -99,7 +99,7 @@ public class MonsterDataManager : MonoBehaviour {
           }
         },
         {
-          "Mouth", new() {//Fix
+          "Mouth", new() {
             new() {
               Label = "Mouth 1",
               IconPath = "Images/Monsters/fairy/Mouth/2",
@@ -111,7 +111,7 @@ public class MonsterDataManager : MonoBehaviour {
           }
         },
         {
-          "Accessories", new() {//Fix
+          "Accessories", new() {
             new() {
               Label = "Necklace 1",
               IconPath = "Images/Monsters/fairy/Necklace/2",
@@ -172,26 +172,26 @@ public class MonsterDataManager : MonoBehaviour {
           }
         },
         {
-          "Eyes", new() {
+          "Eyes", new() { 
             new() {
               Label = "Eyes 1",
               IconPath = "Images/Monsters/fluffy/Eyes/1",
             },
             new() {
               Label = "Eyes 2",
-              IconPath = "Images/Monsters/fluffy/Eyes/2",
-            },
-            new() {
-              Label = "Eyes 3",
-              IconPath = "Images/Monsters/fluffy/Eyes/3",
-            },
-            new() {
-              Label = "Eyes 4",
               IconPath = "Images/Monsters/fluffy/Eyes/4",
             },
             new() {
-              Label = "Eyes 5",
+              Label = "Eyes 3",
               IconPath = "Images/Monsters/fluffy/Eyes/5",
+            },
+            new() {
+              Label = "Eyes 4",
+              IconPath = "Images/Monsters/fluffy/Eyes/2",
+            },
+            new() {
+              Label = "Eyes 5",
+              IconPath = "Images/Monsters/fluffy/Eyes/3",
             },
           }
         },
@@ -213,9 +213,9 @@ public class MonsterDataManager : MonoBehaviour {
         },
         {
           "Arms", new() {
-            new() {
+            new() { 
               Label = "Arms 1",
-              IconPath = "Images/Monsters/fluffy/Arms/1",
+              IconPath = "Images/Monsters/fluffy/Arms/3",
             },
             new() {
               Label = "Arms 2",
@@ -223,7 +223,7 @@ public class MonsterDataManager : MonoBehaviour {
             },
             new() {
               Label = "Arms 3",
-              IconPath = "Images/Monsters/fluffy/Arms/3",
+              IconPath = "Images/Monsters/fluffy/Arms/1",
             },
           }
         }

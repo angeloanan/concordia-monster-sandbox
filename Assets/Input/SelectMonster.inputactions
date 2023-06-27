@@ -27,17 +27,6 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "31e36bc3-fad7-480d-9416-9b3ea1c38d76",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Position",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "363def76-d3de-4b14-bcc2-e545de85a46b",
                     "path": "<Touchscreen>/primaryTouch/position",
                     "interactions": "",
@@ -55,17 +44,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Position",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e2dcc98c-09e6-499b-a5ed-76f676645960",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Select",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

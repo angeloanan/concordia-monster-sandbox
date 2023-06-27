@@ -36,45 +36,12 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "c379e8b5-9de4-4dbd-9fbc-9f402150912c",
-                    "path": "<Mouse>/delta",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PointerDelta",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "dad1e23d-da2d-4f94-92c8-2d7d4998df08",
                     "path": "<Touchscreen>/primaryTouch/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "PointerDelta",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "bd601ced-68b8-4e82-8da9-399e5e4ff77b",
-                    "path": "<Pen>/delta",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PointerDelta",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "25531e56-f921-411f-be16-ce1f9404116e",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PointerClick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -90,64 +57,9 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "Button With One Modifier",
-                    "id": "d2b3a25d-0d21-41f3-8023-b951bf767697",
-                    "path": "ButtonWithOneModifier",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PointerClick",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "Modifier",
-                    "id": "936edad2-9309-4c47-890c-f9e60f67e1ca",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PointerClick",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "Button",
-                    "id": "185a7149-8c9f-47f7-b336-4531388440c1",
-                    "path": "<Pen>/pressure",
-                    "interactions": "",
-                    "processors": "AxisDeadzone",
-                    "groups": "",
-                    "action": "PointerClick",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "a3416eb7-cbb3-4c36-b57e-6e4c7ccfb935",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PointerScreenPosition",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
                     "name": "",
                     "id": "fd0d325e-f3a2-49af-839c-1b6de3e6790c",
                     "path": "<Touchscreen>/primaryTouch/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PointerScreenPosition",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "6e4857ae-79dd-40a5-8c05-586c44a1bb04",
-                    "path": "<Pen>/position",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
