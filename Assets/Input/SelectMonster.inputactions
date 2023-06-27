@@ -1,5 +1,5 @@
 {
-    "name": "ChooseMonsters",
+    "name": "SelectMonster",
     "maps": [
         {
             "name": "Primary",
@@ -49,6 +49,17 @@
                 },
                 {
                     "name": "",
+                    "id": "bc63cf85-b40c-41cd-a264-4abb8b2c53b8",
+                    "path": "<Pen>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "e2dcc98c-09e6-499b-a5ed-76f676645960",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
@@ -62,6 +73,17 @@
                     "name": "",
                     "id": "ec937e52-ea35-4278-be25-4403c577c0b1",
                     "path": "<Touchscreen>/primaryTouch/tap",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1c6476b5-29af-4c62-af07-1316d4163972",
+                    "path": "<Pen>/press",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
