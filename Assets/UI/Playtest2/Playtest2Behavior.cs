@@ -61,7 +61,7 @@ public class Playtest2Behavior : MonoBehaviour {
           // Setup everything to be rendered to a texture
           projectionPanelSetting.targetTexture = renderTexture;
           rendererUiDoc.panelSettings = projectionPanelSetting;
-          rendererUiDoc.visualTreeAsset.CloneTree(textBubble);
+          rendererUiDoc.visualTreeAsset = textBubble.visualTreeAssetSource;
           
           var spawnedTextObject = Instantiate(textBubblePlane);
           spawnedTextObject.GetComponentInChildren<Plane>();
