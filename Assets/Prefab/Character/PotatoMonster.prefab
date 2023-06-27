@@ -313,6 +313,10 @@ MonoBehaviour:
   ears: []
   accessories: []
   wing: []
+  colors:
+  - {fileID: 6355838229827709303}
+  materials:
+  - {fileID: 2100000, guid: 680479b583e85464b818f612aacd64a5, type: 2}
 --- !u!136 &1688775625801617587
 CapsuleCollider:
   m_ObjectHideFlags: 0
