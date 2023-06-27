@@ -33,6 +33,11 @@ public class CharacterCustomization : MonoBehaviour {
   public GameObject[] wing;
   private int _currentWing;
 
+  public GameObject[] colors;
+  private int _currentColor;
+
+  public Material[] materials;
+  private Renderer rend;
   private static void ReRenderParts(IReadOnlyList<GameObject> parts, int index) {
     if (parts.Count == 0) return; // Whatever
     // Check if index is out of range
@@ -45,6 +50,35 @@ public class CharacterCustomization : MonoBehaviour {
     }
 
     parts[index].SetActive(true);
+  }
+  private void setMaterial(IReadOnlyList<GameObject> parts, int index)
+  {
+    if (parts.Count == 0) return; // Whatever
+    // Check if index is out of range
+    if (index < 0 || index >= parts.Count) {
+      throw new IndexOutOfRangeException();
+    }
+    rend.sharedMaterial = materials[_currentColor];
+  }
+  private void Start()
+  {
+    rend = GetComponent<Renderer>();
+    rend.enabled = true;
+    rend.sharedMaterial = materials[0];
+  }
+
+  private void ChangeMaterials()
+  {
+    setMaterial(body, _currentBody);
+    setMaterial(mouth, _currentMouth);
+    setMaterial(eyes, _currentEyes);
+    setMaterial(emotion, _currentEmotion);
+    setMaterial(hair, _currentHair);
+    setMaterial(arms, _currentArms);
+    setMaterial(ears, _currentEars);
+    setMaterial(accessories, _currentAccessories);
+    setMaterial(wing, _currentWing);
+    setMaterial(legs, _currentLegs);
   }
 
   private void ReRenderCharacter() {
@@ -59,7 +93,7 @@ public class CharacterCustomization : MonoBehaviour {
     ReRenderParts(wing, _currentWing);
     ReRenderParts(legs, _currentLegs);
   }
-
+  
   public void SwitchBody() {
     _currentBody = (_currentBody + 1) % body.Length;
     ReRenderParts(body, _currentBody);
@@ -104,7 +138,14 @@ public class CharacterCustomization : MonoBehaviour {
     ReRenderParts(wing, _currentWing);
   }
 
+  public void SwitchColor()
+  {
+    _currentColor = (_currentColor + 1) % colors.Length;
+    ChangeMaterials();
+    
+  }
   private void Awake() {
     ReRenderCharacter();
+    ChangeMaterials();
   }
 }

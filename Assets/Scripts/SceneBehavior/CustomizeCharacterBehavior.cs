@@ -23,8 +23,8 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
     // Get Monster Customization Data based on selected monster
     var monsterData = MonsterDataManager.ResolveMonsterData(monster.name);
     Debug.Assert(monsterData != null, nameof(monsterData) + " != null");
-    var monsterCustomizationScript = monster.GetComponent<CharacterCustomization>(); 
-    
+    var monsterCustomizationScript = monster.GetComponent<CharacterCustomization>();
+
     //monsterData.Customizations.
 
     var categoryStep = root.Q<Label>("CategoryStep");
@@ -42,19 +42,14 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
     //     * Update categoryStep.text
 
     // Map over all customization data and create UI elements for each and assign callbacks
-    foreach (var customization in monsterData.customizations)
-    {
+    foreach (var customization in monsterData.customizations) {
       var customizationName = customization.Key;
       var monsterPartIndex = 0;
 
-      foreach (var monsterPart in customization.Value)
-      {
+      foreach (var monsterPart in customization.Value) {
         var iconPath = Resources.Load<Sprite>(monsterPart.IconPath);
-        
-        var box = new CustomizationBox(iconPath, evt =>
-        {
-          monsterCustomizationScript.SwitchEyes();
-        });
+
+        var box = new CustomizationBox(iconPath, evt => { monsterCustomizationScript.SwitchEyes(); });
 
         customizationContainer.Add(box);
         Debug.Log($"Added CustomizationBox for {monster.name} {customizationName} ({monsterPart.IconPath})");
