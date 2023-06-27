@@ -99,26 +99,26 @@ public class MonsterDataManager : MonoBehaviour {
           }
         },
         {
-          "Mouth", new() {
+          "Mouth", new() {//Fix
             new() {
               Label = "Mouth 1",
-              IconPath = "Images/Monsters/fairy/Mouth/1",
+              IconPath = "Images/Monsters/fairy/Mouth/2",
             },
             new() {
               Label = "Mouth 2",
-              IconPath = "Images/Monsters/fairy/Mouth/2",
+              IconPath = "Images/Monsters/fairy/Mouth/1",
             },
           }
         },
         {
-          "Necklace", new() {
+          "Accessories", new() {//Fix
             new() {
               Label = "Necklace 1",
-              IconPath = "Images/Monsters/fairy/Necklace/1",
+              IconPath = "Images/Monsters/fairy/Necklace/2",
             },
             new() {
               Label = "Necklace 2",
-              IconPath = "Images/Monsters/fairy/Necklace/2",
+              IconPath = "Images/Monsters/fairy/Necklace/1",
             },
           }
         },
@@ -374,7 +374,7 @@ public class MonsterDataManager : MonoBehaviour {
           }
         },
         {
-          "Horn", new() {
+          "Accessories", new() {
             new() {
               Label = "Horn 1",
               IconPath = "Images/Monsters/devil/Horn/1",

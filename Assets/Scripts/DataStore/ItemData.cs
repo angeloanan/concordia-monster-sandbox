@@ -54,7 +54,10 @@ namespace DataStore {
         new() { itemLabel = "Tall Rock", prefabPath = "Objects/rockTall", spawnSfxPath = "rocks/1" },
         new() { itemLabel = "Skull", prefabPath = "Objects/skull", spawnSfxPath = "decor/1" },
       },
-      textBoxes = new ItemEntry[] { }
+      textBoxes = new ItemEntry[]
+      {
+        new() { itemLabel = "textbox", prefabPath = "", spawnSfxPath = "" },
+      }
     };
   }
 }
