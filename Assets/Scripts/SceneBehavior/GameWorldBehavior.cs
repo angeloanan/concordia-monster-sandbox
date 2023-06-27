@@ -165,8 +165,6 @@ public class GameWorldBehavior : MonoBehaviour {
     // Check if we're clicking on UI
     var ray = Camera.main.ScreenPointToRay(_pointerInitialPosition);
     if (Physics.Raycast(ray, out var hit, 100F, LayerMask.NameToLayer("UI"))) {
-      Debug.Log(hit);
-      Debug.Log("Can move camera = false");
       canMoveCamera = false;
     }
 
@@ -186,7 +184,8 @@ public class GameWorldBehavior : MonoBehaviour {
     if (!_isClicking) return;
     if (!canMoveCamera) return;
 
-    if (!_cameraDidMove && _pointerDelta.magnitude > 1f) _cameraDidMove = true;
+    if (!_cameraDidMove && _pointerDelta.magnitude > 10f) _cameraDidMove = true;
+    Debug.Log($"Pointer Delta Magnitude: {_pointerDelta.magnitude}");
     var rotationAroundXAxis = -_pointerDelta.y * cameraSensitivity;
     var rotationAroundYAxis = _pointerDelta.x * cameraSensitivity;
 

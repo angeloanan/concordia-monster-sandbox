@@ -4,7 +4,7 @@
         <ui:Label tabindex="-1" text="1 / 6" display-tooltip-when-elided="true" enable-rich-text="false" name="CategoryStep" style="-unity-font-definition: url(&apos;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&amp;guid=fd5d0c29d12e1cf3e978b4be9cc7da69&amp;type=3#NotInter-Regular&apos;); font-size: 32px; color: rgb(240, 188, 68); margin-left: 8px; margin-right: 8px; margin-bottom: 4px;" />
         <ui:VisualElement name="CategoryContainer" style="flex-grow: 0; background-color: rgb(240, 188, 68); flex-direction: row;" />
     </ui:VisualElement>
-    <ui:Button display-tooltip-when-elided="true" enable-rich-text="false" name="DoneButton" class="done-button" style="top: 21px; right: 19px; left: 943px; bottom: 366px; justify-content: flex-start; align-self: flex-end; align-items: flex-end; position: absolute; -unity-text-align: middle-center; flex-direction: column;" />
+    <ui:Button display-tooltip-when-elided="true" enable-rich-text="false" name="DoneButton" class="done-button" style="top: 24px; right: 24px; left: auto; bottom: auto; justify-content: flex-start; align-self: flex-end; align-items: flex-end; position: absolute; -unity-text-align: middle-center; flex-direction: column;" />
     <ui:VisualElement name="BottomSection" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); align-items: center; flex-direction: row; justify-content: center; position: absolute; bottom: 0; flex-shrink: 0; left: 0; right: 0;">
         <ui:VisualElement name="CustomizationContainer" style="flex-grow: 0; background-color: rgb(240, 188, 68); flex-direction: row;" />
     </ui:VisualElement>
