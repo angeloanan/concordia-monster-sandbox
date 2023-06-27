@@ -14,7 +14,8 @@ public class Playtest2Behavior : MonoBehaviour {
     itemListContainer.Clear();
     
     foreach (var item in items) {
-      var entry = new ItemBox(item.itemLabel, _ => {
+      var image = Resources.Load<Texture2D>($"Images/Icons/{item.previewImagePath ?? item.prefabPath}");
+      var entry = new CustomizationBox(image, _ => {
         AudioManager.Instance.PlayAudio($"spawn/{item.spawnSfxPath}", oneShot: true);
         // TODO: Override this with a custom spawn function later on
         SpawnPrefab(item.prefabPath);
@@ -52,6 +53,7 @@ public class Playtest2Behavior : MonoBehaviour {
     var root = GetComponent<UIDocument>().rootVisualElement;
     var itemListContainer = root.Q<VisualElement>("ItemListContainer");
     var resetButton = root.Q<Button>("resetButton");
+    var screenshotButton = root.Q<Button>("screenshotButton");
 
     // Handle reset button
     resetButton.RegisterCallback<ClickEvent>(_ => {
@@ -64,6 +66,15 @@ public class Playtest2Behavior : MonoBehaviour {
       }
       SceneManager.LoadScene("Scenes/SelectMonster");
     };
+    
+    screenshotButton.RegisterCallback<ClickEvent>(_ => {
+      AudioManager.Instance.PlayCameraClick();
+    });
+    screenshotButton.RegisterCallback<ClickEvent>(_ => {
+      Screenshot.ScreenshotCameraPoint();
+    });
+
+
 
     // Category buttons
     // Adding ItemBoxes dynamically to the Item List
