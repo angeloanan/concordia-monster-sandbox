@@ -51,7 +51,7 @@ public class CharacterCustomization : MonoBehaviour {
 
     parts[index].SetActive(true);
   }
-  private void setMaterial(IReadOnlyList<GameObject> parts, int index)
+  private void SetMaterial(IReadOnlyList<GameObject> parts, int index)
   {
     if (parts.Count == 0) return; // Whatever
     // Check if index is out of range
@@ -60,25 +60,18 @@ public class CharacterCustomization : MonoBehaviour {
     }
     rend.sharedMaterial = materials[_currentColor];
   }
-  private void Start()
-  {
-    rend = GetComponent<Renderer>();
-    rend.enabled = true;
-    rend.sharedMaterial = materials[0];
-  }
-
   private void ChangeMaterials()
   {
-    setMaterial(body, _currentBody);
-    setMaterial(mouth, _currentMouth);
-    setMaterial(eyes, _currentEyes);
-    setMaterial(emotion, _currentEmotion);
-    setMaterial(hair, _currentHair);
-    setMaterial(arms, _currentArms);
-    setMaterial(ears, _currentEars);
-    setMaterial(accessories, _currentAccessories);
-    setMaterial(wing, _currentWing);
-    setMaterial(legs, _currentLegs);
+    SetMaterial(body, _currentBody);
+    SetMaterial(mouth, _currentMouth);
+    SetMaterial(eyes, _currentEyes);
+    SetMaterial(emotion, _currentEmotion);
+    SetMaterial(hair, _currentHair);
+    SetMaterial(arms, _currentArms);
+    SetMaterial(ears, _currentEars);
+    SetMaterial(accessories, _currentAccessories);
+    SetMaterial(wing, _currentWing);
+    SetMaterial(legs, _currentLegs);
   }
 
   private void ReRenderCharacter() {
@@ -145,6 +138,10 @@ public class CharacterCustomization : MonoBehaviour {
     
   }
   private void Awake() {
+    rend = GetComponent<Renderer>();
+    rend.enabled = true;
+    rend.sharedMaterial = materials[0];
+    
     ReRenderCharacter();
     ChangeMaterials();
   }
