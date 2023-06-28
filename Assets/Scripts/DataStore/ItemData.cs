@@ -56,7 +56,7 @@ namespace DataStore {
       },
       textBoxes = new ItemEntry[]
       {
-        new() { itemLabel = "textbox", prefabPath = "", spawnSfxPath = "" },
+        new() { itemLabel = "textbox", prefabPath = "", spawnSfxPath = "", previewImagePath = "textbox"},
       }
     };
   }

@@ -186,7 +186,7 @@ public class GameWorldBehavior : MonoBehaviour {
     if (!canMoveCamera) return;
 
     if (!_cameraDidMove && _pointerDelta.magnitude > 5f) _cameraDidMove = true;
-    Debug.Log($"Pointer Delta Magnitude: {_pointerDelta.magnitude}");
+    // Debug.Log($"Pointer Delta Magnitude: {_pointerDelta.magnitude}");
     var rotationAroundXAxis = -_pointerDelta.y * cameraSensitivity;
     var rotationAroundYAxis = _pointerDelta.x * cameraSensitivity;
 

@@ -6,7 +6,7 @@ public class TextBubble : VisualElement {
 
   public TextBubble() { }
 
-  private VisualElement Container => this.Q<VisualElement>("Image");
+  public VisualElement Container => this.Q<VisualElement>("Image");
   private Label TextContent => Container.Q<Label>("Text");
 
   public TextBubble(string text = "") {

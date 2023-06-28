@@ -33,7 +33,7 @@ public class Playtest2Behavior : MonoBehaviour {
     itemListContainer.Clear();
 
     foreach (var item in items) {
-      var image = Resources.Load<Texture2D>($"");
+      var image = Resources.Load<Texture2D>($"Images/textbox");
       var entry = new CustomizationBox(image, _ => {
         // TODO: Move this to a separate file
         var visualTreeAsset =
@@ -54,19 +54,24 @@ public class Playtest2Behavior : MonoBehaviour {
           var textBubblePlane = Resources.Load<GameObject>("TextBubblePlane");
           var projectionPanelSetting = Resources.Load<PanelSettings>("ProjectionPanelSettings");
           
-          var rendererUiDoc = textBubblePlane.AddComponent<UIDocument>();
+          var spawnedTextObject = Instantiate(textBubblePlane);
+          var rendererUiDoc = spawnedTextObject.GetComponent<UIDocument>();
           var textBubble = new TextBubble(content);
           var renderTexture = new RenderTexture(900, 400, 24);
           
           // Setup everything to be rendered to a texture
-          projectionPanelSetting.targetTexture = renderTexture;
-          rendererUiDoc.panelSettings = projectionPanelSetting;
-          rendererUiDoc.visualTreeAsset = textBubble.visualTreeAssetSource;
           
-          var spawnedTextObject = Instantiate(textBubblePlane);
-          spawnedTextObject.GetComponentInChildren<Plane>();
-          spawnedTextObject.GetComponent<Renderer>().material.mainTexture = renderTexture;
-          spawnedTextObject.tag = "Draggable";
+          rendererUiDoc.panelSettings = projectionPanelSetting;
+          rendererUiDoc.panelSettings.targetTexture = renderTexture;
+          Debug.Log(rendererUiDoc.rootVisualElement);
+          rendererUiDoc.rootVisualElement.Clear();
+          rendererUiDoc.rootVisualElement.Add(textBubble.parent);
+
+          Debug.Log(spawnedTextObject.transform.GetChild(0).gameObject);
+          spawnedTextObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.mainTexture =
+            renderTexture;
+          spawnedTextObject.gameObject.tag = "Draggable";
+          spawnedTextObject.transform.position = new Vector3(0, 4, 8);
           
           // Remove the whole element
           root.Remove(root.Q<VisualElement>("TextBubbleModalBackground"));
