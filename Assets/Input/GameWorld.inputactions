@@ -47,6 +47,17 @@
                 },
                 {
                     "name": "",
+                    "id": "6c9c295a-3faf-4ee7-8cf3-9308fd8798a6",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PointerDelta",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "870277bb-a49e-491a-b674-712158f80f7e",
                     "path": "<Touchscreen>/primaryTouch/press",
                     "interactions": "",
@@ -58,8 +69,30 @@
                 },
                 {
                     "name": "",
+                    "id": "2b46950b-1afd-476a-9819-98483264cfa2",
+                    "path": "<Mouse>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PointerClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "fd0d325e-f3a2-49af-839c-1b6de3e6790c",
                     "path": "<Touchscreen>/primaryTouch/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PointerScreenPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b412f36a-9846-4e5e-8364-789de8c0c126",
+                    "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

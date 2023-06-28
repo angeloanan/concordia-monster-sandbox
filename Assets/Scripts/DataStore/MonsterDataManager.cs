@@ -138,6 +138,15 @@ public class MonsterDataManager : MonoBehaviour {
             },
           }
         },
+        {
+            "Palette", new() {
+                 new () { Label = "Blue", IconPath = "Images/Monsters/FILLMEIN" },
+                 new () { Label = "Pink", IconPath = "Images/Monsters/FILLMEIN" },
+                 new () { Label = "Purple", IconPath = "Images/Monsters/FILLMEIN" },
+                 new () { Label = "Red", IconPath = "Images/Monsters/FILLMEIN" },
+            }
+        },
+     
       },
       sfxData = new MonsterSfxData {
         interaction = "interactions/monster/4",
@@ -234,7 +243,15 @@ public class MonsterDataManager : MonoBehaviour {
               IconPath = "Images/Monsters/fluffy/Arms/1",
             },
           }
-        }
+        },
+          {
+            "Palette", new() {
+                 new () { Label = "Green", IconPath = "Images/Monsters/FILLMEIN" },
+                 new () { Label = "Blue", IconPath = "Images/Monsters/FILLMEIN" },
+                 new () { Label = "Red", IconPath = "Images/Monsters/FILLMEIN" },
+                 new () { Label = "Purple", IconPath = "Images/Monsters/FILLMEIN" },
+            }
+        },
       },
       sfxData = new MonsterSfxData {
         interaction = "interactions/monster/3",
@@ -336,6 +353,14 @@ public class MonsterDataManager : MonoBehaviour {
             },
           }
         },
+        {
+            "Palette", new() {
+                 new () { Label = "Blue", IconPath = "Images/Monsters/FILLMEIN" },
+                 new () { Label = "Green", IconPath = "Images/Monsters/FILLMEIN" },
+                 new () { Label = "Orange", IconPath = "Images/Monsters/FILLMEIN" },
+                 new () { Label = "Pale", IconPath = "Images/Monsters/FILLMEIN" },
+            }
+        },
       },
       sfxData = new MonsterSfxData {
         interaction = "interactions/monster/2",
@@ -434,17 +459,21 @@ public class MonsterDataManager : MonoBehaviour {
           }
         },
         {
-          "Pallete", new() { 
-            new() {
-              Label = "Color 1",
-              IconPath = "Images/Monsters/devil/Color/1",
-            },
-            new() {
-              Label = "Color 2",
-              IconPath = "Images/Monsters/devil/Color/1",
-            },
-          }
-        },
+            "Palette", new() {
+                 new () { Label = "BlueGradient", IconPath = "Images/Monsters/FILLMEIN" },
+                 new () { Label = "BrownGradient", IconPath = "Images/Monsters/FILLMEIN" },
+                 new () { Label = "RedGradient", IconPath = "Images/Monsters/FILLMEIN" },
+                 new () { Label = "YellowGradient", IconPath = "Images/Monsters/FILLMEIN" },
+                 new () { Label = "BlueStripes", IconPath = "Images/Monsters/FILLMEIN" },
+                 new () { Label = "BrownStripes", IconPath = "Images/Monsters/FILLMEIN" },
+                 new () { Label = "RedStripes", IconPath = "Images/Monsters/FILLMEIN" },
+                 new () { Label = "YellowStripes", IconPath = "Images/Monsters/FILLMEIN" },
+                 new () { Label = "BlueWaves", IconPath = "Images/Monsters/FILLMEIN" },
+                 new () { Label = "BrownWaves", IconPath = "Images/Monsters/FILLMEIN" },
+                 new () { Label = "RedWaves", IconPath = "Images/Monsters/FILLMEIN" },
+                 new () { Label = "YellowWaves", IconPath = "Images/Monsters/FILLMEIN" },
+            }
+        }
       },
       sfxData = new MonsterSfxData {
         interaction = "interactions/monster/1",
