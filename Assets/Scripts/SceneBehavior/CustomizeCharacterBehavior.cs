@@ -35,6 +35,25 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
     }
   }
 
+  public void RenderMonsterPaletteBox(int attributeIdx, string attributeGroup,
+    List<MonsterCustomizationEntry> customizations) {
+    _customizationContainer.Clear();
+    _categoryStep.text =
+      $"{attributeIdx}{_categoryStep.text.Substring(1, _categoryStep.text.Length - 1)}";
+
+    var partIndex = 0;
+    foreach (var monsterPart in customizations) {
+      var image = Resources.Load<Texture2D>(monsterPart.IconPath);
+      var i1 = partIndex;
+      var box = new CustomizationBox(image,
+        _ => {
+          MonsterDataManager.Instance.activeMonsterPrefab.GetComponent<CharacterCustomization>().ChangeMaterials(i1);
+        });
+      _customizationContainer.Add(box);
+      partIndex++;
+    }
+  }
+  
   public void Awake() {
     Debug.Log("Switched to CustomizeCharacter Scene");
     Debug.Assert(MonsterDataManager.Instance.activeMonsterPrefab != null,
@@ -60,15 +79,19 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
     // Map over all customization attributes category and create UI and assign callbacks
     var step = 1;
     foreach (var customization in monsterData.customizations) {
-      // TODO: Once attributes icon are here, use them
       var image = Resources.Load<Texture2D>(
         $"Images/Icons/customization/{monster.name.ToLower().Substring(0, monster.name.Length - 7)}_{customization.Key.ToLower()}");
-      Debug.Log(monster.name.ToLower().Substring(0, monster.name.Length - 7));
-      Debug.Log(customization.Key.ToLower());
 
       var step1 = step;
-      var box = new CustomizationBox(image,
-        _ => { RenderMonsterAttributesBox(step1, customization.Key, customization.Value); });
+      CustomizationBox box;
+      if (customization.Key.ToLower() == "Palette") {
+        box = new CustomizationBox(image,
+          _ => { RenderMonsterAttributesBox(step1, customization.Key, customization.Value); });
+      }
+      else {
+        box = new CustomizationBox(image,
+          _ => { RenderMonsterPaletteBox(step1, customization.Key, customization.Value); });
+      }
 
       _categoryContainer.Add(box);
       step++;
