@@ -124,11 +124,17 @@ public class GameWorldBehavior : MonoBehaviour {
 
       // 2. Mount UI element
       Resources.Load<VisualTreeAsset>("UI/Components/DeleteObjectButton").CloneTree(root);
-      var deleteButton = root.Q<VisualElement>("DeleteObjectButton");
+      var deleteButton = root.Q<Button>("DeleteObjectButton");
       deleteButton.RegisterCallback<ClickEvent>(_ => { AudioManager.Instance.PlayUiClick(); });
       deleteButton.RegisterCallback<ClickEvent>(_ => {
         Destroy(newActiveObject);
         ChangeActiveObject(null);
+      });
+      
+      var toggleButton = root.Q<Button>("ToggleObjectButton");
+      toggleButton.RegisterCallback<ClickEvent>(_ => { AudioManager.Instance.PlayUiClick(); });
+      toggleButton.RegisterCallback<ClickEvent>(_ => {
+        transformGizmo.GetComponent<RuntimeTransformHandle>().type = HandleType.ROTATION;
       });
 
       // 3. Add Runtime Transform Handles
