@@ -66,8 +66,9 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
       Debug.Log(monster.name.ToLower().Substring(0, monster.name.Length - 7));
       Debug.Log(customization.Key.ToLower());
 
+      var step1 = step;
       var box = new CustomizationBox(image,
-        _ => { RenderMonsterAttributesBox(step, customization.Key, customization.Value); });
+        _ => { RenderMonsterAttributesBox(step1, customization.Key, customization.Value); });
 
       _categoryContainer.Add(box);
       step++;
