@@ -49,17 +49,6 @@
                 },
                 {
                     "name": "",
-                    "id": "62a08697-d2fb-4c8f-8837-b037e1be30e9",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Position",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "ec937e52-ea35-4278-be25-4403c577c0b1",
                     "path": "<Touchscreen>/primaryTouch/tap",
                     "interactions": "",
@@ -73,17 +62,6 @@
                     "name": "",
                     "id": "1c6476b5-29af-4c62-af07-1316d4163972",
                     "path": "<Pen>/press",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Select",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a88e11d3-d206-4ea9-aad7-549f939c05e1",
-                    "path": "<Mouse>/press",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

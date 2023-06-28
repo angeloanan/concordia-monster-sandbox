@@ -105,7 +105,7 @@ public class GameWorldBehavior : MonoBehaviour {
       }
 
       // 2. Remove mounted UI element
-      var deleteButton = root.Q<VisualElement>("DeleteObjectButton");
+      var deleteButton = root.Q<VisualElement>("FloatingButtonContainer");
       root.Remove(deleteButton);
 
       // 3. Remove Runtime Transform Handles
@@ -134,7 +134,17 @@ public class GameWorldBehavior : MonoBehaviour {
       var toggleButton = root.Q<Button>("ToggleObjectButton");
       toggleButton.RegisterCallback<ClickEvent>(_ => { AudioManager.Instance.PlayUiClick(); });
       toggleButton.RegisterCallback<ClickEvent>(_ => {
-        transformGizmo.GetComponent<RuntimeTransformHandle>().type = HandleType.ROTATION;
+        var rth = transformGizmo.GetComponent<RuntimeTransformHandle>();
+        var newType = rth.type == HandleType.ROTATION
+          ? HandleType.POSITION
+          : HandleType.ROTATION;
+        if (newType == HandleType.ROTATION) {
+          rth.type = HandleType.ROTATION;
+          rth.axes = HandleAxes.Y;
+        } else {
+          rth.type = HandleType.POSITION;
+          rth.axes = HandleAxes.XYZ;
+        }
       });
 
       // 3. Add Runtime Transform Handles
@@ -213,23 +223,22 @@ public class GameWorldBehavior : MonoBehaviour {
   private void UpdateActiveObjectUIElement() {
     if (_activeObject == null) return;
     var root = uiDocument.rootVisualElement;
-    var button = root.Q<VisualElement>("DeleteObjectButton");
+    var floatingButtonContainer = root.Q<VisualElement>("FloatingButtonContainer");
 
-    if (button == null) {
+    if (floatingButtonContainer == null) {
       Debug.LogWarning("DeleteObjectButton not found in UI but active object is not null.");
       return;
     }
 
-    var _activeObjectCollider = _activeObject.GetComponent<Collider>();
-    var _activeObjectCenter = _activeObjectCollider.bounds.center;
-    var _activeObjectSize = _activeObjectCollider.bounds.size;
+    var activeObjectCollider = _activeObject.GetComponent<Collider>();
+    var bounds = activeObjectCollider.bounds;
+    var activeObjectCenter = bounds.center;
+    var activeObjectSize = bounds.size;
 
-    var _activeObjectPostion = (_activeObjectSize / 2) + _activeObjectCenter;
+    var activeObjectPostion = (activeObjectSize / 2) + activeObjectCenter;
 
-    var activeObjectScreenPos = Camera.main.WorldToScreenPoint(_activeObjectPostion);
-    // Debug.Log($"Active object screen pos: {activeObjectScreenPos}");
-    button.style.left = activeObjectScreenPos.x;
-    // TODO: Fix this
-    button.style.bottom = activeObjectScreenPos.y;
+    var activeObjectScreenPos = Camera.main.WorldToScreenPoint(activeObjectPostion);
+    floatingButtonContainer.style.left = activeObjectScreenPos.x;
+    floatingButtonContainer.style.bottom = activeObjectScreenPos.y;
   }
 }
