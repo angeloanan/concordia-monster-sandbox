@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -14,8 +15,11 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
   private VisualElement _categoryContainer;
   private VisualElement _customizationContainer;
 
-  public void RenderMonsterAttributesBox(string part, List<MonsterCustomizationEntry> customizations) {
+  public void RenderMonsterAttributesBox(int attributeIdx, string attributeGroup,
+    List<MonsterCustomizationEntry> customizations) {
     _customizationContainer.Clear();
+    _categoryStep.text =
+      $"{attributeIdx}{_categoryStep.text.Substring(1, _categoryStep.text.Length - 1)}";
 
     var partIndex = 0;
     foreach (var monsterPart in customizations) {
@@ -23,9 +27,8 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
       var i1 = partIndex;
       var box = new CustomizationBox(image,
         _ => {
-          Debug.Log($"Rendering {part} index {i1}");
-          // BUG: This doesn't work
-          CharacterCustomization.ReRenderParts(_characterCustomization[part], i1);
+          Debug.Log($"Rendering {attributeGroup} index {i1}");
+          CharacterCustomization.ReRenderParts(_characterCustomization[attributeGroup], i1);
         });
       _customizationContainer.Add(box);
       partIndex++;
@@ -55,16 +58,19 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
     _categoryStep.text = $"1 / {monsterData.customizations.Count}";
 
     // Map over all customization attributes category and create UI and assign callbacks
+    var step = 1;
     foreach (var customization in monsterData.customizations) {
       // TODO: Once attributes icon are here, use them
-      var image = Resources.Load<Texture2D>($"Images/Icons/customization/{monster.name.ToLower().Substring(0, monster.name.Length - 7)}_{customization.Key.ToLower()}");
+      var image = Resources.Load<Texture2D>(
+        $"Images/Icons/customization/{monster.name.ToLower().Substring(0, monster.name.Length - 7)}_{customization.Key.ToLower()}");
       Debug.Log(monster.name.ToLower().Substring(0, monster.name.Length - 7));
       Debug.Log(customization.Key.ToLower());
-      
+
       var box = new CustomizationBox(image,
-        _ => { RenderMonsterAttributesBox(customization.Key, customization.Value); });
-  
+        _ => { RenderMonsterAttributesBox(step, customization.Key, customization.Value); });
+
       _categoryContainer.Add(box);
+      step++;
     }
 
     // What to do:
@@ -76,7 +82,7 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
     //     * Update categoryStep.text
     var firstKey = monsterData.customizations.Keys.First();
     var firstCustomization = monsterData.customizations[firstKey];
-    RenderMonsterAttributesBox(firstKey, firstCustomization);
+    RenderMonsterAttributesBox(1, firstKey, firstCustomization);
 
     var doneButton = root.Q<Button>("DoneButton");
     doneButton.RegisterCallback<ClickEvent>(_ => { AudioManager.Instance.PlayUiClick(); });
