@@ -10,7 +10,7 @@ public class GameWorldBehavior : MonoBehaviour {
 
   [SerializeField] private float cameraSensitivity = 0.1f;
   [SerializeField] private Vector3 cameraCenter = new(0, 0, 0);
-  [SerializeField] private float cameraRadiusFromCenter = 20.0f;
+  [SerializeField] private float cameraRadiusFromCenter = 15.0f;
   [SerializeField, Range(0, 180)] private float cameraClampRotationDeg = 45.0f;
 
   private Vector2 _pointerDelta;
@@ -185,7 +185,7 @@ public class GameWorldBehavior : MonoBehaviour {
     if (!_isClicking) return;
     if (!canMoveCamera) return;
 
-    if (!_cameraDidMove && _pointerDelta.magnitude > 10f) _cameraDidMove = true;
+    if (!_cameraDidMove && _pointerDelta.magnitude > 5f) _cameraDidMove = true;
     Debug.Log($"Pointer Delta Magnitude: {_pointerDelta.magnitude}");
     var rotationAroundXAxis = -_pointerDelta.y * cameraSensitivity;
     var rotationAroundYAxis = _pointerDelta.x * cameraSensitivity;
