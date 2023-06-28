@@ -50,7 +50,7 @@ public class GameWorldBehavior : MonoBehaviour {
     var transformHandle = transformGizmo.GetOrAddComponent<RuntimeTransformHandle>();
     transformHandle.type = HandleType.POSITION;
     transformHandle.autoScale = true;
-    transformHandle.autoScaleFactor = 2F;
+    transformHandle.autoScaleFactor = 1.5F;
     transformHandle.axes = HandleAxes.XYZ;
     transformHandle.target = null;
 
