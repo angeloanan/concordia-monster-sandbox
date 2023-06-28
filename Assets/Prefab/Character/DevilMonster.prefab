@@ -237,9 +237,7 @@ MonoBehaviour:
   - {fileID: 6660111988915184105}
   - {fileID: 7654169225207350911}
   wing: []
-  color:
-  - {fileID: 6879821131838913120}
-  - {fileID: 1588028437186428375}
+  colors: []
   materials:
   - {fileID: 2100000, guid: fc3326d32055c4d4fa15dc99f20a9a40, type: 2}
   - {fileID: 2100000, guid: 4a5fd7fc384435e4da032d62b8b6390a, type: 2}
@@ -882,8 +880,7 @@ PrefabInstance:
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 5561349426305759274, guid: b91923a2d748144de8216efd8112252d,
-        type: 3}
+      objectReference: {fileID: 2100000, guid: fc3326d32055c4d4fa15dc99f20a9a40, type: 2}
     - target: {fileID: 919132149155446097, guid: 720d623e7ed9c4cf89fef1e24d1a13b5,
         type: 3}
       propertyPath: m_Name
@@ -892,7 +889,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 720d623e7ed9c4cf89fef1e24d1a13b5,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1806,7 +1803,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bdc8bdaf941cc437390e8ae21a7c2dbd,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
