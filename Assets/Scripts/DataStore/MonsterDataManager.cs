@@ -433,6 +433,18 @@ public class MonsterDataManager : MonoBehaviour {
             }
           }
         },
+        {
+          "Pallete", new() { 
+            new() {
+              Label = "Color 1",
+              IconPath = "Images/Monsters/devil/Color/1",
+            },
+            new() {
+              Label = "Color 2",
+              IconPath = "Images/Monsters/devil/Color/1",
+            },
+          }
+        },
       },
       sfxData = new MonsterSfxData {
         interaction = "interactions/monster/1",
