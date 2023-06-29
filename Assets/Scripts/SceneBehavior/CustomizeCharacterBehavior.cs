@@ -47,7 +47,8 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
       var i1 = partIndex;
       var box = new CustomizationBox(image,
         _ => {
-          MonsterDataManager.Instance.activeMonsterPrefab.GetComponent<CharacterCustomization>().ChangeMaterials(i1);
+          MonsterDataManager.Instance.activeMonsterPrefab.GetComponent<CharacterCustomization>()
+            .ChangeMaterials(i1, MonsterDataManager.Instance.activeMonsterPrefab.name);
         });
       _customizationContainer.Add(box);
       partIndex++;

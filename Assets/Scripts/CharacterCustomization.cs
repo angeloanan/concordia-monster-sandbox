@@ -54,8 +54,31 @@ public class CharacterCustomization : MonoBehaviour {
     parts[index].SetActive(true);
   }
 
-  public void ChangeMaterials(int index) {
-    GameObject[][] allAttributes = {body, mouth, eyes, emotion, hair, arms, ears, accessories, wing, legs};
+  public void ChangeMaterials(int index, string monsterName) {
+    monsterName = monsterName.ToLower();
+    GameObject[][] allAttributes = {};
+
+    switch (monsterName) {
+      case "fairymonster": {
+        allAttributes = new []{body, hair, arms, wing, legs, ears};
+        break;
+      }
+      case "devilmonster": {
+        allAttributes = new []{body, hair, arms, ears, wing, legs};
+        break;
+      }
+      case "fluffymonster": {
+        allAttributes = new []{body, hair, arms, ears, legs, accessories, wing};
+        break;
+      }
+      case "potatomonster": {
+        allAttributes = new []{body, hair, arms, ears, wing, legs};
+        break;
+      }
+      default:
+        throw new ArgumentException($"Unknown monster name {monsterName}");
+    }
+    
     var chosenMaterial = materials[index];
     
     foreach (var attributeGroup in allAttributes) {

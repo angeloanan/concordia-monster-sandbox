@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.18270992, g: 0.22573136, b: 0.2914777, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -629,6 +629,12 @@ MonoBehaviour:
   m_DefaultActionMap: Primary
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!1 &917592384 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2870042396776865820, guid: 2a420e5de3a1449faa7b0d3559b89085,
+    type: 3}
+  m_PrefabInstance: {fileID: 1674108639}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1015976249 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1851735268192148287, guid: 2a420e5de3a1449faa7b0d3559b89085,
@@ -1164,6 +1170,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1174713429}
   m_CullTransparentMesh: 1
+--- !u!1 &1194682799 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2371444128604015472, guid: 2a420e5de3a1449faa7b0d3559b89085,
+    type: 3}
+  m_PrefabInstance: {fileID: 1674108639}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1263652052
 GameObject:
   m_ObjectHideFlags: 0
@@ -1658,6 +1670,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7553731072986438519, guid: 2a420e5de3a1449faa7b0d3559b89085,
         type: 3}
+      propertyPath: 'wing.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1194682799}
+    - target: {fileID: 7553731072986438519, guid: 2a420e5de3a1449faa7b0d3559b89085,
+        type: 3}
       propertyPath: materials.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -1676,6 +1693,11 @@ PrefabInstance:
       propertyPath: 'materials.Array.data[3]'
       value: 
       objectReference: {fileID: 2100000, guid: b50e7b7afef372a46afbea1167c3537e, type: 2}
+    - target: {fileID: 7553731072986438519, guid: 2a420e5de3a1449faa7b0d3559b89085,
+        type: 3}
+      propertyPath: 'accessories.Array.data[0]'
+      value: 
+      objectReference: {fileID: 917592384}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
