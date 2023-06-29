@@ -49,6 +49,7 @@
                 },
                 {
                     "name": "",
+<<<<<<< Updated upstream
                     "id": "3599ee57-5ea6-42ad-abf2-e0626fe03c4d",
                     "path": "<Mouse>/position",
                     "interactions": "",
@@ -60,6 +61,8 @@
                 },
                 {
                     "name": "",
+=======
+>>>>>>> Stashed changes
                     "id": "ec937e52-ea35-4278-be25-4403c577c0b1",
                     "path": "<Touchscreen>/primaryTouch/tap",
                     "interactions": "",
@@ -79,6 +82,7 @@
                     "action": "Select",
                     "isComposite": false,
                     "isPartOfComposite": false
+<<<<<<< Updated upstream
                 },
                 {
                     "name": "",
@@ -90,6 +94,8 @@
                     "action": "Select",
                     "isComposite": false,
                     "isPartOfComposite": false
+=======
+>>>>>>> Stashed changes
                 }
             ]
         }
