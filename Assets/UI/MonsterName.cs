@@ -18,6 +18,5 @@ public class MonsterName : MonoBehaviour {
     });
     
     monsterNameField.Focus();
-    _kb = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default, false, false, false, false, "Enter your monster's name");
   }
 }

@@ -184,6 +184,9 @@ MonoBehaviour:
   - {fileID: 8734720858034632692}
   materials:
   - {fileID: 2100000, guid: 9c2e3bca7ce7bc94899fc9dfe71307aa, type: 2}
+  - {fileID: 2100000, guid: bdd926f01b1bb35498e91aff5a7a9d68, type: 2}
+  - {fileID: 2100000, guid: 0761fdb2f480e6d4ead17e94b1742c99, type: 2}
+  - {fileID: 2100000, guid: 617fdc13108e62d4dacbad123377c7a8, type: 2}
 --- !u!136 &5331944270338691211
 CapsuleCollider:
   m_ObjectHideFlags: 0
