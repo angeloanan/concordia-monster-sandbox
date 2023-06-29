@@ -125,15 +125,15 @@ public class GameWorldBehavior : MonoBehaviour {
       // 2. Mount UI element
       Resources.Load<VisualTreeAsset>("UI/Components/DeleteObjectButton").CloneTree(root);
       var deleteButton = root.Q<Button>("DeleteObjectButton");
-      deleteButton.RegisterCallback<ClickEvent>(_ => { AudioManager.Instance.PlayUiClick(); });
-      deleteButton.RegisterCallback<ClickEvent>(_ => {
+      deleteButton.RegisterCallback<PointerDownEvent>(_ => { AudioManager.Instance.PlayUiClick(); }, TrickleDown.TrickleDown);
+      deleteButton.RegisterCallback<PointerDownEvent>(_ => {
         Destroy(newActiveObject);
         ChangeActiveObject(null);
-      });
+      }, TrickleDown.TrickleDown);
       
       var toggleButton = root.Q<Button>("ToggleObjectButton");
-      toggleButton.RegisterCallback<ClickEvent>(_ => { AudioManager.Instance.PlayUiClick(); });
-      toggleButton.RegisterCallback<ClickEvent>(_ => {
+      toggleButton.RegisterCallback<PointerDownEvent>(_ => { AudioManager.Instance.PlayUiClick(); }, TrickleDown.TrickleDown);
+      toggleButton.RegisterCallback<PointerDownEvent>(_ => {
         var rth = transformGizmo.GetComponent<RuntimeTransformHandle>();
         var newType = rth.type == HandleType.ROTATION
           ? HandleType.POSITION
@@ -145,7 +145,7 @@ public class GameWorldBehavior : MonoBehaviour {
           rth.type = HandleType.POSITION;
           rth.axes = HandleAxes.XYZ;
         }
-      });
+      }, TrickleDown.TrickleDown);
 
       // 3. Add Runtime Transform Handles
       transformGizmo.SetActive(true);

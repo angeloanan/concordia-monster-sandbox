@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class CharacterCustomization : MonoBehaviour {
@@ -56,35 +57,47 @@ public class CharacterCustomization : MonoBehaviour {
 
   public void ChangeMaterials(int index, string monsterName) {
     monsterName = monsterName.ToLower();
-    GameObject[][] allAttributes = {};
 
-    switch (monsterName) {
-      case "fairymonster": {
-        allAttributes = new []{body, hair, arms, wing, legs, ears};
-        break;
-      }
-      case "devilmonster": {
-        allAttributes = new []{body, hair, arms, ears, wing, legs};
-        break;
-      }
-      case "fluffymonster": {
-        allAttributes = new []{body, hair, arms, ears, legs, accessories, wing};
-        break;
-      }
-      case "potatomonster": {
-        allAttributes = new []{body, hair, arms, ears, wing, legs};
-        break;
-      }
-      default:
-        throw new ArgumentException($"Unknown monster name {monsterName}");
+    // HACK
+    GameObject[][] allAttributes = monsterName switch {
+      "fairymonster" => new[] { body, hair, arms, wing, legs, ears },
+      "devilmonster" => new[] { body, hair, arms, ears, wing, legs, eyes },
+      "fluffymonster" => new[] { body, hair, arms, ears, legs, accessories, wing, eyes },
+      "potatomonster" => new[] { hair, arms, ears, wing, legs },
+      _ => throw new ArgumentException($"Unknown monster name {monsterName}")
+    };
+
+    // HACK
+    if (monsterName == "potatomonster") {
+      var transformList = MonsterDataManager.Instance.activeMonsterPrefab.transform
+        .Find("Mouth")
+        .gameObject
+        .GetComponentsInChildren<Transform>();
+      var activeBody = transformList[^1];
+      Debug.Assert(activeBody != null, "activeBody != null");
+      var activeBodyIndex = activeBody.name.ToCharArray()[activeBody.name.Length - 1] - '0';
+      var bodyIndex = index % 4 + (4 * (activeBodyIndex - 1));
+      Debug.Log(bodyIndex);
+      index = bodyIndex;
+
+      activeBody.GetComponent<Renderer>().material = materials[index];
     }
-    
+
     var chosenMaterial = materials[index];
     
     foreach (var attributeGroup in allAttributes) {
       foreach (var part in attributeGroup) {
         if (part.TryGetComponent(out Renderer partRenderer)) {
           partRenderer.material = chosenMaterial;
+        }
+
+        // TODO: Recursive but lazy
+        if (part.transform.childCount < 0) continue;
+        for (int i = 0; i < part.transform.childCount; i++) {
+          if (part.transform.GetChild(i).TryGetComponent(out Renderer subPartRenderer)) {
+            Debug.Log(subPartRenderer.name);
+            subPartRenderer.material = chosenMaterial;
+          }
         }
       }
     }

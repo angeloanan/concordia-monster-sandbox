@@ -1,8 +1,7 @@
 fileFormatVersion: 2
-guid: 244de3f32e1c0b1439bb7ff73ac59484
-timeCreated: 1436042081
-licenseType: Store
+guid: 53f69200b69484bb9b7e7dbea6b041c4
 MonoImporter:
+  externalObjects: {}
   serializedVersion: 2
   defaultReferences: []
   executionOrder: 0
@@ -10,10 +9,3 @@ MonoImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 50735
-  packageName: Inferno VFX
-  packageVersion: 2.6.0
-  assetPath: Assets/Mirza Beig/Particle Systems/_Common/Scripts/AnimatedLight.cs
-  uploadId: 235952

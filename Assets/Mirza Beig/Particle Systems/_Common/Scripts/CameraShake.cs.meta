@@ -1,8 +1,7 @@
 fileFormatVersion: 2
-guid: 6c59e681925ba2d41b68052c25820eca
-timeCreated: 1510113832
-licenseType: Store
+guid: 09b992ea267814d0fb5dae9de3d9d786
 MonoImporter:
+  externalObjects: {}
   serializedVersion: 2
   defaultReferences: []
   executionOrder: 0
@@ -10,10 +9,3 @@ MonoImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 50735
-  packageName: Inferno VFX
-  packageVersion: 2.6.0
-  assetPath: Assets/Mirza Beig/Particle Systems/_Common/Scripts/CameraShake.cs
-  uploadId: 235952

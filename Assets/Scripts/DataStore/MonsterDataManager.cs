@@ -183,20 +183,20 @@ public class MonsterDataManager : MonoBehaviour {
               IconPath = "Images/Monsters/fluffy/Eyes/1",
             },
             new() {
-              Label = "Eyes 2",
-              IconPath = "Images/Monsters/fluffy/Eyes/4",
-            },
-            new() {
-              Label = "Eyes 3",
-              IconPath = "Images/Monsters/fluffy/Eyes/5",
-            },
-            new() {
               Label = "Eyes 4",
               IconPath = "Images/Monsters/fluffy/Eyes/2",
             },
             new() {
               Label = "Eyes 5",
               IconPath = "Images/Monsters/fluffy/Eyes/3",
+            },
+            new() {
+              Label = "Eyes 2",
+              IconPath = "Images/Monsters/fluffy/Eyes/4",
+            },
+            new() {
+              Label = "Eyes 3",
+              IconPath = "Images/Monsters/fluffy/Eyes/5",
             },
             new() {
               Label = "Eyes 6",
@@ -455,20 +455,6 @@ public class MonsterDataManager : MonoBehaviour {
             new() { Label = "YellowWaves", IconPath = "Images/Monsters/FILLMEIN" },
           }
         }
-=======
-        /*{
-          "Pallete", new() { 
-            new() {
-              Label = "Color 1",
-              IconPath = "Images/Monsters/devil/Color/1",
-            },
-            new() {
-              Label = "Color 2",
-              IconPath = "Images/Monsters/devil/Color/1",
-            },
-          }
-        },*/
->>>>>>> Stashed changes
       },
       sfxData = new MonsterSfxData {
         interaction = "interactions/monster/1",
