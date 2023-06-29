@@ -49,7 +49,6 @@ public class CharacterCustomization : MonoBehaviour {
 
     foreach (var p in parts) {
       p.SetActive(false);
-      Debug.Log($"Setting {p} to not active");
     }
 
     parts[index].SetActive(true);

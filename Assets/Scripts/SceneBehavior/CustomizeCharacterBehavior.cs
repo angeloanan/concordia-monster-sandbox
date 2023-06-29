@@ -36,14 +36,14 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
   }
 
   public void RenderMonsterPaletteBox(int attributeIdx, string attributeGroup,
-    List<MonsterCustomizationEntry> customizations) {
+    List<MonsterCustomizationEntry> colors) {
     _customizationContainer.Clear();
     _categoryStep.text =
       $"{attributeIdx}{_categoryStep.text.Substring(1, _categoryStep.text.Length - 1)}";
 
     var partIndex = 0;
-    foreach (var monsterPart in customizations) {
-      var image = Resources.Load<Texture2D>(monsterPart.IconPath);
+    foreach (var color in colors) {
+      var image = Resources.Load<Texture2D>(color.IconPath);
       var i1 = partIndex;
       var box = new CustomizationBox(image,
         _ => {
@@ -53,7 +53,7 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
       partIndex++;
     }
   }
-  
+
   public void Awake() {
     Debug.Log("Switched to CustomizeCharacter Scene");
     Debug.Assert(MonsterDataManager.Instance.activeMonsterPrefab != null,
@@ -83,15 +83,15 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
         $"Images/Icons/customization/{monster.name.ToLower().Substring(0, monster.name.Length - 7)}_{customization.Key.ToLower()}");
 
       var step1 = step;
-      CustomizationBox box;
-      if (customization.Key.ToLower() == "Palette") {
-        box = new CustomizationBox(image,
-          _ => { RenderMonsterAttributesBox(step1, customization.Key, customization.Value); });
-      }
-      else {
-        box = new CustomizationBox(image,
-          _ => { RenderMonsterPaletteBox(step1, customization.Key, customization.Value); });
-      }
+      var box = new CustomizationBox(image,
+        _ => {
+          if (customization.Key.ToLower() == "palette") {
+            RenderMonsterPaletteBox(step1, customization.Key, customization.Value);
+          }
+          else {
+            RenderMonsterAttributesBox(step1, customization.Key, customization.Value);
+          }
+        });
 
       _categoryContainer.Add(box);
       step++;
