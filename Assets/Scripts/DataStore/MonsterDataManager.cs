@@ -65,8 +65,7 @@ public class MonsterDataManager : MonoBehaviour {
               IconPath = "Images/Monsters/fairy/Emotion/3",
             },
           }
-        },*/
-        {
+        },*/ {
           "Eyes", new() {
             new() {
               Label = "Eyes 1",
@@ -81,8 +80,7 @@ public class MonsterDataManager : MonoBehaviour {
               IconPath = "Images/Monsters/fairy/Eyes/3",
             },
           }
-        },
-        {
+        }, {
           "Hair", new() {
             new() {
               Label = "Hair 1",
@@ -97,8 +95,7 @@ public class MonsterDataManager : MonoBehaviour {
               IconPath = "Images/Monsters/fairy/Hair/3",
             },
           }
-        },
-        {
+        }, {
           "Mouth", new() {
             new() {
               Label = "Mouth 1",
@@ -109,8 +106,7 @@ public class MonsterDataManager : MonoBehaviour {
               IconPath = "Images/Monsters/fairy/Mouth/1",
             },
           }
-        },
-        {
+        }, {
           "Accessories", new() {
             new() {
               Label = "Necklace 1",
@@ -121,8 +117,7 @@ public class MonsterDataManager : MonoBehaviour {
               IconPath = "Images/Monsters/fairy/Necklace/1",
             },
           }
-        },
-        {
+        }, {
           "Wing", new() {
             new() {
               Label = "Wing 1",
@@ -136,6 +131,13 @@ public class MonsterDataManager : MonoBehaviour {
               Label = "Wing 3",
               IconPath = "Images/Monsters/fairy/Wing/3",
             },
+          }
+        }, {
+          "Palette", new() {
+            new() { Label = "Blue", IconPath = "Images/Monsters/FILLMEIN" },
+            new() { Label = "Pink", IconPath = "Images/Monsters/FILLMEIN" },
+            new() { Label = "Purple", IconPath = "Images/Monsters/FILLMEIN" },
+            new() { Label = "Red", IconPath = "Images/Monsters/FILLMEIN" },
           }
         },
       },
@@ -174,9 +176,8 @@ public class MonsterDataManager : MonoBehaviour {
               IconPath = "Images/Monsters/fluffy/Mouth/6",
             },
           }
-        },
-        {
-          "Eyes", new() { 
+        }, {
+          "Eyes", new() {
             new() {
               Label = "Eyes 1",
               IconPath = "Images/Monsters/fluffy/Eyes/1",
@@ -218,10 +219,9 @@ public class MonsterDataManager : MonoBehaviour {
               IconPath = "Images/Monsters/fluffy/Emotion/3",
             },
           }
-        },*/
-        {
+        },*/ {
           "Arms", new() {
-            new() { 
+            new() {
               Label = "Arms 1",
               IconPath = "Images/Monsters/fluffy/Arms/3",
             },
@@ -234,7 +234,14 @@ public class MonsterDataManager : MonoBehaviour {
               IconPath = "Images/Monsters/fluffy/Arms/1",
             },
           }
-        }
+        }, {
+          "Palette", new() {
+            new() { Label = "Green", IconPath = "Images/Monsters/FILLMEIN" },
+            new() { Label = "Blue", IconPath = "Images/Monsters/FILLMEIN" },
+            new() { Label = "Red", IconPath = "Images/Monsters/FILLMEIN" },
+            new() { Label = "Purple", IconPath = "Images/Monsters/FILLMEIN" },
+          }
+        },
       },
       sfxData = new MonsterSfxData {
         interaction = "interactions/monster/3",
@@ -259,8 +266,7 @@ public class MonsterDataManager : MonoBehaviour {
               IconPath = "Images/Monsters/potato/Eyes/3",
             },
           }
-        },
-        {
+        }, {
           "Arms", new() {
             new() {
               Label = "Arms 1",
@@ -291,8 +297,7 @@ public class MonsterDataManager : MonoBehaviour {
               IconPath = "Images/Monsters/potato/Emotion/3",
             },
           }
-        },*/
-        {
+        },*/ {
           "Hair", new() {
             new() {
               Label = "Hair 1",
@@ -307,8 +312,7 @@ public class MonsterDataManager : MonoBehaviour {
               IconPath = "Images/Monsters/potato/Hair/3",
             },
           }
-        },
-        {
+        }, {
           "Legs", new() {
             new() {
               Label = "Legs 1",
@@ -319,8 +323,7 @@ public class MonsterDataManager : MonoBehaviour {
               IconPath = "Images/Monsters/potato/Legs/2",
             },
           }
-        },
-        {
+        }, {
           "Mouth", new() {
             new() {
               Label = "Mouth 1",
@@ -334,6 +337,13 @@ public class MonsterDataManager : MonoBehaviour {
               Label = "Mouth 3",
               IconPath = "Images/Monsters/potato/Mouth/3",
             },
+          }
+        }, {
+          "Palette", new() {
+            new() { Label = "Blue", IconPath = "Images/Monsters/FILLMEIN" },
+            new() { Label = "Green", IconPath = "Images/Monsters/FILLMEIN" },
+            new() { Label = "Orange", IconPath = "Images/Monsters/FILLMEIN" },
+            new() { Label = "Pale", IconPath = "Images/Monsters/FILLMEIN" },
           }
         },
       },
@@ -364,8 +374,7 @@ public class MonsterDataManager : MonoBehaviour {
               IconPath = "Images/Monsters/devil/Eyes/4",
             },
           }
-        },
-        {
+        }, {
           "Mouth", new() {
             new() {
               Label = "Mouth 1",
@@ -380,8 +389,7 @@ public class MonsterDataManager : MonoBehaviour {
               IconPath = "Images/Monsters/devil/Mouth/3",
             },
           }
-        },
-        {
+        }, {
           "Accessories", new() {
             new() {
               Label = "Horn 1",
@@ -420,8 +428,7 @@ public class MonsterDataManager : MonoBehaviour {
               IconPath = "Images/Monsters/devil/Emotion/3",
             },
           }
-        },*/
-        {
+        },*/ {
           "Legs", new() {
             new() {
               Label = "Legs 1",
@@ -432,8 +439,24 @@ public class MonsterDataManager : MonoBehaviour {
               IconPath = "Images/Monsters/devil/Legs/2",
             }
           }
-        },
-        {
+        }, {
+          "Palette", new() {
+            new() { Label = "BlueGradient", IconPath = "Images/Monsters/FILLMEIN" },
+            new() { Label = "BrownGradient", IconPath = "Images/Monsters/FILLMEIN" },
+            new() { Label = "RedGradient", IconPath = "Images/Monsters/FILLMEIN" },
+            new() { Label = "YellowGradient", IconPath = "Images/Monsters/FILLMEIN" },
+            new() { Label = "BlueStripes", IconPath = "Images/Monsters/FILLMEIN" },
+            new() { Label = "BrownStripes", IconPath = "Images/Monsters/FILLMEIN" },
+            new() { Label = "RedStripes", IconPath = "Images/Monsters/FILLMEIN" },
+            new() { Label = "YellowStripes", IconPath = "Images/Monsters/FILLMEIN" },
+            new() { Label = "BlueWaves", IconPath = "Images/Monsters/FILLMEIN" },
+            new() { Label = "BrownWaves", IconPath = "Images/Monsters/FILLMEIN" },
+            new() { Label = "RedWaves", IconPath = "Images/Monsters/FILLMEIN" },
+            new() { Label = "YellowWaves", IconPath = "Images/Monsters/FILLMEIN" },
+          }
+        }
+=======
+        /*{
           "Pallete", new() { 
             new() {
               Label = "Color 1",
@@ -444,7 +467,8 @@ public class MonsterDataManager : MonoBehaviour {
               IconPath = "Images/Monsters/devil/Color/1",
             },
           }
-        },
+        },*/
+>>>>>>> Stashed changes
       },
       sfxData = new MonsterSfxData {
         interaction = "interactions/monster/1",

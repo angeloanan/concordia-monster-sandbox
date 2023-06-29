@@ -35,6 +35,26 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
     }
   }
 
+  public void RenderMonsterPaletteBox(int attributeIdx, string attributeGroup,
+    List<MonsterCustomizationEntry> colors) {
+    _customizationContainer.Clear();
+    _categoryStep.text =
+      $"{attributeIdx}{_categoryStep.text.Substring(1, _categoryStep.text.Length - 1)}";
+
+    var partIndex = 0;
+    foreach (var color in colors) {
+      var image = Resources.Load<Texture2D>(color.IconPath);
+      var i1 = partIndex;
+      var box = new CustomizationBox(image,
+        _ => {
+          MonsterDataManager.Instance.activeMonsterPrefab.GetComponent<CharacterCustomization>()
+            .ChangeMaterials(i1, MonsterDataManager.Instance.activeMonsterPrefab.name);
+        });
+      _customizationContainer.Add(box);
+      partIndex++;
+    }
+  }
+
   public void Awake() {
     Debug.Log("Switched to CustomizeCharacter Scene");
     Debug.Assert(MonsterDataManager.Instance.activeMonsterPrefab != null,
@@ -60,15 +80,19 @@ public class CustomizeCharacterBehavior : MonoBehaviour {
     // Map over all customization attributes category and create UI and assign callbacks
     var step = 1;
     foreach (var customization in monsterData.customizations) {
-      // TODO: Once attributes icon are here, use them
       var image = Resources.Load<Texture2D>(
         $"Images/Icons/customization/{monster.name.ToLower().Substring(0, monster.name.Length - 7)}_{customization.Key.ToLower()}");
-      Debug.Log(monster.name.ToLower().Substring(0, monster.name.Length - 7));
-      Debug.Log(customization.Key.ToLower());
 
       var step1 = step;
       var box = new CustomizationBox(image,
-        _ => { RenderMonsterAttributesBox(step1, customization.Key, customization.Value); });
+        _ => {
+          if (customization.Key.ToLower() == "palette") {
+            RenderMonsterPaletteBox(step1, customization.Key, customization.Value);
+          }
+          else {
+            RenderMonsterAttributesBox(step1, customization.Key, customization.Value);
+          }
+        });
 
       _categoryContainer.Add(box);
       step++;

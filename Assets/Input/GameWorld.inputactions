@@ -47,7 +47,7 @@
                 },
                 {
                     "name": "",
-                    "id": "b976cce1-5d3c-4270-864c-a50f6a694d47",
+                    "id": "6c9c295a-3faf-4ee7-8cf3-9308fd8798a6",
                     "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
@@ -69,7 +69,7 @@
                 },
                 {
                     "name": "",
-                    "id": "531f2cae-d973-4d33-a57d-722732500ec0",
+                    "id": "2b46950b-1afd-476a-9819-98483264cfa2",
                     "path": "<Mouse>/press",
                     "interactions": "",
                     "processors": "",
@@ -91,7 +91,7 @@
                 },
                 {
                     "name": "",
-                    "id": "c05fc33c-788e-4a65-b271-f73d92d8f4fe",
+                    "id": "b412f36a-9846-4e5e-8364-789de8c0c126",
                     "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",

@@ -49,7 +49,7 @@
                 },
                 {
                     "name": "",
-                    "id": "b928cb8f-86f4-4cf1-8e2f-0a1476cee842",
+                    "id": "3599ee57-5ea6-42ad-abf2-e0626fe03c4d",
                     "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
@@ -82,7 +82,7 @@
                 },
                 {
                     "name": "",
-                    "id": "1b6e8c89-7b80-479b-9c8a-9ab4e31f8f14",
+                    "id": "d696c540-366a-4126-b2a3-5eb5b68cef23",
                     "path": "<Mouse>/press",
                     "interactions": "",
                     "processors": "",

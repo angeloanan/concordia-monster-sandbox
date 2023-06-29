@@ -37,6 +37,7 @@ public class CharacterCustomization : MonoBehaviour {
   private int _currentColor;
 
   public Material[] materials;
+  
   private Renderer rend;
 
   public static void ReRenderParts(IReadOnlyList<GameObject> parts, int index) {
@@ -48,33 +49,45 @@ public class CharacterCustomization : MonoBehaviour {
 
     foreach (var p in parts) {
       p.SetActive(false);
-      Debug.Log($"Setting {p} to not active");
     }
 
     parts[index].SetActive(true);
   }
 
-  public void SetMaterial(IReadOnlyList<GameObject> parts, int index) {
-    if (parts.Count == 0) return; // Whatever
-    // Check if index is out of range
-    if (index < 0 || index >= parts.Count) {
-      throw new IndexOutOfRangeException();
+  public void ChangeMaterials(int index, string monsterName) {
+    monsterName = monsterName.ToLower();
+    GameObject[][] allAttributes = {};
+
+    switch (monsterName) {
+      case "fairymonster": {
+        allAttributes = new []{body, hair, arms, wing, legs, ears};
+        break;
+      }
+      case "devilmonster": {
+        allAttributes = new []{body, hair, arms, ears, wing, legs};
+        break;
+      }
+      case "fluffymonster": {
+        allAttributes = new []{body, hair, arms, ears, legs, accessories, wing};
+        break;
+      }
+      case "potatomonster": {
+        allAttributes = new []{body, hair, arms, ears, wing, legs};
+        break;
+      }
+      default:
+        throw new ArgumentException($"Unknown monster name {monsterName}");
     }
-
-    rend.sharedMaterial = materials[_currentColor];
-  }
-
-  private void ChangeMaterials() {
-    SetMaterial(body, _currentBody);
-    SetMaterial(mouth, _currentMouth);
-    SetMaterial(eyes, _currentEyes);
-    SetMaterial(emotion, _currentEmotion);
-    SetMaterial(hair, _currentHair);
-    SetMaterial(arms, _currentArms);
-    SetMaterial(ears, _currentEars);
-    SetMaterial(accessories, _currentAccessories);
-    SetMaterial(wing, _currentWing);
-    SetMaterial(legs, _currentLegs);
+    
+    var chosenMaterial = materials[index];
+    
+    foreach (var attributeGroup in allAttributes) {
+      foreach (var part in attributeGroup) {
+        if (part.TryGetComponent(out Renderer partRenderer)) {
+          partRenderer.material = chosenMaterial;
+        }
+      }
+    }
   }
 
   private void ReRenderCharacter() {
@@ -90,64 +103,8 @@ public class CharacterCustomization : MonoBehaviour {
     ReRenderParts(legs, _currentLegs);
   }
 
-  public void SwitchBody() {
-    _currentBody = (_currentBody + 1) % body.Length;
-    ReRenderParts(body, _currentBody);
-  }
-
-  public void SwitchMouth() {
-    _currentMouth = (_currentMouth + 1) % mouth.Length;
-    ReRenderParts(mouth, _currentMouth);
-  }
-
-  public void SwitchEyes() {
-    _currentEyes = (_currentEyes + 1) % eyes.Length;
-    ReRenderParts(eyes, _currentEyes);
-  }
-
-  public void SwitchEmotion() {
-    _currentEmotion = (_currentEmotion + 1) % emotion.Length;
-    ReRenderParts(emotion, _currentEmotion);
-  }
-
-  public void SwitchHair() {
-    _currentHair = (_currentHair + 1) % hair.Length;
-    ReRenderParts(hair, _currentHair);
-  }
-
-  public void SwitchArms() {
-    _currentArms = (_currentArms + 1) % arms.Length;
-    ReRenderParts(arms, _currentArms);
-  }
-
-  public void SwitchEars() {
-    _currentEars = (_currentEars + 1) % ears.Length;
-    ReRenderParts(ears, _currentEars);
-  }
-
-  public void SwitchAccessories() {
-    _currentAccessories = (_currentAccessories + 1) % accessories.Length;
-    ReRenderParts(accessories, _currentAccessories);
-  }
-
-  public void SwitchWing() {
-    _currentWing = (_currentWing + 1) % wing.Length;
-    ReRenderParts(wing, _currentWing);
-  }
-
-  public void SwitchColor() {
-    _currentColor = (_currentColor + 1) % colors.Length;
-    ChangeMaterials();
-
-  }
-
   private void Awake() {
-    rend = GetComponent<Renderer>();
-    rend.enabled = true;
-    rend.sharedMaterial = materials[0];
-
     ReRenderCharacter();
-    ChangeMaterials();
   }
 
   public IReadOnlyList<GameObject> this[string part] {
