@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 5331944270338691211}
   m_Layer: 0
   m_Name: FairyMonster
-  m_TagString: Untagged
+  m_TagString: Draggable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

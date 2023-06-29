@@ -455,6 +455,20 @@ public class MonsterDataManager : MonoBehaviour {
             new() { Label = "YellowWaves", IconPath = "Images/Monsters/FILLMEIN" },
           }
         }
+=======
+        /*{
+          "Pallete", new() { 
+            new() {
+              Label = "Color 1",
+              IconPath = "Images/Monsters/devil/Color/1",
+            },
+            new() {
+              Label = "Color 2",
+              IconPath = "Images/Monsters/devil/Color/1",
+            },
+          }
+        },*/
+>>>>>>> Stashed changes
       },
       sfxData = new MonsterSfxData {
         interaction = "interactions/monster/1",
