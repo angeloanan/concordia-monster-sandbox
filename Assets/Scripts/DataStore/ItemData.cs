@@ -45,7 +45,7 @@ namespace DataStore {
       trees = new ItemEntry[] {
         new() { itemLabel = "Pine Tree", prefabPath = "Objects/pinetree", spawnSfxPath = "tree/1" },
         new() { itemLabel = "Dead Tree", prefabPath = "Objects/treeDead", spawnSfxPath = "tree/2" },
-        new() { itemLabel = "Orange Tree", prefabPath = "Objects/treeDead", spawnSfxPath = "tree/2" },
+        new() { itemLabel = "Orange Tree", prefabPath = "Objects/orangetree", spawnSfxPath = "tree/2" },
       },
       decorations = new ItemEntry[] {
         new() { itemLabel = "Lantern", prefabPath = "Objects/lantern", spawnSfxPath = "decor/1" },
