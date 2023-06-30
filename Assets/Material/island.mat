@@ -121,9 +121,9 @@ Material:
     - _GlossyReflections: 0
     - _Halftone: 0.5
     - _HalftoneFactor: 0
-    - _Light0Intensity: 0.58
-    - _Light1Intensity: 0.25
-    - _Light2Intensity: 0.5
+    - _Light0Intensity: 0.35
+    - _Light1Intensity: 0.43
+    - _Light2Intensity: 0.49
     - _LightIntensity: 1
     - _Metallic: 0
     - _OcclusionStrength: 1
